@@ -458,13 +458,24 @@ function keepBorrowed(keep: boolean): void {
 
 const sheetQuery = window.matchMedia("(max-width: 720px), (max-height: 520px)");
 const isSheet = () => sheetQuery.matches;
-let sheetOpen = false;
 
-/** How much of the sheet is hidden below the fold. Collapsed it shows the fields and
- *  the headline answer and nothing else, so the route stays on screen. */
-function sheetOffset(): number {
-  if (!isSheet()) return 0;
-  if (sheetOpen) return 0;
+/** Three resting heights, which is what every map app on a phone settles on: a peek
+ *  that keeps the map whole, a middle that answers the question, and a full sheet for
+ *  the turn list. Two was not enough -- the peek showed the fields and the first line
+ *  of the answer, and everything a rider had actually asked for sat below the fold
+ *  behind a 20 px grip nobody could see. */
+type Detent = "peek" | "mid" | "full";
+const DETENTS: Detent[] = ["peek", "mid", "full"];
+/** Share of the screen the middle rests at. Enough for the headline, the three
+ *  figures and the first alternatives; not so much that the route disappears. */
+const MID_SHARE = 0.55;
+let detent: Detent = "peek";
+
+/** How far down the sheet sits, for a given resting height. */
+function offsetFor(which: Detent): number {
+  const height = panel.offsetHeight;
+  if (which === "full") return 0;
+  if (which === "mid") return Math.max(0, height - Math.round(window.innerHeight * MID_SHARE));
   const first = readout.querySelector<HTMLElement>(".headline, .notice, .lede");
   // Measured against the panel rather than summed from part heights: both move with
   // the sheet, so the difference holds however far down it is pushed, and margins
@@ -473,25 +484,37 @@ function sheetOffset(): number {
   const peek = first
     ? first.getBoundingClientRect().bottom - top + 18
     : form.getBoundingClientRect().bottom - top + 14;
-  return Math.max(0, panel.offsetHeight - peek);
+  return Math.max(0, height - peek);
 }
+
+const sheetOffset = (): number => (isSheet() ? offsetFor(detent) : 0);
 
 function layoutSheet(): void {
   if (!isSheet()) {
     panel.style.removeProperty("--sheet");
     document.documentElement.style.removeProperty("--controls");
+    panel.dataset.detent = "full";
     grip.setAttribute("aria-expanded", "true");
     return;
   }
   const offset = sheetOffset();
   panel.style.setProperty("--sheet", `${offset}px`);
   document.documentElement.style.setProperty("--controls", `${panel.offsetHeight - offset + 12}px`);
-  grip.setAttribute("aria-expanded", String(sheetOpen));
+  panel.dataset.detent = detent;
+  grip.setAttribute("aria-expanded", String(detent !== "peek"));
+  grip.setAttribute("aria-label", detent === "full"
+    ? "Pienennä paneeli" : "Laajenna paneelia");
 }
 
-function setSheet(open: boolean): void {
-  sheetOpen = open;
+function setDetent(which: Detent): void {
+  detent = which;
   layoutSheet();
+}
+
+/** The resting height nearest where a drag was let go. */
+function nearestDetent(offset: number): Detent {
+  return DETENTS.reduce((best, which) =>
+    Math.abs(offsetFor(which) - offset) < Math.abs(offsetFor(best) - offset) ? which : best);
 }
 
 (() => {
@@ -515,17 +538,21 @@ function setSheet(open: boolean): void {
   const finish = () => {
     if (!panel.classList.contains("dragging")) return;
     panel.classList.remove("dragging");
-    // A tap is a drag that went nowhere, and it toggles; a real drag snaps to
-    // whichever end it is nearer.
-    setSheet(Math.abs(moved) < 6 ? !sheetOpen : moved < 0);
+    if (Math.abs(moved) < 6) {
+      // A tap is a drag that went nowhere. It steps up through the heights and wraps,
+      // so the sheet can be worked with one thumb and without a drag at all.
+      setDetent(DETENTS[(DETENTS.indexOf(detent) + 1) % DETENTS.length]);
+      return;
+    }
+    setDetent(nearestDetent(startOffset + moved));
   };
   grip.addEventListener("pointerup", finish);
   grip.addEventListener("pointercancel", finish);
 })();
 
-// A phone keyboard opening, a rotation, a resize: all change what "collapsed" means.
+// A phone keyboard opening, a rotation, a resize: all change what each height means.
 window.addEventListener("resize", layoutSheet);
-sheetQuery.addEventListener("change", () => setSheet(false));
+sheetQuery.addEventListener("change", () => setDetent("peek"));
 
 // --- rendering ---------------------------------------------------------------
 
@@ -1053,6 +1080,11 @@ function update(options: { frame?: boolean } = {}): void {
   openStep = -1;
   failure = routes.length ? "" : "Reittiä ei löytynyt. Siirrä pisteitä lähemmäs tieverkkoa.";
   drawRoutes();
+  // A route the rider just asked for should show its own answer. Left at the peek,
+  // everything they asked for sat below the fold behind a grip they had to find
+  // first; the middle height puts the duration, the figures and the alternatives on
+  // screen and still leaves most of the map.
+  if (isSheet() && detent === "peek") detent = "mid";
   render();
   writeUrl();
   if (options.frame !== false) frame();
