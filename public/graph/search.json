@@ -1,0 +1,129 @@
+{
+  "address_count": 122613,
+  "addressed_street_count": 11687,
+  "attribution": "\u00a9 OpenStreetMap contributors",
+  "bytes": 2849752,
+  "coordinate_scale": 10000000,
+  "district_count": 1124,
+  "layout": {
+    "entry_lat": {
+      "count": 122613,
+      "encoding": "uint32 zigzag delta of degrees * 1e7 against the previous entry",
+      "offset": 1416916,
+      "type": "uint32"
+    },
+    "entry_lon": {
+      "count": 122613,
+      "encoding": "uint32 zigzag delta of degrees * 1e7 against the previous entry",
+      "offset": 926464,
+      "type": "uint32"
+    },
+    "entry_street": {
+      "count": 122613,
+      "encoding": "uint16 zigzag delta of the street index; entries are sorted by street",
+      "offset": 681236,
+      "type": "uint16"
+    },
+    "number_blob": {
+      "count": 352182,
+      "encoding": "utf-8 house numbers, newline separated, one per address",
+      "offset": 329052,
+      "type": "uint8"
+    },
+    "place_blob": {
+      "count": 588447,
+      "encoding": "utf-8 place names, newline separated",
+      "offset": 1907368,
+      "type": "uint8"
+    },
+    "place_kind": {
+      "count": 32176,
+      "encoding": "uint8 index into the manifest's place_kinds",
+      "offset": 2495816,
+      "type": "uint8"
+    },
+    "place_lat": {
+      "count": 32176,
+      "encoding": "int32 degrees * 1e7",
+      "offset": 2656696,
+      "type": "int32"
+    },
+    "place_lon": {
+      "count": 32176,
+      "encoding": "int32 degrees * 1e7",
+      "offset": 2527992,
+      "type": "int32"
+    },
+    "place_street": {
+      "count": 32176,
+      "encoding": "uint16 index into street_blob of the nearest street, or 65535 for none",
+      "offset": 2785400,
+      "type": "uint16"
+    },
+    "street_blob": {
+      "count": 208683,
+      "encoding": "utf-8 street names, newline separated, sorted",
+      "offset": 0,
+      "type": "uint8"
+    },
+    "street_lat": {
+      "count": 15046,
+      "encoding": "int32 degrees * 1e7, a representative point for the street",
+      "offset": 268868,
+      "type": "int32"
+    },
+    "street_lon": {
+      "count": 15046,
+      "encoding": "int32 degrees * 1e7, a representative point for the street",
+      "offset": 208684,
+      "type": "int32"
+    }
+  },
+  "place_count": 32176,
+  "place_kind_counts": {
+    "airport": 9,
+    "attraction": 1691,
+    "city": 3,
+    "hospital": 329,
+    "hotel": 196,
+    "mall": 144,
+    "nature": 1835,
+    "neighbourhood": 487,
+    "office": 3084,
+    "park": 5871,
+    "quarter": 266,
+    "school": 778,
+    "service": 8910,
+    "shop": 5688,
+    "sports": 907,
+    "station": 334,
+    "suburb": 296,
+    "town": 6,
+    "venue": 1276,
+    "village": 66
+  },
+  "place_kinds": [
+    "city",
+    "town",
+    "suburb",
+    "quarter",
+    "neighbourhood",
+    "village",
+    "airport",
+    "mall",
+    "attraction",
+    "venue",
+    "sports",
+    "park",
+    "nature",
+    "station",
+    "school",
+    "hospital",
+    "hotel",
+    "office",
+    "shop",
+    "service"
+  ],
+  "street_count": 15046,
+  "version": 2
+}

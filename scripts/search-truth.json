@@ -1,0 +1,313 @@
+{
+ "Kamppi": {
+  "lon": 24.9323618,
+  "lat": 60.1690184,
+  "tags": {
+   "amenity": "bus_station",
+   "public_transport": "station"
+  },
+  "candidates": 11
+ },
+ "Musiikkitalo": {
+  "lon": 24.93492616904762,
+  "lat": 60.17372281428572,
+  "tags": {
+   "amenity": "arts_centre",
+   "building": "yes"
+  },
+  "candidates": 1
+ },
+ "Kiasma": {
+  "lon": 24.9366599,
+  "lat": 60.1720573,
+  "tags": {
+   "tourism": "gallery",
+   "building": "public"
+  },
+  "candidates": 2
+ },
+ "Ateneum": {
+  "lon": 24.94419633139535,
+  "lat": 60.17002123953488,
+  "tags": {
+   "tourism": "gallery",
+   "building": "museum"
+  },
+  "candidates": 1
+ },
+ "Linnanmäki": {
+  "lon": 24.940398686842105,
+  "lat": 60.188157858552636,
+  "tags": {
+   "tourism": "theme_park",
+   "landuse": "commercial"
+  },
+  "candidates": 2
+ },
+ "Korkeasaari": {
+  "lon": 24.9867,
+  "lat": 60.1748,
+  "tags": {
+   "place": "island",
+   "wikidata": "Q54824182",
+   "wikipedia": "fi:Korkeasaari"
+  },
+  "candidates": 10,
+  "note": "chosen by hand: the Espoo skerry shares the name, this is the one with the zoo"
+ },
+ "Suomenlinna": {
+  "lon": 24.9854048,
+  "lat": 60.1443884,
+  "tags": {
+   "place": "suburb"
+  },
+  "candidates": 3
+ },
+ "Kauppatori": {
+  "lon": 24.953604980952385,
+  "lat": 60.16724974642857,
+  "tags": {
+   "tourism": "attraction",
+   "place": "square"
+  },
+  "candidates": 9
+ },
+ "Hakaniemen kauppahalli": {
+  "lon": 24.951340535384617,
+  "lat": 60.180025310769224,
+  "tags": {
+   "amenity": "marketplace",
+   "tourism": "attraction",
+   "building": "public"
+  },
+  "candidates": 1
+ },
+ "Olympiastadion": {
+  "lon": 24.9249741,
+  "lat": 60.1845055,
+  "tags": {
+   "amenity": "bicycle_rental"
+  },
+  "candidates": 1
+ },
+ "Tennispalatsi": {
+  "lon": 24.93042824814815,
+  "lat": 60.16960382962963,
+  "tags": {
+   "building": "commercial"
+  },
+  "candidates": 1
+ },
+ "Sello": {
+  "lon": 24.812518725,
+  "lat": 60.217936196875,
+  "tags": {
+   "shop": "mall",
+   "building": "yes",
+   "landuse": "retail"
+  },
+  "candidates": 1
+ },
+ "Jumbo": {
+  "lon": 24.964544611627907,
+  "lat": 60.29178077209302,
+  "tags": {
+   "shop": "mall",
+   "building": "retail"
+  },
+  "candidates": 5
+ },
+ "Iso Omena": {
+  "lon": 24.73851056153846,
+  "lat": 60.1612394448718,
+  "tags": {
+   "shop": "mall",
+   "building": "retail"
+  },
+  "candidates": 1
+ },
+ "Aalto-yliopisto": {
+  "lon": 24.828547914225943,
+  "lat": 60.18627234811716,
+  "tags": {
+   "amenity": "college"
+  },
+  "candidates": 8
+ },
+ "Kaivopuisto": {
+  "lon": 24.95748391771429,
+  "lat": 60.156114261714286,
+  "tags": {
+   "leisure": "park"
+  },
+  "candidates": 5
+ },
+ "Keskuspuisto": {
+  "lon": 25.102492574603176,
+  "lat": 60.40608502222222,
+  "tags": {
+   "leisure": "park"
+  },
+  "candidates": 7
+ },
+ "Seurasaari": {
+  "lon": 24.884921141962423,
+  "lat": 60.180768047599166,
+  "tags": {
+   "place": "island",
+   "natural": "coastline"
+  },
+  "candidates": 4
+ },
+ "Messukeskus": {
+  "lon": 24.9366956,
+  "lat": 60.2014151,
+  "tags": {
+   "railway": "tram_stop",
+   "public_transport": "platform"
+  },
+  "candidates": 4
+ },
+ "Kansallismuseo": {
+  "lon": 24.93165253230769,
+  "lat": 60.17489614769231,
+  "tags": {
+   "tourism": "museum",
+   "building": "public"
+  },
+  "candidates": 7
+ },
+ "Designmuseo": {
+  "lon": 24.9459373,
+  "lat": 60.163157,
+  "tags": {
+   "amenity": "bicycle_rental"
+  },
+  "candidates": 1
+ },
+ "Temppeliaukion kirkko": {
+  "lon": 24.92520624333333,
+  "lat": 60.17296512666667,
+  "tags": {
+   "amenity": "place_of_worship",
+   "tourism": "attraction",
+   "building": "church"
+  },
+  "candidates": 1
+ },
+ "Töölön kisahalli": {
+  "lon": 24.92598137142857,
+  "lat": 60.18343941904762,
+  "tags": {
+   "leisure": "sports_centre",
+   "building": "public"
+  },
+  "candidates": 11
+ },
+ "Redi": {
+  "lon": 24.979280803703706,
+  "lat": 60.186892685185185,
+  "tags": {
+   "shop": "mall",
+   "landuse": "retail"
+  },
+  "candidates": 1
+ },
+ "Itäkeskus": {
+  "lon": 25.0801781,
+  "lat": 60.210804,
+  "tags": {
+   "place": "suburb"
+  },
+  "candidates": 7
+ },
+ "Pasila": {
+  "lon": 24.9322653,
+  "lat": 60.197873,
+  "tags": {
+   "place": "suburb"
+  },
+  "candidates": 14
+ },
+ "Otaniemi": {
+  "lon": 24.8318201,
+  "lat": 60.1879383,
+  "tags": {
+   "place": "suburb"
+  },
+  "candidates": 6
+ },
+ "Arabia": {
+  "lon": 24.9750556,
+  "lat": 60.2082106,
+  "tags": {
+   "public_transport": "platform"
+  },
+  "candidates": 2
+ },
+ "Tapiola": {
+  "lon": 24.8031685,
+  "lat": 60.17664,
+  "tags": {
+   "place": "suburb"
+  },
+  "candidates": 6
+ },
+ "Leppävaara": {
+  "lon": 24.8141415,
+  "lat": 60.21967,
+  "tags": {
+   "place": "suburb"
+  },
+  "candidates": 7
+ },
+ "Tikkurila": {
+  "lon": 25.0377634,
+  "lat": 60.2923492,
+  "tags": {
+   "place": "suburb"
+  },
+  "candidates": 9
+ },
+ "Rautatientori": {
+  "lon": 24.94421100769231,
+  "lat": 60.17128355769231,
+  "tags": {
+   "place": "square"
+  },
+  "candidates": 13
+ },
+ "Senaatintori": {
+  "lon": 24.952249684615385,
+  "lat": 60.16949314230769,
+  "tags": {
+   "place": "square"
+  },
+  "candidates": 6
+ },
+ "Mäkelänrinteen uintikeskus": {
+  "lon": 24.948072304347825,
+  "lat": 60.19976562173913,
+  "tags": {
+   "leisure": "sports_centre",
+   "building": "yes"
+  },
+  "candidates": 1
+ },
+ "Pirkkolan liikuntapuisto": {
+  "lon": 24.911245011458334,
+  "lat": 60.233506963541664,
+  "tags": {
+   "leisure": "sports_centre"
+  },
+  "candidates": 4
+ },
+ "Helsinki-Vantaan lentoasema": {
+  "lon": 24.9465656120603,
+  "lat": 60.320414704773874,
+  "tags": {
+   "aeroway": "aerodrome"
+  },
+  "candidates": 1
+ }
+}

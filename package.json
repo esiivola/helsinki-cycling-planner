@@ -1,0 +1,24 @@
+{
+  "name": "helsinki-cycling-planner",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest run",
+    "test:graph": "python -m pytest tools",
+    "build:graph": "python tools/build_graph.py",
+    "build:search": "python tools/build_search.py",
+    "build:climb": "python tools/build_climb.py",
+    "build:data": "tools/build_all.sh"
+  },
+  "dependencies": {
+    "maplibre-gl": "^6.6.0"
+  },
+  "devDependencies": {
+    "@types/geojson": "^7946.0.16",
+    "typescript": "^7.0.2",
+    "vite": "^8.0.1",
+    "vitest": "^4.1.11"
+  }
+}

@@ -1,0 +1,5586 @@
+{
+ "attribution": "Helsinki, Espoo ja Vantaa, CC BY 4.0",
+ "note": "signalised junctions; locations only, the registers carry no timing",
+ "signals": [
+  {
+   "lon": 24.5903351,
+   "lat": 60.1854388,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.597769,
+   "lat": 60.188714,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.609307,
+   "lat": 60.180263,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.626763,
+   "lat": 60.159731,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.632285,
+   "lat": 60.1569415,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.63654,
+   "lat": 60.208875,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.6378301,
+   "lat": 60.2093254,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.638416,
+   "lat": 60.209425,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.639762,
+   "lat": 60.206865,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.642917,
+   "lat": 60.212085,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.643062,
+   "lat": 60.155162,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.649684,
+   "lat": 60.204318,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.650687,
+   "lat": 60.149334,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.651664,
+   "lat": 60.152092,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.652357,
+   "lat": 60.202832,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.652765,
+   "lat": 60.213854,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.6530392,
+   "lat": 60.1513208,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.6542555,
+   "lat": 60.1507021,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.656648,
+   "lat": 60.152672,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.6579,
+   "lat": 60.152473,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.66074,
+   "lat": 60.167203,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.661577,
+   "lat": 60.218401,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.66268,
+   "lat": 60.1954412,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.6627139,
+   "lat": 60.1561864,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.662777,
+   "lat": 60.219861,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.663715,
+   "lat": 60.155225,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.664678,
+   "lat": 60.194948,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.665129,
+   "lat": 60.152321,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.666171,
+   "lat": 60.199219,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.666329,
+   "lat": 60.221613,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.666785,
+   "lat": 60.149078,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.669702,
+   "lat": 60.202642,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.669715,
+   "lat": 60.197321,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.67093,
+   "lat": 60.2214263,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.670939,
+   "lat": 60.1812,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.671484,
+   "lat": 60.146585,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.67344,
+   "lat": 60.20669,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.6736278,
+   "lat": 60.2222468,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.67366,
+   "lat": 60.155548,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.675117,
+   "lat": 60.143827,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.675637,
+   "lat": 60.179916,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.6767,
+   "lat": 60.222556,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.682451,
+   "lat": 60.201496,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.688699,
+   "lat": 60.223387,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.689004,
+   "lat": 60.173036,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.691349,
+   "lat": 60.159099,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.693285,
+   "lat": 60.160108,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.6939631,
+   "lat": 60.1730878,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.695286,
+   "lat": 60.2235259,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.6974895,
+   "lat": 60.1693797,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.697527,
+   "lat": 60.207174,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.697924,
+   "lat": 60.153121,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.6999824,
+   "lat": 60.1665916,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.70059,
+   "lat": 60.162077,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.701633,
+   "lat": 60.1656,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.70199,
+   "lat": 60.162116,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.702641,
+   "lat": 60.164876,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.7041259,
+   "lat": 60.1528899,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.704828,
+   "lat": 60.160758,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.706062,
+   "lat": 60.159243,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.706692,
+   "lat": 60.158341,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.707011,
+   "lat": 60.224018,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.707117,
+   "lat": 60.161889,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.7076155,
+   "lat": 60.1568042,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.707755,
+   "lat": 60.238603,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.7093245,
+   "lat": 60.1588207,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.71018,
+   "lat": 60.16176,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.7159324,
+   "lat": 60.3161502,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.716128,
+   "lat": 60.231851,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.718568,
+   "lat": 60.162143,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.722015,
+   "lat": 60.162829,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.722515,
+   "lat": 60.172357,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.722565,
+   "lat": 60.224504,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.723835,
+   "lat": 60.235589,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.724857,
+   "lat": 60.16423,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.7251881,
+   "lat": 60.3119735,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.7271509,
+   "lat": 60.1668315,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.728072,
+   "lat": 60.165744,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.729753,
+   "lat": 60.173313,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.731377,
+   "lat": 60.171908,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.732267,
+   "lat": 60.165767,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.735463,
+   "lat": 60.162637,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.735906,
+   "lat": 60.158944,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.736418,
+   "lat": 60.307509,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.736441,
+   "lat": 60.166588,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.736617,
+   "lat": 60.165105,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.737267,
+   "lat": 60.225211,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.737359,
+   "lat": 60.164013,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.737805,
+   "lat": 60.163394,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.737982,
+   "lat": 60.159377,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.738566,
+   "lat": 60.166361,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.739839,
+   "lat": 60.161674,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.740613,
+   "lat": 60.160621,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.740736,
+   "lat": 60.240364,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.741173,
+   "lat": 60.167441,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.741205,
+   "lat": 60.159993,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.741488,
+   "lat": 60.239368,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.741558,
+   "lat": 60.162049,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.741807,
+   "lat": 60.22564,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.742308,
+   "lat": 60.238117,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.742863,
+   "lat": 60.168275,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.742945,
+   "lat": 60.175309,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.743112,
+   "lat": 60.209442,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.743209,
+   "lat": 60.231463,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.745239,
+   "lat": 60.173036,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.745688,
+   "lat": 60.181558,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.745873,
+   "lat": 60.23408,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.745989,
+   "lat": 60.283582,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.746219,
+   "lat": 60.225629,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.747218,
+   "lat": 60.159507,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.747325,
+   "lat": 60.181818,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.74806,
+   "lat": 60.169676,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.748341,
+   "lat": 60.208074,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.749253,
+   "lat": 60.244283,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.749917,
+   "lat": 60.2254,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.750149,
+   "lat": 60.21796,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.751034,
+   "lat": 60.155549,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.751783,
+   "lat": 60.163155,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.751864,
+   "lat": 60.207389,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.752355,
+   "lat": 60.17003,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.753563,
+   "lat": 60.208774,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.754231,
+   "lat": 60.181193,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.754467,
+   "lat": 60.170381,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.754714,
+   "lat": 60.206477,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.755621,
+   "lat": 60.200249,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.756985,
+   "lat": 60.205411,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.757743,
+   "lat": 60.209593,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.758618,
+   "lat": 60.225672,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.758882,
+   "lat": 60.204477,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.758953,
+   "lat": 60.170723,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.759317,
+   "lat": 60.2701869,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.759777,
+   "lat": 60.180984,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.759854,
+   "lat": 60.224043,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.760951,
+   "lat": 60.20374,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.761344,
+   "lat": 60.170826,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.76159,
+   "lat": 60.210786,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.763215,
+   "lat": 60.199146,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.763442,
+   "lat": 60.21194,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.763795,
+   "lat": 60.250437,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.764297,
+   "lat": 60.170987,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.765047,
+   "lat": 60.225718,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.765494,
+   "lat": 60.169661,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.765828,
+   "lat": 60.196787,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.766386,
+   "lat": 60.203492,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.767302,
+   "lat": 60.171198,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.7681518,
+   "lat": 60.1827893,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.768397,
+   "lat": 60.211711,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.768837,
+   "lat": 60.203807,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.768865,
+   "lat": 60.252165,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.769257,
+   "lat": 60.194334,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.771336,
+   "lat": 60.171057,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.772748,
+   "lat": 60.165885,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.774661,
+   "lat": 60.231807,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.775692,
+   "lat": 60.191437,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.776209,
+   "lat": 60.171392,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.777558,
+   "lat": 60.229769,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.778394,
+   "lat": 60.225379,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.778718,
+   "lat": 60.178442,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.779511,
+   "lat": 60.172222,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.779571,
+   "lat": 60.181619,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.7802287,
+   "lat": 60.2173082,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.780943,
+   "lat": 60.161295,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.781303,
+   "lat": 60.188907,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.783064,
+   "lat": 60.208451,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.783157,
+   "lat": 60.182344,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.783597,
+   "lat": 60.207866,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.783844,
+   "lat": 60.186987,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.7858933,
+   "lat": 60.2199201,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.786943,
+   "lat": 60.223698,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.787238,
+   "lat": 60.183179,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.788405,
+   "lat": 60.173487,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.79207,
+   "lat": 60.173447,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.793215,
+   "lat": 60.182767,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.793913,
+   "lat": 60.164268,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.794702,
+   "lat": 60.182734,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.7948,
+   "lat": 60.173742,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.7962935,
+   "lat": 60.1859062,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.796908,
+   "lat": 60.180716,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.799855,
+   "lat": 60.176688,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.800089,
+   "lat": 60.176271,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.800677,
+   "lat": 60.175232,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.801086,
+   "lat": 60.17454,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.801471,
+   "lat": 60.173762,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.802218,
+   "lat": 60.171555,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.80276,
+   "lat": 60.217284,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.802792,
+   "lat": 60.169067,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.803026,
+   "lat": 60.184633,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.803056,
+   "lat": 60.168354,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.804007,
+   "lat": 60.200969,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.805851,
+   "lat": 60.221883,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8064868,
+   "lat": 60.2205299,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.806544,
+   "lat": 60.219961,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.806916,
+   "lat": 60.221406,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.80722,
+   "lat": 60.200636,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.807234,
+   "lat": 60.185007,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.807619,
+   "lat": 60.219712,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.807647,
+   "lat": 60.219144,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.808591,
+   "lat": 60.220818,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8086717,
+   "lat": 60.1999975,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.808778,
+   "lat": 60.237895,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.809216,
+   "lat": 60.217064,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8095758,
+   "lat": 60.2047438,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8099087,
+   "lat": 60.1994759,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.809991,
+   "lat": 60.185848,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.81019,
+   "lat": 60.1880787,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.81029,
+   "lat": 60.174275,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8103604,
+   "lat": 60.2138752,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.810476,
+   "lat": 60.172923,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.810574,
+   "lat": 60.220052,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.810784,
+   "lat": 60.222882,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.810912,
+   "lat": 60.220823,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8110134,
+   "lat": 60.2126806,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.811088,
+   "lat": 60.221852,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.811118,
+   "lat": 60.225103,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8112838,
+   "lat": 60.2146374,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8114726,
+   "lat": 60.2096018,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.811534,
+   "lat": 60.177622,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.81211,
+   "lat": 60.21592,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.812151,
+   "lat": 60.217115,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8126637,
+   "lat": 60.2116752,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8129086,
+   "lat": 60.2044378,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.813541,
+   "lat": 60.212887,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.813607,
+   "lat": 60.234245,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.813772,
+   "lat": 60.228757,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8137752,
+   "lat": 60.2175034,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8140557,
+   "lat": 60.2189905,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.814141,
+   "lat": 60.219828,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.814656,
+   "lat": 60.1784,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.814817,
+   "lat": 60.21752,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.815166,
+   "lat": 60.218702,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8169591,
+   "lat": 60.1868451,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.817875,
+   "lat": 60.178737,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.818317,
+   "lat": 60.217867,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.818399,
+   "lat": 60.212633,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.81874,
+   "lat": 60.234389,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.819133,
+   "lat": 60.228178,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.819391,
+   "lat": 60.21949,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.819688,
+   "lat": 60.220227,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.819727,
+   "lat": 60.217244,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.820037,
+   "lat": 60.178925,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.821824,
+   "lat": 60.217145,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8219486,
+   "lat": 60.178996,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8223508,
+   "lat": 60.186396,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.822381,
+   "lat": 60.219423,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.824163,
+   "lat": 60.217111,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8249978,
+   "lat": 60.1800213,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.825794,
+   "lat": 60.225255,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.826626,
+   "lat": 60.217061,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8268897,
+   "lat": 60.219486,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8280011,
+   "lat": 60.1841808,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.830284,
+   "lat": 60.216775,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8314113,
+   "lat": 60.1830995,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.831919,
+   "lat": 60.21673,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8339129,
+   "lat": 60.181217,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.834054,
+   "lat": 60.22049,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8348,
+   "lat": 60.179612,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.835171,
+   "lat": 60.217691,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8352397,
+   "lat": 60.2150617,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.839023,
+   "lat": 60.220723,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.842749,
+   "lat": 60.2177421,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8471736,
+   "lat": 60.2186194,
+   "city": "Espoo",
+   "name": null
+  },
+  {
+   "lon": 24.8336262,
+   "lat": 60.2503945,
+   "city": "Helsinki",
+   "name": "Vihdintie/Vanha Hämeenkyläntie"
+  },
+  {
+   "lon": 24.8450049,
+   "lat": 60.2226743,
+   "city": "Helsinki",
+   "name": "Turuntie/Mäkkylän seisake"
+  },
+  {
+   "lon": 24.8457547,
+   "lat": 60.2436757,
+   "city": "Helsinki",
+   "name": "Vihdintie/Konalantie/Malminkartanontie"
+  },
+  {
+   "lon": 24.8468047,
+   "lat": 60.2353387,
+   "city": "Helsinki",
+   "name": "Konalantie/Tähkätie (suojatie)"
+  },
+  {
+   "lon": 24.8483839,
+   "lat": 60.2449958,
+   "city": "Helsinki",
+   "name": "Malminkartanontie/Hankasuontie"
+  },
+  {
+   "lon": 24.8492966,
+   "lat": 60.224739,
+   "city": "Helsinki",
+   "name": "Pitäjänmäentie/Henrikintie"
+  },
+  {
+   "lon": 24.8496307,
+   "lat": 60.2284356,
+   "city": "Helsinki",
+   "name": "Konalantie/Kokkokalliontie/Lauritsalantie"
+  },
+  {
+   "lon": 24.8503816,
+   "lat": 60.1817438,
+   "city": "Helsinki",
+   "name": "Kuusisaarentie/Lehtisaarentie/Liljasaarentie"
+  },
+  {
+   "lon": 24.8517578,
+   "lat": 60.2399924,
+   "city": "Helsinki",
+   "name": "Vihdintie/Ristipellontie"
+  },
+  {
+   "lon": 24.8545256,
+   "lat": 60.2382842,
+   "city": "Helsinki",
+   "name": "Vihdintie/Ruosilanpolku"
+  },
+  {
+   "lon": 24.854829,
+   "lat": 60.224808,
+   "city": "Helsinki",
+   "name": "Pitäjänmäentie/Konalantie"
+  },
+  {
+   "lon": 24.8573456,
+   "lat": 60.2365619,
+   "city": "Helsinki",
+   "name": "Vihdintie/Ruosilantie"
+  },
+  {
+   "lon": 24.8578144,
+   "lat": 60.1845869,
+   "city": "Helsinki",
+   "name": "Kuusisaarentie/Kuusitorpantie (suojatie)"
+  },
+  {
+   "lon": 24.8588744,
+   "lat": 60.2242234,
+   "city": "Helsinki",
+   "name": "Pitäjänmäentie/Turkismiehentie/Sulkapolku"
+  },
+  {
+   "lon": 24.8596012,
+   "lat": 60.2351823,
+   "city": "Helsinki",
+   "name": "Vihdintie/Kehä I (pohjoisramppi)"
+  },
+  {
+   "lon": 24.8618855,
+   "lat": 60.1580605,
+   "city": "Helsinki",
+   "name": "Isokaari 19/Lauttasaaren koulu (suojatie)"
+  },
+  {
+   "lon": 24.8619275,
+   "lat": 60.2214228,
+   "city": "Helsinki",
+   "name": "Pitäjänmäentie/Strömbergintie/Takkatie"
+  },
+  {
+   "lon": 24.8621067,
+   "lat": 60.2201315,
+   "city": "Helsinki",
+   "name": "Pitäjänmäentie/Pajamäentie"
+  },
+  {
+   "lon": 24.8625487,
+   "lat": 60.2334095,
+   "city": "Helsinki",
+   "name": "Vihdintie/Kehä I (eteläramppi)"
+  },
+  {
+   "lon": 24.8661591,
+   "lat": 60.2313582,
+   "city": "Helsinki",
+   "name": "Vihdintie/Muonamiehentie"
+  },
+  {
+   "lon": 24.8663676,
+   "lat": 60.2510402,
+   "city": "Helsinki",
+   "name": "Malminkartanontie/Rukkilanpolku (suojatie)"
+  },
+  {
+   "lon": 24.8667529,
+   "lat": 60.2184118,
+   "city": "Helsinki",
+   "name": "Pitäjänmäentie/Taimistontie"
+  },
+  {
+   "lon": 24.8687728,
+   "lat": 60.2253493,
+   "city": "Helsinki",
+   "name": "Kaupintie/Meijeritie"
+  },
+  {
+   "lon": 24.8691491,
+   "lat": 60.1615658,
+   "city": "Helsinki",
+   "name": "Lauttasaarentie/Lahnalahdentie (suojatie)"
+  },
+  {
+   "lon": 24.8692247,
+   "lat": 60.1871171,
+   "city": "Helsinki",
+   "name": "Kuusisaarentie/Kuusiniementie (suojatie)"
+  },
+  {
+   "lon": 24.8696863,
+   "lat": 60.2172921,
+   "city": "Helsinki",
+   "name": "Pitäjänmäentie/Takomotie/Purotie"
+  },
+  {
+   "lon": 24.8726378,
+   "lat": 60.203842,
+   "city": "Helsinki",
+   "name": "Ulvilantie/Professorintie (suojatie)"
+  },
+  {
+   "lon": 24.8730943,
+   "lat": 60.2274061,
+   "city": "Helsinki",
+   "name": "Vihdintie/Kaupintie"
+  },
+  {
+   "lon": 24.874022,
+   "lat": 60.20193,
+   "city": "Helsinki",
+   "name": "Professorintie/Dosentintie (suojatie)"
+  },
+  {
+   "lon": 24.8742389,
+   "lat": 60.1582456,
+   "city": "Helsinki",
+   "name": "Särkiniementie/Tallbergin puistotie"
+  },
+  {
+   "lon": 24.8749388,
+   "lat": 60.1599678,
+   "city": "Helsinki",
+   "name": "Särkiniementie/Lahnalahden puisto (suojatie)"
+  },
+  {
+   "lon": 24.8752938,
+   "lat": 60.161034,
+   "city": "Helsinki",
+   "name": "Lauttasaarentien/Särkiniementie/Lemissaarentie"
+  },
+  {
+   "lon": 24.8755616,
+   "lat": 60.2152861,
+   "city": "Helsinki",
+   "name": "Pitäjänmäentie/Valimontie/Kuutamotie"
+  },
+  {
+   "lon": 24.8759939,
+   "lat": 60.1580802,
+   "city": "Helsinki",
+   "name": "Tallbergin puistotie/Haahkakuja (suojatie)"
+  },
+  {
+   "lon": 24.8777284,
+   "lat": 60.1606884,
+   "city": "Helsinki",
+   "name": "Lauttasaarentie/Gyldenintie"
+  },
+  {
+   "lon": 24.8787058,
+   "lat": 60.2143204,
+   "city": "Helsinki",
+   "name": null
+  },
+  {
+   "lon": 24.8790095,
+   "lat": 60.1924977,
+   "city": "Helsinki",
+   "name": "Saunalahdentie/Ramsaynranta"
+  },
+  {
+   "lon": 24.8792724,
+   "lat": 60.1577833,
+   "city": "Helsinki",
+   "name": "Tallbergin puistotie/Otavantie"
+  },
+  {
+   "lon": 24.8795367,
+   "lat": 60.2091075,
+   "city": "Helsinki",
+   "name": "Huopalahdentie/Pohjolan pysäköinti/Canonin pysäköinti"
+  },
+  {
+   "lon": 24.8798763,
+   "lat": 60.2066187,
+   "city": "Helsinki",
+   "name": "Huopalahdentie/Lapinmäentie/Ulvilantie (pohjoinen)"
+  },
+  {
+   "lon": 24.88066,
+   "lat": 60.2051031,
+   "city": "Helsinki",
+   "name": "Huopalahdentie/Ulvilantie (eteläinen)"
+  },
+  {
+   "lon": 24.8811002,
+   "lat": 60.2036921,
+   "city": "Helsinki",
+   "name": "Huopalahdentie/Turunväylä (menoramppi)"
+  },
+  {
+   "lon": 24.8813931,
+   "lat": 60.2191609,
+   "city": "Helsinki",
+   "name": "Vihdintie/Valimonkuja"
+  },
+  {
+   "lon": 24.8816772,
+   "lat": 60.2024377,
+   "city": "Helsinki",
+   "name": "Huopalahdentie/Turunväylä (tuloramppi)"
+  },
+  {
+   "lon": 24.8817876,
+   "lat": 60.2304865,
+   "city": "Helsinki",
+   "name": "Leiviskäpolku"
+  },
+  {
+   "lon": 24.8822542,
+   "lat": 60.2015727,
+   "city": "Helsinki",
+   "name": "Huopalahdentie/Tietokuja"
+  },
+  {
+   "lon": 24.8823749,
+   "lat": 60.2067638,
+   "city": "Helsinki",
+   "name": "Lapinmäentie/Niemenmäentie"
+  },
+  {
+   "lon": 24.8832339,
+   "lat": 60.2137411,
+   "city": "Helsinki",
+   "name": "Vihdintien ympyrä/Pitäjänmäentie/Huopalahdentie"
+  },
+  {
+   "lon": 24.8833189,
+   "lat": 60.2160591,
+   "city": "Helsinki",
+   "name": "Vihdintie/Karvaamokuja"
+  },
+  {
+   "lon": 24.8834363,
+   "lat": 60.199536,
+   "city": "Helsinki",
+   "name": "Huopalahdentie/Lokkalantie (suojatie)"
+  },
+  {
+   "lon": 24.8837754,
+   "lat": 60.2073843,
+   "city": "Helsinki",
+   "name": "Lapinmäentie (puiston suojatie)"
+  },
+  {
+   "lon": 24.8840775,
+   "lat": 60.2143124,
+   "city": "Helsinki",
+   "name": "Vihdintien ympyrä/Vihdintie (pohjoinen)"
+  },
+  {
+   "lon": 24.8842215,
+   "lat": 60.1979487,
+   "city": "Helsinki",
+   "name": "Huopalahdentie/Perustie"
+  },
+  {
+   "lon": 24.8847713,
+   "lat": 60.1964422,
+   "city": "Helsinki",
+   "name": "Munkkiniemen aukio"
+  },
+  {
+   "lon": 24.8854313,
+   "lat": 60.2141563,
+   "city": "Helsinki",
+   "name": "Vihdintien ympyrä/Eliel Saarisen tie/Vanha Turun maantie"
+  },
+  {
+   "lon": 24.8855864,
+   "lat": 60.2130681,
+   "city": "Helsinki",
+   "name": "Vihdintien ympyrä/Vihdintie (eteläinen)"
+  },
+  {
+   "lon": 24.8866255,
+   "lat": 60.2084689,
+   "city": "Helsinki",
+   "name": "Lapinmäentie/Ansaritie (suojatie)"
+  },
+  {
+   "lon": 24.887356,
+   "lat": 60.1593083,
+   "city": "Helsinki",
+   "name": "Meripuistotie/Pajalahdentie"
+  },
+  {
+   "lon": 24.8881815,
+   "lat": 60.2106298,
+   "city": "Helsinki",
+   "name": "Vihdintie/Isonnevantie"
+  },
+  {
+   "lon": 24.8884756,
+   "lat": 60.2370642,
+   "city": "Helsinki",
+   "name": "Kantelettarentie/Lauttakuja"
+  },
+  {
+   "lon": 24.8891068,
+   "lat": 60.1610822,
+   "city": "Helsinki",
+   "name": "Lauttasaarentie/Meripuistotie"
+  },
+  {
+   "lon": 24.8891686,
+   "lat": 60.2329705,
+   "city": "Helsinki",
+   "name": "Kaupintie/Näyttelijäntie"
+  },
+  {
+   "lon": 24.8895581,
+   "lat": 60.2166601,
+   "city": "Helsinki",
+   "name": null
+  },
+  {
+   "lon": 24.8898242,
+   "lat": 60.2089604,
+   "city": "Helsinki",
+   "name": "Vihdintie/Lapinmäentie"
+  },
+  {
+   "lon": 24.8912867,
+   "lat": 60.1947066,
+   "city": "Helsinki",
+   "name": "Paciuksenkatu/Paciuksenkaari"
+  },
+  {
+   "lon": 24.891977,
+   "lat": 60.2086751,
+   "city": "Helsinki",
+   "name": "Vihdintie/Korppaanmäentie"
+  },
+  {
+   "lon": 24.8920165,
+   "lat": 60.1614064,
+   "city": "Helsinki",
+   "name": "Lauttasaarentie/Pohjoiskaari"
+  },
+  {
+   "lon": 24.8949582,
+   "lat": 60.1931132,
+   "city": "Helsinki",
+   "name": "Paciuksenkatu/Meilahdentie"
+  },
+  {
+   "lon": 24.8951584,
+   "lat": 60.2083206,
+   "city": "Helsinki",
+   "name": "Vihdintie/Kauppalantie"
+  },
+  {
+   "lon": 24.8956554,
+   "lat": 60.2262777,
+   "city": "Helsinki",
+   "name": "Näyttelijäntie/Pietari Hannikaisen tie"
+  },
+  {
+   "lon": 24.8962675,
+   "lat": 60.221886,
+   "city": "Helsinki",
+   "name": null
+  },
+  {
+   "lon": 24.8974809,
+   "lat": 60.2590004,
+   "city": "Helsinki",
+   "name": "Perhekunnantie"
+  },
+  {
+   "lon": 24.8976293,
+   "lat": 60.2244213,
+   "city": "Helsinki",
+   "name": "Eliel Saarisen tie/Aino Ackten tie"
+  },
+  {
+   "lon": 24.8982876,
+   "lat": 60.2153134,
+   "city": "Helsinki",
+   "name": "Kauppalantie/Palokaivon aukio (suojatie)"
+  },
+  {
+   "lon": 24.8983989,
+   "lat": 60.2125462,
+   "city": "Helsinki",
+   "name": "Kauppalantie/Kylänevantie"
+  },
+  {
+   "lon": 24.899067,
+   "lat": 60.2056042,
+   "city": "Helsinki",
+   "name": "Mannerheimintie 172 (suojatie)"
+  },
+  {
+   "lon": 24.8992492,
+   "lat": 60.2032616,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Korppaanmäentie/Koroistentie"
+  },
+  {
+   "lon": 24.8992976,
+   "lat": 60.2080234,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Hakamäentie/Vihdintie"
+  },
+  {
+   "lon": 24.8999575,
+   "lat": 60.2259923,
+   "city": "Helsinki",
+   "name": "Eliel Saarisen tie/Maria Jotunin tie (suojatie)"
+  },
+  {
+   "lon": 24.9001326,
+   "lat": 60.1913118,
+   "city": "Helsinki",
+   "name": "Paciuksenkatu/Tukholmankatu"
+  },
+  {
+   "lon": 24.9010967,
+   "lat": 60.1986611,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Kiskontie/Sanitäärinkatu"
+  },
+  {
+   "lon": 24.9015065,
+   "lat": 60.1963888,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Tilkanvierto"
+  },
+  {
+   "lon": 24.901653,
+   "lat": 60.195362,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Kuusitie (suojatie)"
+  },
+  {
+   "lon": 24.9030294,
+   "lat": 60.2267692,
+   "city": "Helsinki",
+   "name": null
+  },
+  {
+   "lon": 24.9030746,
+   "lat": 60.1890292,
+   "city": "Helsinki",
+   "name": "Paciuksenkatu 4 (suojatie)"
+  },
+  {
+   "lon": 24.9032712,
+   "lat": 60.2080454,
+   "city": "Helsinki",
+   "name": "Hakamäentie/Kivihaantie (suojatie)"
+  },
+  {
+   "lon": 24.9035716,
+   "lat": 60.1629873,
+   "city": "Helsinki",
+   "name": "Porkkalankatu/Tallberginkatu"
+  },
+  {
+   "lon": 24.9039326,
+   "lat": 60.1943879,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Lehtikuusentie/Valpurintie"
+  },
+  {
+   "lon": 24.9051781,
+   "lat": 60.1635281,
+   "city": "Helsinki",
+   "name": "Porkkalankatu/Itämerenkatu (suojatie)"
+  },
+  {
+   "lon": 24.905325,
+   "lat": 60.2273555,
+   "city": "Helsinki",
+   "name": null
+  },
+  {
+   "lon": 24.9062847,
+   "lat": 60.1935731,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Jalavatie"
+  },
+  {
+   "lon": 24.9071367,
+   "lat": 60.191163,
+   "city": "Helsinki",
+   "name": "Tukholmankatu/Haartmaninkatu"
+  },
+  {
+   "lon": 24.9078001,
+   "lat": 60.1642172,
+   "city": "Helsinki",
+   "name": "Porkkalankatu/Länsisatamankatu"
+  },
+  {
+   "lon": 24.9078136,
+   "lat": 60.1631271,
+   "city": "Helsinki",
+   "name": "Itämerenkatu/Länsisatamankatu"
+  },
+  {
+   "lon": 24.9082631,
+   "lat": 60.2197107,
+   "city": "Helsinki",
+   "name": "Metsäläntie/Nurmijärventie (länsiramppi)"
+  },
+  {
+   "lon": 24.9085175,
+   "lat": 60.1851254,
+   "city": "Helsinki",
+   "name": "Paciuksenkatu/Stenbäckinkatu/Merikannontie"
+  },
+  {
+   "lon": 24.9102571,
+   "lat": 60.1921807,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Topeliuksenkatu"
+  },
+  {
+   "lon": 24.9103722,
+   "lat": 60.1911467,
+   "city": "Helsinki",
+   "name": "Tukholmankatu/Topeliuksenkatu"
+  },
+  {
+   "lon": 24.9123635,
+   "lat": 60.1643585,
+   "city": "Helsinki",
+   "name": "Porkkalankatu/Länsiväylä"
+  },
+  {
+   "lon": 24.9127162,
+   "lat": 60.188453,
+   "city": "Helsinki",
+   "name": "Topeliuksenkatu/Stenbäckinkatu/Haartmaninkatu"
+  },
+  {
+   "lon": 24.913084,
+   "lat": 60.1912097,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Tukholmankatu/Lääkärinkatu"
+  },
+  {
+   "lon": 24.9139948,
+   "lat": 60.1633492,
+   "city": "Helsinki",
+   "name": "Itämerenkatu/Ruoholahden metroasema (suojatie)"
+  },
+  {
+   "lon": 24.9147559,
+   "lat": 60.1904059,
+   "city": "Helsinki",
+   "name": "Mannerheimintie 110 (suojatie)"
+  },
+  {
+   "lon": 24.9150932,
+   "lat": 60.1505816,
+   "city": "Helsinki",
+   "name": "Tyynenmerenkatu/Atlantinkatu"
+  },
+  {
+   "lon": 24.9154667,
+   "lat": 60.1644407,
+   "city": "Helsinki",
+   "name": "Porkkalankatu/Mechelininkatu (menoramppi)"
+  },
+  {
+   "lon": 24.9155692,
+   "lat": 60.1834238,
+   "city": "Helsinki",
+   "name": "Mechelininkatu/Rajasaarentie"
+  },
+  {
+   "lon": 24.9156002,
+   "lat": 60.1620012,
+   "city": "Helsinki",
+   "name": "Selkämerenkatu/Ruoholahden kanava (suojatie)"
+  },
+  {
+   "lon": 24.9159271,
+   "lat": 60.1804763,
+   "city": "Helsinki",
+   "name": "Mechelininkatu/Sibeliuksenkatu"
+  },
+  {
+   "lon": 24.9161553,
+   "lat": 60.1645447,
+   "city": "Helsinki",
+   "name": "Porkkalankatu/Mechelininkatu (tuloramppi)"
+  },
+  {
+   "lon": 24.9163932,
+   "lat": 60.1852324,
+   "city": "Helsinki",
+   "name": "Nordenskiöldin aukio"
+  },
+  {
+   "lon": 24.9164439,
+   "lat": 60.1896781,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Reijolankatu/Stenbäckinkatu (vaihe 1)"
+  },
+  {
+   "lon": 24.916988,
+   "lat": 60.2300548,
+   "city": "Helsinki",
+   "name": null
+  },
+  {
+   "lon": 24.9173314,
+   "lat": 60.1524115,
+   "city": "Helsinki",
+   "name": "Tyynenmerenkatu/Länsisatamankatu"
+  },
+  {
+   "lon": 24.9176805,
+   "lat": 60.176724,
+   "city": "Helsinki",
+   "name": "Mechelininkatu/Pohjoinen Hesperiankatu"
+  },
+  {
+   "lon": 24.9181027,
+   "lat": 60.175884,
+   "city": "Helsinki",
+   "name": "Mechelininkatu/Eteläinen Hesperiankatu"
+  },
+  {
+   "lon": 24.9183086,
+   "lat": 60.1897954,
+   "city": "Helsinki",
+   "name": "Reijolankatu/Urheilukatu"
+  },
+  {
+   "lon": 24.9185196,
+   "lat": 60.1751451,
+   "city": "Helsinki",
+   "name": "Mechelininkatu/Museokatu"
+  },
+  {
+   "lon": 24.9185252,
+   "lat": 60.1880053,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Nordenskiöldinkatu"
+  },
+  {
+   "lon": 24.91893,
+   "lat": 60.2524931,
+   "city": "Helsinki",
+   "name": "Pakilantie 120 (suojatie)"
+  },
+  {
+   "lon": 24.9192383,
+   "lat": 60.17375,
+   "city": "Helsinki",
+   "name": "Mechelininkatu/Caloniuksenkatu"
+  },
+  {
+   "lon": 24.9194074,
+   "lat": 60.1888898,
+   "city": "Helsinki",
+   "name": "Nordenskiöldinkatu/Urheilukatu"
+  },
+  {
+   "lon": 24.9196962,
+   "lat": 60.1728405,
+   "city": "Helsinki",
+   "name": "Mechelininkatu/Sammonkatu"
+  },
+  {
+   "lon": 24.9201515,
+   "lat": 60.1816512,
+   "city": "Helsinki",
+   "name": "Topeliuksenkatu/Sibeliuksenkatu"
+  },
+  {
+   "lon": 24.9203537,
+   "lat": 60.2548482,
+   "city": "Helsinki",
+   "name": "Kuusmiehentie/Paloheinän ulkoilumaja"
+  },
+  {
+   "lon": 24.9203969,
+   "lat": 60.17157,
+   "city": "Helsinki",
+   "name": "Mechelininkatu/Arkadiankatu"
+  },
+  {
+   "lon": 24.9204928,
+   "lat": 60.2310768,
+   "city": "Helsinki",
+   "name": "Pirkkolantie/Metsäpurontie (suojatie)"
+  },
+  {
+   "lon": 24.9205506,
+   "lat": 60.155329,
+   "city": "Helsinki",
+   "name": "Länsiterminaalin edusta"
+  },
+  {
+   "lon": 24.9206616,
+   "lat": 60.18983,
+   "city": "Helsinki",
+   "name": "Nordenskiöldinkatu/Reijolankatu"
+  },
+  {
+   "lon": 24.9208295,
+   "lat": 60.1698924,
+   "city": "Helsinki",
+   "name": "Mechelininkatu/Hietaniemenkatu"
+  },
+  {
+   "lon": 24.9209788,
+   "lat": 60.1646455,
+   "city": "Helsinki",
+   "name": "Mechelininkatu/Porkkalankatu (rampit)/Telia"
+  },
+  {
+   "lon": 24.9211189,
+   "lat": 60.1677204,
+   "city": "Helsinki",
+   "name": "Mechelininkatu/Pohjoinen Rautatiekatu/Lapinlahdentie"
+  },
+  {
+   "lon": 24.9213107,
+   "lat": 60.1602383,
+   "city": "Helsinki",
+   "name": "Välimerenkatu/Tyynenmerenkatu"
+  },
+  {
+   "lon": 24.9214069,
+   "lat": 60.1634707,
+   "city": "Helsinki",
+   "name": "Mechelininkatu/Itämerenkatu"
+  },
+  {
+   "lon": 24.9215379,
+   "lat": 60.1591957,
+   "city": "Helsinki",
+   "name": "Tyynenmerenkatu/Juutinraumankatu"
+  },
+  {
+   "lon": 24.9218979,
+   "lat": 60.156887,
+   "city": "Helsinki",
+   "name": "Tyynenmerenkatu/Rionkatu"
+  },
+  {
+   "lon": 24.921904,
+   "lat": 60.1852995,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Sallinkatu/Humalistonkatu"
+  },
+  {
+   "lon": 24.9219302,
+   "lat": 60.1752528,
+   "city": "Helsinki",
+   "name": "Runeberginkatu/Caloniuksenkatu/Museokatu"
+  },
+  {
+   "lon": 24.9221897,
+   "lat": 60.1765486,
+   "city": "Helsinki",
+   "name": "Runeberginkatu/Eteläinen Hesperiankatu/Apollonkatu"
+  },
+  {
+   "lon": 24.9222784,
+   "lat": 60.1771541,
+   "city": "Helsinki",
+   "name": "Runeberginkatu/Pohjoinen Hesperiankatu"
+  },
+  {
+   "lon": 24.9223195,
+   "lat": 60.1740795,
+   "city": "Helsinki",
+   "name": "Runeberginkatu/Tunturikatu/Ilmarinkatu"
+  },
+  {
+   "lon": 24.9227574,
+   "lat": 60.1731356,
+   "city": "Helsinki",
+   "name": "Runeberginkatu/Sammonkatu"
+  },
+  {
+   "lon": 24.9228519,
+   "lat": 60.1622049,
+   "city": "Helsinki",
+   "name": "Hietalahdenranta/Jätkäsaarenlaituri"
+  },
+  {
+   "lon": 24.9228952,
+   "lat": 60.1791777,
+   "city": "Helsinki",
+   "name": "Töölöntori"
+  },
+  {
+   "lon": 24.9232235,
+   "lat": 60.2203539,
+   "city": "Helsinki",
+   "name": "Metsäläntie/Postintaival"
+  },
+  {
+   "lon": 24.9235109,
+   "lat": 60.1722524,
+   "city": "Helsinki",
+   "name": "Runeberginkatu/Lutherinkatu"
+  },
+  {
+   "lon": 24.9236545,
+   "lat": 60.2329775,
+   "city": "Helsinki",
+   "name": "Pirkkolantie/Lehtotie"
+  },
+  {
+   "lon": 24.923801,
+   "lat": 60.1914939,
+   "city": "Helsinki",
+   "name": "Lasten liikennekaupunki"
+  },
+  {
+   "lon": 24.9240109,
+   "lat": 60.1839213,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Toivonkatu/Eino Leinon katu"
+  },
+  {
+   "lon": 24.9243747,
+   "lat": 60.1713839,
+   "city": "Helsinki",
+   "name": "Runeberginkatu/Arkadiankatu"
+  },
+  {
+   "lon": 24.9245388,
+   "lat": 60.1804843,
+   "city": "Helsinki",
+   "name": "Runeberginkatu/Töölönkatu"
+  },
+  {
+   "lon": 24.9246718,
+   "lat": 60.1913352,
+   "city": "Helsinki",
+   "name": "Nordenskiöldinkatu/Pohjoinen Stadiontie/Auroranportti"
+  },
+  {
+   "lon": 24.9251771,
+   "lat": 60.2337459,
+   "city": "Helsinki",
+   "name": "Pirkkolantie/Maunulantie"
+  },
+  {
+   "lon": 24.925583,
+   "lat": 60.164959,
+   "city": "Helsinki",
+   "name": "Ruoholahdenkatu/Hietalahdenkatu/Lapinrinne"
+  },
+  {
+   "lon": 24.9256183,
+   "lat": 60.1609672,
+   "city": "Helsinki",
+   "name": "Hietalahdenranta/Ruoholahdenranta"
+  },
+  {
+   "lon": 24.9258303,
+   "lat": 60.2429131,
+   "city": "Helsinki",
+   "name": "Pakilantie/Halkosuontie"
+  },
+  {
+   "lon": 24.9258721,
+   "lat": 60.2028242,
+   "city": "Helsinki",
+   "name": null
+  },
+  {
+   "lon": 24.926429,
+   "lat": 60.1823775,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/kisahalli (suojatie)"
+  },
+  {
+   "lon": 24.9264292,
+   "lat": 60.242082,
+   "city": "Helsinki",
+   "name": "Pakilantie/Kehä I (pohjoinen ramppi)"
+  },
+  {
+   "lon": 24.9270808,
+   "lat": 60.2002805,
+   "city": "Helsinki",
+   "name": "Pasilankatu/Kyllikinportti"
+  },
+  {
+   "lon": 24.9272154,
+   "lat": 60.1695189,
+   "city": "Helsinki",
+   "name": "Runeberginkatu/Eteläinen Rautatiekatu/Pohjoinen Rautatiekatu"
+  },
+  {
+   "lon": 24.9272379,
+   "lat": 60.1669664,
+   "city": "Helsinki",
+   "name": "Lapinlahdenkatu/Lapinrinne"
+  },
+  {
+   "lon": 24.9272863,
+   "lat": 60.1655637,
+   "city": "Helsinki",
+   "name": "Ruoholahdenkatu/Abrahaminkatu"
+  },
+  {
+   "lon": 24.9273577,
+   "lat": 60.1817434,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Helsinginkatu"
+  },
+  {
+   "lon": 24.9274024,
+   "lat": 60.163626,
+   "city": "Helsinki",
+   "name": "Hietalahdenkatu/Kalevankatu"
+  },
+  {
+   "lon": 24.9275353,
+   "lat": 60.2405818,
+   "city": "Helsinki",
+   "name": "Pakilantie/Kehä I (eteläinen ramppi)"
+  },
+  {
+   "lon": 24.9275365,
+   "lat": 60.1675007,
+   "city": "Helsinki",
+   "name": "Salomonkatu (joukkoliikennetunneli)"
+  },
+  {
+   "lon": 24.927556,
+   "lat": 60.2053875,
+   "city": "Helsinki",
+   "name": "Veturitie/Hakamäentie (eteläinen ramppi)"
+  },
+  {
+   "lon": 24.9281358,
+   "lat": 60.203448,
+   "city": "Helsinki",
+   "name": "Veturitie/Radioportti"
+  },
+  {
+   "lon": 24.9284642,
+   "lat": 60.1628678,
+   "city": "Helsinki",
+   "name": "Lönnrotinkatu/Hietalahdenkatu"
+  },
+  {
+   "lon": 24.9284915,
+   "lat": 60.1973598,
+   "city": "Helsinki",
+   "name": "Pasilankatu/Pasilan silta/Esterinportti"
+  },
+  {
+   "lon": 24.9286165,
+   "lat": 60.238009,
+   "city": "Helsinki",
+   "name": "Pakilantie/Osuuskunnantie"
+  },
+  {
+   "lon": 24.9290541,
+   "lat": 60.1700439,
+   "city": "Helsinki",
+   "name": "Fredrikinkatu/Eteläinen Rautatiekatu/Pohjoinen Rautatiekatu"
+  },
+  {
+   "lon": 24.9290752,
+   "lat": 60.1960737,
+   "city": "Helsinki",
+   "name": "Pasilankatu/Palkkatilanportti"
+  },
+  {
+   "lon": 24.9291014,
+   "lat": 60.1786457,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Dunkerinkatu"
+  },
+  {
+   "lon": 24.929221,
+   "lat": 60.2080015,
+   "city": "Helsinki",
+   "name": "Veturitie/Hakamäentie (pohjoinen ramppi)"
+  },
+  {
+   "lon": 24.9293285,
+   "lat": 60.1924261,
+   "city": "Helsinki",
+   "name": "Nordenskiöldinkatu/Veturitie"
+  },
+  {
+   "lon": 24.9296191,
+   "lat": 60.1777963,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Pohjoinen Hesperiankatu/Eteläinen Hesperiankatu"
+  },
+  {
+   "lon": 24.9296916,
+   "lat": 60.1824576,
+   "city": "Helsinki",
+   "name": "Helsinginkatu/Ooppera"
+  },
+  {
+   "lon": 24.9298165,
+   "lat": 60.1618542,
+   "city": "Helsinki",
+   "name": "Bulevardi/Hietalahdenkatu"
+  },
+  {
+   "lon": 24.9299194,
+   "lat": 60.1955922,
+   "city": "Helsinki",
+   "name": "Veturitie/Pasilankatu"
+  },
+  {
+   "lon": 24.9299929,
+   "lat": 60.2558407,
+   "city": "Helsinki",
+   "name": "Kuusmiehentie/Paloheinän koulu"
+  },
+  {
+   "lon": 24.9302108,
+   "lat": 60.1634724,
+   "city": "Helsinki",
+   "name": "Lönnrotinkatu/Abrahaminkatu"
+  },
+  {
+   "lon": 24.9302544,
+   "lat": 60.1664352,
+   "city": "Helsinki",
+   "name": "Ruoholahdenkatu/Lapinlahdenkatu/Malminrinne"
+  },
+  {
+   "lon": 24.9302826,
+   "lat": 60.1704532,
+   "city": "Helsinki",
+   "name": "Eteläinen Rautatiekatu/Pohjoinen Rautatiekatu/Jaakonkatu"
+  },
+  {
+   "lon": 24.930518,
+   "lat": 60.1603893,
+   "city": "Helsinki",
+   "name": "Hietalahdenranta/Mallaskatu"
+  },
+  {
+   "lon": 24.9308359,
+   "lat": 60.2007196,
+   "city": "Helsinki",
+   "name": "Veturitie/Höyrykatu/Rautatieläisenkatu"
+  },
+  {
+   "lon": 24.9310491,
+   "lat": 60.1763076,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Cygnaeuksenkatu"
+  },
+  {
+   "lon": 24.931101,
+   "lat": 60.1674698,
+   "city": "Helsinki",
+   "name": "Runeberginkatu/Malminrinne"
+  },
+  {
+   "lon": 24.9311024,
+   "lat": 60.2340636,
+   "city": "Helsinki",
+   "name": "Pirjontie/Pakilantie/Suursuonlaita"
+  },
+  {
+   "lon": 24.9312381,
+   "lat": 60.1657937,
+   "city": "Helsinki",
+   "name": "Albertinkatu/Eerikinkatu"
+  },
+  {
+   "lon": 24.9315276,
+   "lat": 60.2118828,
+   "city": "Helsinki",
+   "name": "Veturitie/Transpoint"
+  },
+  {
+   "lon": 24.9317557,
+   "lat": 60.1839742,
+   "city": "Helsinki",
+   "name": "Helsinginkatu/Mäntymäentie"
+  },
+  {
+   "lon": 24.9319018,
+   "lat": 60.1927631,
+   "city": "Helsinki",
+   "name": "Nordenskiöldinkatu/Vauhtitie"
+  },
+  {
+   "lon": 24.9320189,
+   "lat": 60.1652497,
+   "city": "Helsinki",
+   "name": "Albertinkatu/Kalevankatu"
+  },
+  {
+   "lon": 24.9323886,
+   "lat": 60.1711426,
+   "city": "Helsinki",
+   "name": "Eläinmuseon aukio"
+  },
+  {
+   "lon": 24.9325597,
+   "lat": 60.1674932,
+   "city": "Helsinki",
+   "name": "Fredrikinkatu/Kansakoulukatu"
+  },
+  {
+   "lon": 24.9327707,
+   "lat": 60.1747136,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Finlandiatalo (suojatie)"
+  },
+  {
+   "lon": 24.9329794,
+   "lat": 60.2042181,
+   "city": "Helsinki",
+   "name": "Ratapihantie/Suomen messut"
+  },
+  {
+   "lon": 24.9330852,
+   "lat": 60.1644679,
+   "city": "Helsinki",
+   "name": "Lönnrotinkatu/Albertinkatu"
+  },
+  {
+   "lon": 24.9331289,
+   "lat": 60.1582405,
+   "city": "Helsinki",
+   "name": "Tehtaankatu/Telakkakatu"
+  },
+  {
+   "lon": 24.9331507,
+   "lat": 60.2206701,
+   "city": "Helsinki",
+   "name": "Asesepäntie/Metsäläntie/Veturitie/Rajametsäntie"
+  },
+  {
+   "lon": 24.9332264,
+   "lat": 60.2322429,
+   "city": "Helsinki",
+   "name": null
+  },
+  {
+   "lon": 24.9337054,
+   "lat": 60.1737541,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Töölönlahdenkatu"
+  },
+  {
+   "lon": 24.9337179,
+   "lat": 60.2010142,
+   "city": "Helsinki",
+   "name": "Ratapihantie/Rautatieläisenkatu"
+  },
+  {
+   "lon": 24.9337637,
+   "lat": 60.1666795,
+   "city": "Helsinki",
+   "name": "Fredrikinkatu/Eerikinkatu"
+  },
+  {
+   "lon": 24.9339813,
+   "lat": 60.184985,
+   "city": "Helsinki",
+   "name": "Helsinginkatu/Vauhtitie"
+  },
+  {
+   "lon": 24.9344291,
+   "lat": 60.1931779,
+   "city": "Helsinki",
+   "name": "Nordenskiöldinkatu/Savonkatu/Viipurinkatu"
+  },
+  {
+   "lon": 24.9345023,
+   "lat": 60.1634469,
+   "city": "Helsinki",
+   "name": "Bulevardi/Albertinkatu"
+  },
+  {
+   "lon": 24.9345168,
+   "lat": 60.2312382,
+   "city": "Helsinki",
+   "name": "Pakilantie/Metsäpurontie"
+  },
+  {
+   "lon": 24.9345274,
+   "lat": 60.1661343,
+   "city": "Helsinki",
+   "name": "Fredrikinkatu/Kalevankatu"
+  },
+  {
+   "lon": 24.9348479,
+   "lat": 60.1684014,
+   "city": "Helsinki",
+   "name": "Simonkatu/Annankatu"
+  },
+  {
+   "lon": 24.934886,
+   "lat": 60.1724384,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Pohjoinen Rautatiekatu"
+  },
+  {
+   "lon": 24.9349422,
+   "lat": 60.1981812,
+   "city": "Helsinki",
+   "name": "Asemapäällikönkatu/Ratapihantie"
+  },
+  {
+   "lon": 24.935206,
+   "lat": 60.1550966,
+   "city": "Helsinki",
+   "name": "Telakkakatu/Eiranranranta"
+  },
+  {
+   "lon": 24.935618,
+   "lat": 60.1653535,
+   "city": "Helsinki",
+   "name": "Lönnrotinkatu/Fredrikinkatu"
+  },
+  {
+   "lon": 24.9356235,
+   "lat": 60.1626728,
+   "city": "Helsinki",
+   "name": "Albertinkatu/Uudenmaankatu"
+  },
+  {
+   "lon": 24.935798,
+   "lat": 60.196386,
+   "city": "Helsinki",
+   "name": "Ratapihantie/Teollisuuskatu"
+  },
+  {
+   "lon": 24.936033,
+   "lat": 60.1955848,
+   "city": "Helsinki",
+   "name": "Savonkatu/Aleksis Kiven katu/Eläintarhan alakoulu"
+  },
+  {
+   "lon": 24.9361438,
+   "lat": 60.1712289,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Arkadiankatu"
+  },
+  {
+   "lon": 24.9363236,
+   "lat": 60.1691193,
+   "city": "Helsinki",
+   "name": "Simonkatu/Yrjönkatu/Forum"
+  },
+  {
+   "lon": 24.937039,
+   "lat": 60.1643249,
+   "city": "Helsinki",
+   "name": "Bulevardi/Fredrikinkatu"
+  },
+  {
+   "lon": 24.9371199,
+   "lat": 60.1707902,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Postikatu"
+  },
+  {
+   "lon": 24.9375432,
+   "lat": 60.2209809,
+   "city": "Helsinki",
+   "name": "Asesepäntie/Läkkisepänkuja"
+  },
+  {
+   "lon": 24.9379307,
+   "lat": 60.1661464,
+   "city": "Helsinki",
+   "name": "Lönnrotinkatu/Annankatu"
+  },
+  {
+   "lon": 24.9381282,
+   "lat": 60.1635428,
+   "city": "Helsinki",
+   "name": "Fredrikinkatu/Uudenmaankatu"
+  },
+  {
+   "lon": 24.938477,
+   "lat": 60.169894,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Kaivokatu/Simonkatu"
+  },
+  {
+   "lon": 24.9389771,
+   "lat": 60.1709608,
+   "city": "Helsinki",
+   "name": "Postikatu/asema-aukio (suojatie)"
+  },
+  {
+   "lon": 24.9390889,
+   "lat": 60.2567269,
+   "city": "Helsinki",
+   "name": "Kuusmiehentie/Tulustie"
+  },
+  {
+   "lon": 24.9393582,
+   "lat": 60.1651411,
+   "city": "Helsinki",
+   "name": "Bulevardi/Annankatu"
+  },
+  {
+   "lon": 24.9395593,
+   "lat": 60.1702571,
+   "city": "Helsinki",
+   "name": "Kaivokatu/asema-aukio"
+  },
+  {
+   "lon": 24.9398567,
+   "lat": 60.1690106,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Ylioppilastalo (suojatie)"
+  },
+  {
+   "lon": 24.9400241,
+   "lat": 60.1987787,
+   "city": "Helsinki",
+   "name": "Asemapäällikönkatu/Ratamestarinkatu"
+  },
+  {
+   "lon": 24.9402631,
+   "lat": 60.1669579,
+   "city": "Helsinki",
+   "name": "Lönnrotinkatu/Yrjönkatu"
+  },
+  {
+   "lon": 24.9404447,
+   "lat": 60.2296726,
+   "city": "Helsinki",
+   "name": null
+  },
+  {
+   "lon": 24.9404493,
+   "lat": 60.1643531,
+   "city": "Helsinki",
+   "name": "Uudenmaankatu/Annankatu"
+  },
+  {
+   "lon": 24.940623,
+   "lat": 60.2077274,
+   "city": "Helsinki",
+   "name": "Koskelantie/Ilmattarentie"
+  },
+  {
+   "lon": 24.9406463,
+   "lat": 60.1859436,
+   "city": "Helsinki",
+   "name": "Helsinginkatu/Sturenkatu/Kolmas Linja"
+  },
+  {
+   "lon": 24.9407657,
+   "lat": 60.1683609,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Aleksanterinkatu/Kalevankatu"
+  },
+  {
+   "lon": 24.9415142,
+   "lat": 60.1704067,
+   "city": "Helsinki",
+   "name": "Kaivokatu/Rautatieasema (suojatie)"
+  },
+  {
+   "lon": 24.9421343,
+   "lat": 60.1675395,
+   "city": "Helsinki",
+   "name": "Mannerheimintie/Pohjoisesplanadi/Lönnrotinkatu"
+  },
+  {
+   "lon": 24.9427065,
+   "lat": 60.2215489,
+   "city": "Helsinki",
+   "name": "Asesepäntie/Tuusulan moottoritie (läntinen ramppi)"
+  },
+  {
+   "lon": 24.9427662,
+   "lat": 60.1704342,
+   "city": "Helsinki",
+   "name": "Kaivokatu/Keskuskatu/Rautatientori"
+  },
+  {
+   "lon": 24.9428122,
+   "lat": 60.1651704,
+   "city": "Helsinki",
+   "name": "Uudenmaankatu/Yrjönkatu"
+  },
+  {
+   "lon": 24.9431108,
+   "lat": 60.1869674,
+   "city": "Helsinki",
+   "name": "Sturenkatu/Wallininkatu"
+  },
+  {
+   "lon": 24.9432578,
+   "lat": 60.2134226,
+   "city": "Helsinki",
+   "name": "Mäkelänkatu/Pohjolankatu/Vaakalinnuntie"
+  },
+  {
+   "lon": 24.9432962,
+   "lat": 60.1932258,
+   "city": "Helsinki",
+   "name": "Aleksis Kiven Katu/Traverssikuja"
+  },
+  {
+   "lon": 24.9435859,
+   "lat": 60.1966647,
+   "city": "Helsinki",
+   "name": "Kumpulantie/Jämsänkatu"
+  },
+  {
+   "lon": 24.9437757,
+   "lat": 60.1665717,
+   "city": "Helsinki",
+   "name": "Erottaja"
+  },
+  {
+   "lon": 24.94388,
+   "lat": 60.1655385,
+   "city": "Helsinki",
+   "name": "Uudenmaankatu/Erottajankatu/Ludviginkatu"
+  },
+  {
+   "lon": 24.9438822,
+   "lat": 60.1956583,
+   "city": "Helsinki",
+   "name": "Teollisuuskatu/Jämsänkatu"
+  },
+  {
+   "lon": 24.9444507,
+   "lat": 60.2106543,
+   "city": "Helsinki",
+   "name": "Mäkelänkatu/Kimmontie/Väinölänkatu"
+  },
+  {
+   "lon": 24.9447823,
+   "lat": 60.2098259,
+   "city": "Helsinki",
+   "name": "Mäkelänkatu/Turjantie/Amer"
+  },
+  {
+   "lon": 24.944813,
+   "lat": 60.2007378,
+   "city": "Helsinki",
+   "name": "Mäkelänkatu/Radanrakentajantie/uimahalli"
+  },
+  {
+   "lon": 24.9448899,
+   "lat": 60.1830079,
+   "city": "Helsinki",
+   "name": "Toinen Linja/Ilolanpuisto (suojatie)"
+  },
+  {
+   "lon": 24.9450704,
+   "lat": 60.1881948,
+   "city": "Helsinki",
+   "name": "Sturenkatu/Kalliolanrinne"
+  },
+  {
+   "lon": 24.9451604,
+   "lat": 60.1706765,
+   "city": "Helsinki",
+   "name": "Kaivokatu/Mikonkatu/Kaisaniemenkatu/Rautatientori"
+  },
+  {
+   "lon": 24.9451973,
+   "lat": 60.2566348,
+   "city": "Helsinki",
+   "name": "Kuusmiehenkaari"
+  },
+  {
+   "lon": 24.9452072,
+   "lat": 60.1719869,
+   "city": "Helsinki",
+   "name": "Vilhonkatu/Mikonkatu/Itäinen Teatterikuja"
+  },
+  {
+   "lon": 24.9452936,
+   "lat": 60.2027681,
+   "city": "Helsinki",
+   "name": "Mäkelänkatu/Isoniitynkatu"
+  },
+  {
+   "lon": 24.9453448,
+   "lat": 60.2085814,
+   "city": "Helsinki",
+   "name": "Mäkelänkatu/Koskelantie/Sofianlehdonkatu"
+  },
+  {
+   "lon": 24.9457607,
+   "lat": 60.167119,
+   "city": "Helsinki",
+   "name": "Eteläesplanadi/Korkeavuorenkatu"
+  },
+  {
+   "lon": 24.9458748,
+   "lat": 60.1947955,
+   "city": "Helsinki",
+   "name": "Teollisuuskatu/Traverssikuja"
+  },
+  {
+   "lon": 24.9461628,
+   "lat": 60.1888875,
+   "city": "Helsinki",
+   "name": "Sturenkatu/Kirstinkatu"
+  },
+  {
+   "lon": 24.9462451,
+   "lat": 60.2299185,
+   "city": "Helsinki",
+   "name": "Käskynhaltijantie/Tuusulanväylän itäinen ramppi"
+  },
+  {
+   "lon": 24.9466272,
+   "lat": 60.2220311,
+   "city": "Helsinki",
+   "name": "Mäkitorpantie/Panuntie/Asesepäntie"
+  },
+  {
+   "lon": 24.9469865,
+   "lat": 60.1943616,
+   "city": "Helsinki",
+   "name": "Teollisuuskatu/Töysänkatu"
+  },
+  {
+   "lon": 24.9476508,
+   "lat": 60.1671667,
+   "city": "Helsinki",
+   "name": "Eteläesplanadi/Kasarmikatu"
+  },
+  {
+   "lon": 24.9476855,
+   "lat": 60.1897475,
+   "city": "Helsinki",
+   "name": "Sturenkatu/Porvoonkatu/Läntinen Brahenkatu"
+  },
+  {
+   "lon": 24.9478469,
+   "lat": 60.1982973,
+   "city": "Helsinki",
+   "name": "Mäkelänkatu/Kumpulantie"
+  },
+  {
+   "lon": 24.9478898,
+   "lat": 60.1720906,
+   "city": "Helsinki",
+   "name": "Kaisaniemenkatu/Vuorikatu/Helsingin yliopiston metroasema"
+  },
+  {
+   "lon": 24.9482243,
+   "lat": 60.1882592,
+   "city": "Helsinki",
+   "name": "Läntinen Brahenkatu/Kalliolanrinne (suojatie)"
+  },
+  {
+   "lon": 24.9483603,
+   "lat": 60.209411,
+   "city": "Helsinki",
+   "name": "Koskelantie/Kalervonkatu"
+  },
+  {
+   "lon": 24.9484902,
+   "lat": 60.1937099,
+   "city": "Helsinki",
+   "name": "Teollisuuskatu/Telekatu"
+  },
+  {
+   "lon": 24.9487064,
+   "lat": 60.197968,
+   "city": "Helsinki",
+   "name": "Mäkelänkatu/Elimäenkatu/Mäkelänrinne"
+  },
+  {
+   "lon": 24.9490068,
+   "lat": 60.1731159,
+   "city": "Helsinki",
+   "name": "Kaisaniemenkatu/Fabianinkatu/Puutarhakatu"
+  },
+  {
+   "lon": 24.9493121,
+   "lat": 60.1906403,
+   "city": "Helsinki",
+   "name": "Sturenkatu/Aleksis Kiven katu"
+  },
+  {
+   "lon": 24.9494957,
+   "lat": 60.1678337,
+   "city": "Helsinki",
+   "name": "Pohjoisesplanadi/Fabianinkatu/Kluuvin pysäköinti"
+  },
+  {
+   "lon": 24.9495821,
+   "lat": 60.1672018,
+   "city": "Helsinki",
+   "name": "Eteläesplanadi/Fabianinkatu"
+  },
+  {
+   "lon": 24.9498907,
+   "lat": 60.1798739,
+   "city": "Helsinki",
+   "name": "Ympyrätalo - Hämeentie/Siltasaarenkatu/Eläintarhantie"
+  },
+  {
+   "lon": 24.9500627,
+   "lat": 60.1740291,
+   "city": "Helsinki",
+   "name": "Kaisaniemen ympyrä"
+  },
+  {
+   "lon": 24.950122,
+   "lat": 60.1768794,
+   "city": "Helsinki",
+   "name": "Siltasaarenkatu/Pitkänsillan ranta/John Stenbergin ranta"
+  },
+  {
+   "lon": 24.9502042,
+   "lat": 60.1782927,
+   "city": "Helsinki",
+   "name": "Siltasaarenkatu/Hakaniemenranta"
+  },
+  {
+   "lon": 24.9502406,
+   "lat": 60.1758332,
+   "city": "Helsinki",
+   "name": "Unioninkatu/Siltavuorenranta/Kaisaniemenranta"
+  },
+  {
+   "lon": 24.9507219,
+   "lat": 60.1841749,
+   "city": "Helsinki",
+   "name": "Kallion paloasema"
+  },
+  {
+   "lon": 24.9510376,
+   "lat": 60.1678334,
+   "city": "Helsinki",
+   "name": "Pohjoisesplanadi/Unioninkatu"
+  },
+  {
+   "lon": 24.9511241,
+   "lat": 60.1672317,
+   "city": "Helsinki",
+   "name": "Eteläesplanadi/Unioninkatu"
+  },
+  {
+   "lon": 24.9512572,
+   "lat": 60.1867167,
+   "city": "Helsinki",
+   "name": "Helsinginkatu/Kaarlenkatu"
+  },
+  {
+   "lon": 24.9513999,
+   "lat": 60.1804476,
+   "city": "Helsinki",
+   "name": "Hämeentie/Toinen Linja/Hakaniemen torikatu"
+  },
+  {
+   "lon": 24.9514093,
+   "lat": 60.1647974,
+   "city": "Helsinki",
+   "name": "Unioninkatu/Eteläinen Makasiinikatu"
+  },
+  {
+   "lon": 24.9514724,
+   "lat": 60.2308501,
+   "city": "Helsinki",
+   "name": null
+  },
+  {
+   "lon": 24.9518007,
+   "lat": 60.210791,
+   "city": "Helsinki",
+   "name": "Koskelantie 17 (suojatie)"
+  },
+  {
+   "lon": 24.952186,
+   "lat": 60.1920299,
+   "city": "Helsinki",
+   "name": "Teollisuuskatu/Sturenkatu (rampit)"
+  },
+  {
+   "lon": 24.9522306,
+   "lat": 60.1922835,
+   "city": "Helsinki",
+   "name": "Sturenkatu/Teollisuuskatu (rampit)"
+  },
+  {
+   "lon": 24.9524277,
+   "lat": 60.1673702,
+   "city": "Helsinki",
+   "name": "Eteläesplanadi/Eteläranta"
+  },
+  {
+   "lon": 24.9525143,
+   "lat": 60.1677574,
+   "city": "Helsinki",
+   "name": "Pohjoisesplanadi/Eteläranta"
+  },
+  {
+   "lon": 24.952649,
+   "lat": 60.1648612,
+   "city": "Helsinki",
+   "name": "Eteläranta/Eteläinen Makasiinikatu"
+  },
+  {
+   "lon": 24.9529355,
+   "lat": 60.1894932,
+   "city": "Helsinki",
+   "name": "Aleksis Kiven katu/Fleminginkatu"
+  },
+  {
+   "lon": 24.9529718,
+   "lat": 60.1962325,
+   "city": "Helsinki",
+   "name": "Mäkelänkatu/Nokiankuja (suojatie)"
+  },
+  {
+   "lon": 24.9531003,
+   "lat": 60.1740793,
+   "city": "Helsinki",
+   "name": "Liisankatu/Snellmaninkatu"
+  },
+  {
+   "lon": 24.9531937,
+   "lat": 60.1870214,
+   "city": "Helsinki",
+   "name": "Helsinginkatu/Fleminginkatu"
+  },
+  {
+   "lon": 24.9537189,
+   "lat": 60.191482,
+   "city": "Helsinki",
+   "name": "Teollisuuskatu/Primula (suojatie)"
+  },
+  {
+   "lon": 24.954385,
+   "lat": 60.2117635,
+   "city": "Helsinki",
+   "name": "Koskelantie 25 (suojatie)"
+  },
+  {
+   "lon": 24.9554703,
+   "lat": 60.19528,
+   "city": "Helsinki",
+   "name": "Mäkelänkatu/Hattulantie/Ensi-Kodintie"
+  },
+  {
+   "lon": 24.9561939,
+   "lat": 60.182158,
+   "city": "Helsinki",
+   "name": "Hämeentie/Viides Linja/Haapaniemenkatu"
+  },
+  {
+   "lon": 24.9564091,
+   "lat": 60.2162254,
+   "city": "Helsinki",
+   "name": "Kullervonkadun palokuntavalot"
+  },
+  {
+   "lon": 24.9564689,
+   "lat": 60.1611574,
+   "city": "Helsinki",
+   "name": "Eteläranta/Laivasillankatu"
+  },
+  {
+   "lon": 24.9568294,
+   "lat": 60.1691459,
+   "city": "Helsinki",
+   "name": "Mariankatu/Aleksanterinkatu"
+  },
+  {
+   "lon": 24.9571225,
+   "lat": 60.1944388,
+   "city": "Helsinki",
+   "name": "Mäkelänkatu/Sturenkatu"
+  },
+  {
+   "lon": 24.9571319,
+   "lat": 60.1680776,
+   "city": "Helsinki",
+   "name": "Pohjoisesplanadi/Katajanokanlaituri/Mariankatu"
+  },
+  {
+   "lon": 24.9571621,
+   "lat": 60.1904664,
+   "city": "Helsinki",
+   "name": "Teollisuuskatu/Kustaankatu"
+  },
+  {
+   "lon": 24.9576509,
+   "lat": 60.1684213,
+   "city": "Helsinki",
+   "name": "Kanavakatu/Päävartiotori"
+  },
+  {
+   "lon": 24.9582809,
+   "lat": 60.1692192,
+   "city": "Helsinki",
+   "name": "Pohjoisranta/Aleksanterinkatu"
+  },
+  {
+   "lon": 24.9582835,
+   "lat": 60.2492963,
+   "city": "Helsinki",
+   "name": "Yhdyskunnantie/Lukupolku"
+  },
+  {
+   "lon": 24.9584842,
+   "lat": 60.2324185,
+   "city": "Helsinki",
+   "name": "Käskynhaltijantie/Norrtäljentie"
+  },
+  {
+   "lon": 24.9586259,
+   "lat": 60.2134453,
+   "city": "Helsinki",
+   "name": "Koskelantie/Käpyläntie/Intiankatu"
+  },
+  {
+   "lon": 24.9593358,
+   "lat": 60.2425371,
+   "city": "Helsinki",
+   "name": "Yhdyskunnantie/Manttaalitie"
+  },
+  {
+   "lon": 24.959483,
+   "lat": 60.1806577,
+   "city": "Helsinki",
+   "name": "Sörnäisten rantatie/Haapaniemenkatu"
+  },
+  {
+   "lon": 24.9597308,
+   "lat": 60.1958397,
+   "city": "Helsinki",
+   "name": "Sturenkatu/Kangasalantie"
+  },
+  {
+   "lon": 24.9597545,
+   "lat": 60.1698606,
+   "city": "Helsinki",
+   "name": "Pohjoisranta/Meritullintori (suojatie)"
+  },
+  {
+   "lon": 24.9600691,
+   "lat": 60.1710518,
+   "city": "Helsinki",
+   "name": "Pohjoisranta/Kirkkokatu"
+  },
+  {
+   "lon": 24.9606032,
+   "lat": 60.1717086,
+   "city": "Helsinki",
+   "name": "Pohjoisranta/Rauhankatu (suojatie)"
+  },
+  {
+   "lon": 24.9608182,
+   "lat": 60.1923481,
+   "city": "Helsinki",
+   "name": "Mäkelänkatu/Päijänteentie/Vallilantie"
+  },
+  {
+   "lon": 24.9610982,
+   "lat": 60.1898933,
+   "city": "Helsinki",
+   "name": "Teollisuuskatu/Vääksyntie/Teollisuuspolku"
+  },
+  {
+   "lon": 24.9611006,
+   "lat": 60.1860936,
+   "city": "Helsinki",
+   "name": "Hämeentie/Torkkelinkatu/Käenkuja"
+  },
+  {
+   "lon": 24.9612808,
+   "lat": 60.1919191,
+   "city": "Helsinki",
+   "name": "Mäkelänkatu/Päijänteentie/Vallilantie"
+  },
+  {
+   "lon": 24.9613962,
+   "lat": 60.1734309,
+   "city": "Helsinki",
+   "name": "Pohjoisranta/Maneesikatu (suojatie)"
+  },
+  {
+   "lon": 24.961508,
+   "lat": 60.1671758,
+   "city": "Helsinki",
+   "name": "Kanavakatu/Satamakatu"
+  },
+  {
+   "lon": 24.9616557,
+   "lat": 60.1876326,
+   "city": "Helsinki",
+   "name": "Hämeentie/Helsinginkatu/Vilhovuorenkatu"
+  },
+  {
+   "lon": 24.9617545,
+   "lat": 60.1987793,
+   "city": "Helsinki",
+   "name": "Hämeentie/Haukilahdenkatu"
+  },
+  {
+   "lon": 24.9617741,
+   "lat": 60.1742956,
+   "city": "Helsinki",
+   "name": "Pohjoisranta/Liisankatu/Tervasaaren kannas"
+  },
+  {
+   "lon": 24.9620973,
+   "lat": 60.1969558,
+   "city": "Helsinki",
+   "name": "Hämeentie/Sturenkatu/Violankatu"
+  },
+  {
+   "lon": 24.9629349,
+   "lat": 60.2145946,
+   "city": "Helsinki",
+   "name": "Koskelantie/Kullervonkatu"
+  },
+  {
+   "lon": 24.9631263,
+   "lat": 60.1880328,
+   "city": "Helsinki",
+   "name": "Hämeentie/Vilhonvuorenkatu (suojatie)"
+  },
+  {
+   "lon": 24.9631776,
+   "lat": 60.2020597,
+   "city": "Helsinki",
+   "name": "Hämeentie/Hermannin rantatie (menoramppi)"
+  },
+  {
+   "lon": 24.9635919,
+   "lat": 60.2291096,
+   "city": "Helsinki",
+   "name": null
+  },
+  {
+   "lon": 24.9638172,
+   "lat": 60.2017856,
+   "city": "Helsinki",
+   "name": "Hämeentie/Hermannin rantatie (tuloramppi)"
+  },
+  {
+   "lon": 24.9640276,
+   "lat": 60.189161,
+   "city": "Helsinki",
+   "name": "Hämeentie/Pääskylänkatu/Kinaporinkatu"
+  },
+  {
+   "lon": 24.9642607,
+   "lat": 60.1896138,
+   "city": "Helsinki",
+   "name": "Hämeentie/Mäkelänkatu/Lautatarhankatu"
+  },
+  {
+   "lon": 24.9646485,
+   "lat": 60.1928785,
+   "city": "Helsinki",
+   "name": "Hämeentie/Vellamonkatu"
+  },
+  {
+   "lon": 24.9648137,
+   "lat": 60.1839785,
+   "city": "Helsinki",
+   "name": "Sörnäisten rantatie/Hanasaarenkatu"
+  },
+  {
+   "lon": 24.9650233,
+   "lat": 60.2150961,
+   "city": "Helsinki",
+   "name": "Koskelantie/Valtimontie (suojatie)"
+  },
+  {
+   "lon": 24.9651566,
+   "lat": 60.2031695,
+   "city": "Helsinki",
+   "name": "Hämeentie/Kustaa Vaasan tie"
+  },
+  {
+   "lon": 24.9654733,
+   "lat": 60.2005037,
+   "city": "Helsinki",
+   "name": "Hermannin rantatie/Toukolankatu (jatke)"
+  },
+  {
+   "lon": 24.9658041,
+   "lat": 60.2038064,
+   "city": "Helsinki",
+   "name": "Kustaa Vaasan tie"
+  },
+  {
+   "lon": 24.9659866,
+   "lat": 60.1846776,
+   "city": "Helsinki",
+   "name": "Sörnäisten rantatie/Parrukatu/Käenkuja"
+  },
+  {
+   "lon": 24.9667293,
+   "lat": 60.2052363,
+   "city": "Helsinki",
+   "name": "Kustaa Vaasan tie/Pietari Kalmin katu"
+  },
+  {
+   "lon": 24.9669553,
+   "lat": 60.2273428,
+   "city": "Helsinki",
+   "name": "Maaherrantie/Oulunkyläntie"
+  },
+  {
+   "lon": 24.9679748,
+   "lat": 60.2077061,
+   "city": "Helsinki",
+   "name": "Kustaa Vaasan tie/Intiankatu (suojatie)"
+  },
+  {
+   "lon": 24.9680942,
+   "lat": 60.1862949,
+   "city": "Helsinki",
+   "name": "Sörnäisten rantatie/Vilhonvuorenkatu"
+  },
+  {
+   "lon": 24.9682072,
+   "lat": 60.2160201,
+   "city": "Helsinki",
+   "name": "Koskelantie/Kunnalliskodintie"
+  },
+  {
+   "lon": 24.9683812,
+   "lat": 60.2088926,
+   "city": "Helsinki",
+   "name": "Kustaa Vaasan tie/Väinö Auerin katu"
+  },
+  {
+   "lon": 24.968565,
+   "lat": 60.2037787,
+   "city": "Helsinki",
+   "name": "Hämeentie/Kotisaarenkatu"
+  },
+  {
+   "lon": 24.9686328,
+   "lat": 60.1648475,
+   "city": "Helsinki",
+   "name": "Katajanokan terminaali"
+  },
+  {
+   "lon": 24.9687328,
+   "lat": 60.2106857,
+   "city": "Helsinki",
+   "name": "Kustaa Vaasan tie/Aavasaksantie (suojatie)"
+  },
+  {
+   "lon": 24.9690892,
+   "lat": 60.1985343,
+   "city": "Helsinki",
+   "name": "Hermannin rantatie/Kyläsaarenkatu/Haukilahdenkatu"
+  },
+  {
+   "lon": 24.9701268,
+   "lat": 60.1880303,
+   "city": "Helsinki",
+   "name": "Sörnäisten rantatie/Itäväylä/Pääskylänkatu"
+  },
+  {
+   "lon": 24.9702206,
+   "lat": 60.2125524,
+   "city": "Helsinki",
+   "name": "Kustaa Vaasan tie/Valtimontie (suojatie)"
+  },
+  {
+   "lon": 24.9708281,
+   "lat": 60.1887868,
+   "city": "Helsinki",
+   "name": "Lautatarhankatu/Tynnyrintekijänkatu"
+  },
+  {
+   "lon": 24.9721392,
+   "lat": 60.2306871,
+   "city": "Helsinki",
+   "name": null
+  },
+  {
+   "lon": 24.9724121,
+   "lat": 60.1882163,
+   "city": "Helsinki",
+   "name": "Hermannin rantatie (ramppi)/Panimokatu (suojatie)"
+  },
+  {
+   "lon": 24.9724375,
+   "lat": 60.2056835,
+   "city": "Helsinki",
+   "name": "Hämeentie/Kokkosaarenkatu (suojatie)"
+  },
+  {
+   "lon": 24.9727523,
+   "lat": 60.2166691,
+   "city": "Helsinki",
+   "name": "Koskelantie/Lahdenväylä (länsiramppi)"
+  },
+  {
+   "lon": 24.9734213,
+   "lat": 60.2310062,
+   "city": "Helsinki",
+   "name": null
+  },
+  {
+   "lon": 24.9740123,
+   "lat": 60.2071652,
+   "city": "Helsinki",
+   "name": "Hämeentie/Arabiankatu"
+  },
+  {
+   "lon": 24.974908,
+   "lat": 60.2082111,
+   "city": "Helsinki",
+   "name": "Hämeentie 135 A (suojatie)"
+  },
+  {
+   "lon": 24.975496,
+   "lat": 60.2373606,
+   "city": "Helsinki",
+   "name": "Käskynhaltijantie/Liukumäentie"
+  },
+  {
+   "lon": 24.9759662,
+   "lat": 60.2168419,
+   "city": "Helsinki",
+   "name": "Koskelantie/Lahdenväylä (itäramppi)"
+  },
+  {
+   "lon": 24.9761587,
+   "lat": 60.2097006,
+   "city": "Helsinki",
+   "name": "Hämeentie 135 C (suojatie)"
+  },
+  {
+   "lon": 24.9769472,
+   "lat": 60.1864825,
+   "city": "Helsinki",
+   "name": "Leonkatu/Hermannin rantatie"
+  },
+  {
+   "lon": 24.9776258,
+   "lat": 60.1880425,
+   "city": "Helsinki",
+   "name": "Työpajankatu/Hermannin rantatie"
+  },
+  {
+   "lon": 24.978221,
+   "lat": 60.1893717,
+   "city": "Helsinki",
+   "name": null
+  },
+  {
+   "lon": 24.9782672,
+   "lat": 60.1927299,
+   "city": "Helsinki",
+   "name": "Vanha talvitie/Hermannin rantatie"
+  },
+  {
+   "lon": 24.9786799,
+   "lat": 60.1903664,
+   "city": "Helsinki",
+   "name": "Hermannin rantatie/Verkkosaarenkatu"
+  },
+  {
+   "lon": 24.9787927,
+   "lat": 60.2128274,
+   "city": "Helsinki",
+   "name": "Hämeentie 157 (suojatie)"
+  },
+  {
+   "lon": 24.9788946,
+   "lat": 60.2437673,
+   "city": "Helsinki",
+   "name": "Pukinmäenkaari/Jokipellontie (suojatie)"
+  },
+  {
+   "lon": 24.9797436,
+   "lat": 60.2169462,
+   "city": "Helsinki",
+   "name": "Koskelantie/Hämeentie/Viikintie"
+  },
+  {
+   "lon": 24.9810703,
+   "lat": 60.2421466,
+   "city": "Helsinki",
+   "name": "Pukinmäenkaari/Kehä I (pohjoinen ramppi)"
+  },
+  {
+   "lon": 24.9813432,
+   "lat": 60.2411231,
+   "city": "Helsinki",
+   "name": "Pukinmäenkaari/Kehä I (eteläinen ramppi)"
+  },
+  {
+   "lon": 24.9830223,
+   "lat": 60.2175243,
+   "city": "Helsinki",
+   "name": "Viikintie/Katariina Saksilaisen katu"
+  },
+  {
+   "lon": 24.9834483,
+   "lat": 60.2644496,
+   "city": "Helsinki",
+   "name": "Tapaninkyläntie/Kirkonkyläntie"
+  },
+  {
+   "lon": 24.9861352,
+   "lat": 60.2186715,
+   "city": "Helsinki",
+   "name": "Viikintie/Jokisuunpolku"
+  },
+  {
+   "lon": 24.9870252,
+   "lat": 60.2579927,
+   "city": "Helsinki",
+   "name": "Tapaninvainiontie 42/päiväkoti (suojatie)"
+  },
+  {
+   "lon": 24.9871165,
+   "lat": 60.2705161,
+   "city": "Helsinki",
+   "name": "Siltakyläntie 9/koulu (suojatie)"
+  },
+  {
+   "lon": 24.987196,
+   "lat": 60.2516842,
+   "city": "Helsinki",
+   "name": "Pukinmäenkaari/Katajamäentie"
+  },
+  {
+   "lon": 24.9882821,
+   "lat": 60.2495273,
+   "city": "Helsinki",
+   "name": "Karhusuontie/Kuismankuja (suojatie)"
+  },
+  {
+   "lon": 24.99052,
+   "lat": 60.2613305,
+   "city": "Helsinki",
+   "name": "Tapanilantie/Laukkipäänpolku (suojatie)"
+  },
+  {
+   "lon": 24.9907877,
+   "lat": 60.2212501,
+   "city": "Helsinki",
+   "name": "Viikintie/Hernepellontie"
+  },
+  {
+   "lon": 24.9965344,
+   "lat": 60.2427442,
+   "city": "Helsinki",
+   "name": "Malminkaari/Eskolantie"
+  },
+  {
+   "lon": 24.9966711,
+   "lat": 60.2412058,
+   "city": "Helsinki",
+   "name": "Kehä I/Malminkaari (eteläramppi)"
+  },
+  {
+   "lon": 24.9977735,
+   "lat": 60.2746605,
+   "city": "Helsinki",
+   "name": "Suutarilantie/Oinaanpolku (suojatie)"
+  },
+  {
+   "lon": 24.9980433,
+   "lat": 60.2489004,
+   "city": "Helsinki",
+   "name": "Pukinmäenkaari/Kenttätie (suojatie)"
+  },
+  {
+   "lon": 24.9984273,
+   "lat": 60.256868,
+   "city": "Helsinki",
+   "name": "Kirkonkyläntie/Laulurastaantie/Syystie"
+  },
+  {
+   "lon": 25.0013911,
+   "lat": 60.2283292,
+   "city": "Helsinki",
+   "name": "Maaherrantie/Hernepellontie/Aulangontie"
+  },
+  {
+   "lon": 25.0015642,
+   "lat": 60.2553555,
+   "city": "Helsinki",
+   "name": "Kirkonkyläntie/Tukkisillantie (suojatie)"
+  },
+  {
+   "lon": 25.0023892,
+   "lat": 60.2393764,
+   "city": "Helsinki",
+   "name": "Rapakiventie/Lucina Hagmanin kuja (suojatie)"
+  },
+  {
+   "lon": 25.0028384,
+   "lat": 60.2537968,
+   "city": "Helsinki",
+   "name": "Kirkonkyläntie/Sairaalakatu (suojatie)"
+  },
+  {
+   "lon": 25.0061177,
+   "lat": 60.2778027,
+   "city": "Helsinki",
+   "name": "Suutarilantie/Revontulentie/Vaskipellontie"
+  },
+  {
+   "lon": 25.0068941,
+   "lat": 60.2522533,
+   "city": "Helsinki",
+   "name": "Kirkonkyläntie/Malmin raitti/Markkinatie"
+  },
+  {
+   "lon": 25.0086156,
+   "lat": 60.2506102,
+   "city": "Helsinki",
+   "name": "Malmin terminaali (pohjoinen risteys)"
+  },
+  {
+   "lon": 25.008843,
+   "lat": 60.2497586,
+   "city": "Helsinki",
+   "name": "Kirkonkyläntie/Malmin terminaali (eteläinen)"
+  },
+  {
+   "lon": 25.0089879,
+   "lat": 60.2670358,
+   "city": "Helsinki",
+   "name": "Tapaninkyläntie/Sidekuja (suojatie)"
+  },
+  {
+   "lon": 25.009436,
+   "lat": 60.2265257,
+   "city": "Helsinki",
+   "name": "Maaherrantie/Pihlajamäentie"
+  },
+  {
+   "lon": 25.009969,
+   "lat": 60.2302444,
+   "city": "Helsinki",
+   "name": "Pihlajamäentie/Pihlajistontie"
+  },
+  {
+   "lon": 25.0101303,
+   "lat": 60.2484143,
+   "city": "Helsinki",
+   "name": "Latokartanontie/Vilppulantie/Malmin asematie"
+  },
+  {
+   "lon": 25.0104249,
+   "lat": 60.2799141,
+   "city": "Helsinki",
+   "name": "Suutarilantie/Tapulikaupungintie"
+  },
+  {
+   "lon": 25.0108161,
+   "lat": 60.2477811,
+   "city": "Helsinki",
+   "name": "Latokartanontie/Vilppulantie/Malmin asematie"
+  },
+  {
+   "lon": 25.0113093,
+   "lat": 60.2272306,
+   "city": "Helsinki",
+   "name": "Viikinkaari/Pasteurinkatu/Pihlajamäentie"
+  },
+  {
+   "lon": 25.0115364,
+   "lat": 60.2809902,
+   "city": "Helsinki",
+   "name": "Suutarilantie/Sateenkaarentie"
+  },
+  {
+   "lon": 25.0117355,
+   "lat": 60.2324408,
+   "city": "Helsinki",
+   "name": "Pihlajamäentie/Meripihkatie"
+  },
+  {
+   "lon": 25.0118078,
+   "lat": 60.228107,
+   "city": "Helsinki",
+   "name": "Pihlajamäentie/Latokartanonkaari/Lahdentie (ramppi)"
+  },
+  {
+   "lon": 25.0122215,
+   "lat": 60.2823896,
+   "city": "Helsinki",
+   "name": "Suutarilantie/Lampputie"
+  },
+  {
+   "lon": 25.0128794,
+   "lat": 60.2843499,
+   "city": "Helsinki",
+   "name": "Suutarilantie/Kehä III (ramppi)"
+  },
+  {
+   "lon": 25.0132803,
+   "lat": 60.2569778,
+   "city": "Helsinki",
+   "name": "Kotinummentie/Malmin raitti"
+  },
+  {
+   "lon": 25.0153601,
+   "lat": 60.2435135,
+   "city": "Helsinki",
+   "name": "Latokartanontie/Riihenkulma (suojatie)"
+  },
+  {
+   "lon": 25.0169573,
+   "lat": 60.2248031,
+   "city": "Helsinki",
+   "name": "Viikintie/Viikinkaari"
+  },
+  {
+   "lon": 25.0178773,
+   "lat": 60.1656233,
+   "city": "Helsinki",
+   "name": "Haakoninkahdenkatu 9"
+  },
+  {
+   "lon": 25.0201166,
+   "lat": 60.2422211,
+   "city": "Helsinki",
+   "name": "Vanha Helsingintie/Tattariharjuntie"
+  },
+  {
+   "lon": 25.0207249,
+   "lat": 60.2404782,
+   "city": "Helsinki",
+   "name": "Pihlajamäentie/Kehä I (eteläramppi)"
+  },
+  {
+   "lon": 25.021248,
+   "lat": 60.2695219,
+   "city": "Helsinki",
+   "name": "Tapanilankaari/Ripetie"
+  },
+  {
+   "lon": 25.0212717,
+   "lat": 60.2239636,
+   "city": "Helsinki",
+   "name": "Viikintie/Tilanhoitajankaari"
+  },
+  {
+   "lon": 25.0220526,
+   "lat": 60.2364108,
+   "city": "Helsinki",
+   "name": "Malmin hautausmaa (suojatie)"
+  },
+  {
+   "lon": 25.0247832,
+   "lat": 60.2230007,
+   "city": "Helsinki",
+   "name": null
+  },
+  {
+   "lon": 25.0255514,
+   "lat": 60.2653183,
+   "city": "Helsinki",
+   "name": "Päiväläntie/Veljestentie (suojatie)"
+  },
+  {
+   "lon": 25.0275694,
+   "lat": 60.2782913,
+   "city": "Helsinki",
+   "name": "Tapulikaupungintie/Palovartijanpolku"
+  },
+  {
+   "lon": 25.0285084,
+   "lat": 60.2814406,
+   "city": "Helsinki",
+   "name": "Tikkuritie/Tikkurikuja"
+  },
+  {
+   "lon": 25.0287465,
+   "lat": 60.2424119,
+   "city": "Helsinki",
+   "name": "Tattariharjuntie/Malmin Kalmistontie (suojatie)"
+  },
+  {
+   "lon": 25.029037,
+   "lat": 60.2831938,
+   "city": "Helsinki",
+   "name": "Tikkuritie/Kehä III (pohjoinen ramppi)"
+  },
+  {
+   "lon": 25.029583,
+   "lat": 60.2839215,
+   "city": "Helsinki",
+   "name": "Härkävaljakontie/Aamuruskontie"
+  },
+  {
+   "lon": 25.0309075,
+   "lat": 60.1941209,
+   "city": "Helsinki",
+   "name": "Herttoniemen ympyrä"
+  },
+  {
+   "lon": 25.0309297,
+   "lat": 60.2785247,
+   "city": "Helsinki",
+   "name": "Tapulikaupungintie/Mintun päiväkoti"
+  },
+  {
+   "lon": 25.0325368,
+   "lat": 60.2490157,
+   "city": "Helsinki",
+   "name": "Tullivuorentie/Pyrytie"
+  },
+  {
+   "lon": 25.0330014,
+   "lat": 60.1938003,
+   "city": "Helsinki",
+   "name": "Linnanrakentajantie/Itäväylä (menoramppi)"
+  },
+  {
+   "lon": 25.0333913,
+   "lat": 60.1956412,
+   "city": "Helsinki",
+   "name": "Itäväylä/Operaattorinkatu/Koodaajankatu"
+  },
+  {
+   "lon": 25.0340837,
+   "lat": 60.1935672,
+   "city": "Helsinki",
+   "name": "Linnanrakentajantie/Kipinä/Insinöörinkatu"
+  },
+  {
+   "lon": 25.0341477,
+   "lat": 60.2043558,
+   "city": "Helsinki",
+   "name": "Kettutie/Eränkävijäntori (suojatie)"
+  },
+  {
+   "lon": 25.0357507,
+   "lat": 60.1951562,
+   "city": "Helsinki",
+   "name": "Suunnittelijankatu/Insinöörinkatu"
+  },
+  {
+   "lon": 25.0357826,
+   "lat": 60.1931719,
+   "city": "Helsinki",
+   "name": "Linnanrakentajantie/Laivalahdenportti"
+  },
+  {
+   "lon": 25.0366846,
+   "lat": 60.2209515,
+   "city": "Helsinki",
+   "name": "Viikintie"
+  },
+  {
+   "lon": 25.0376259,
+   "lat": 60.1947154,
+   "city": "Helsinki",
+   "name": "Suunnitteljiankatu/Laivalahdenkatu"
+  },
+  {
+   "lon": 25.0396255,
+   "lat": 60.1922418,
+   "city": "Helsinki",
+   "name": "Linnanrakentajantie/Laajasalontie/Abraham Wetterin tie"
+  },
+  {
+   "lon": 25.0402609,
+   "lat": 60.1898483,
+   "city": "Helsinki",
+   "name": "Kerttulinkuja/Linnanrakentajantie"
+  },
+  {
+   "lon": 25.0412154,
+   "lat": 60.1883309,
+   "city": "Helsinki",
+   "name": "Linnanrakentajantie/Kaivolahdenkatu"
+  },
+  {
+   "lon": 25.0433291,
+   "lat": 60.2190161,
+   "city": "Helsinki",
+   "name": "Viikintie/Viilarintie"
+  },
+  {
+   "lon": 25.0433452,
+   "lat": 60.1966155,
+   "city": "Helsinki",
+   "name": "Herttoniemen paloasema (Sorvaajankatu 16)"
+  },
+  {
+   "lon": 25.0447805,
+   "lat": 60.2146327,
+   "city": "Helsinki",
+   "name": "Viikintie/Siilitie (suojatie)"
+  },
+  {
+   "lon": 25.04713,
+   "lat": 60.1933374,
+   "city": "Helsinki",
+   "name": "Abraham Wetterin tie/Sahaajankatu"
+  },
+  {
+   "lon": 25.0473428,
+   "lat": 60.1983536,
+   "city": "Helsinki",
+   "name": "Sahaajankatu/Asentajankatu"
+  },
+  {
+   "lon": 25.0476675,
+   "lat": 60.1675898,
+   "city": "Helsinki",
+   "name": "Laajasalontie/Reiherintie (suojatie)"
+  },
+  {
+   "lon": 25.048059,
+   "lat": 60.2183974,
+   "city": "Helsinki",
+   "name": "Viilarintie/Myllärintie"
+  },
+  {
+   "lon": 25.0493203,
+   "lat": 60.1718327,
+   "city": "Helsinki",
+   "name": "Laajasalontie/Willebrandintie (suojatie)"
+  },
+  {
+   "lon": 25.0496024,
+   "lat": 60.175378,
+   "city": "Helsinki",
+   "name": "Laajasalontie/Koirasaarentie/Kuvernöörintie"
+  },
+  {
+   "lon": 25.0500176,
+   "lat": 60.1806626,
+   "city": "Helsinki",
+   "name": "Laajasalontie/Yliskyläntie"
+  },
+  {
+   "lon": 25.0502131,
+   "lat": 60.1938206,
+   "city": "Helsinki",
+   "name": "Abraham Wetterin tie/Porolahden puisto (suojatie)"
+  },
+  {
+   "lon": 25.0504093,
+   "lat": 60.1782282,
+   "city": "Helsinki",
+   "name": "Laajasalontie/Reposalmentie/Isosaarentie"
+  },
+  {
+   "lon": 25.0527379,
+   "lat": 60.2709629,
+   "city": "Helsinki",
+   "name": "Puistolan raitti/Tenavapolku (suojatie)"
+  },
+  {
+   "lon": 25.0532752,
+   "lat": 60.1948439,
+   "city": "Helsinki",
+   "name": "Roihuvuorentie 2/koulu (suojatie)"
+  },
+  {
+   "lon": 25.0537483,
+   "lat": 60.2300451,
+   "city": "Helsinki",
+   "name": "Kivikontie/Kehä I (eteläinen ramppi)"
+  },
+  {
+   "lon": 25.053802,
+   "lat": 60.2073895,
+   "city": "Helsinki",
+   "name": "Viilarintie/Roihuvuorentie/Sahaajankatu"
+  },
+  {
+   "lon": 25.0552151,
+   "lat": 60.2305876,
+   "city": "Helsinki",
+   "name": "Kivikontie/Kehä I (pohjoinen ramppi)"
+  },
+  {
+   "lon": 25.0564394,
+   "lat": 60.1944857,
+   "city": "Helsinki",
+   "name": "Abraham Wetterin tie/koulu (suojatie)"
+  },
+  {
+   "lon": 25.0568852,
+   "lat": 60.2699765,
+   "city": "Helsinki",
+   "name": "Puistolan raitti/Koudankuja (suojatie)"
+  },
+  {
+   "lon": 25.0584195,
+   "lat": 60.2101823,
+   "city": "Helsinki",
+   "name": "Viilarintie/Varikkotie/Tulppatie"
+  },
+  {
+   "lon": 25.0597411,
+   "lat": 60.2015495,
+   "city": "Helsinki",
+   "name": "Roihuvuorentie/Vuorenpeikontie/Tulisuontie"
+  },
+  {
+   "lon": 25.0599304,
+   "lat": 60.2094083,
+   "city": "Helsinki",
+   "name": null
+  },
+  {
+   "lon": 25.0754314,
+   "lat": 60.2081578,
+   "city": "Helsinki",
+   "name": "Marjaniementie/Iiris (suojatie)"
+  },
+  {
+   "lon": 25.0754441,
+   "lat": 60.2091483,
+   "city": "Helsinki",
+   "name": "Itäkatu 11 (suojatie)"
+  },
+  {
+   "lon": 25.0756732,
+   "lat": 60.2060358,
+   "city": "Helsinki",
+   "name": "Kauppakartanonkatu/Marjaniementie"
+  },
+  {
+   "lon": 25.0757724,
+   "lat": 60.2271394,
+   "city": "Helsinki",
+   "name": "Kehä I/Kontulantie"
+  },
+  {
+   "lon": 25.0763244,
+   "lat": 60.2286157,
+   "city": "Helsinki",
+   "name": "Kontulantie/Kurkimäentie"
+  },
+  {
+   "lon": 25.0767082,
+   "lat": 60.2048139,
+   "city": "Helsinki",
+   "name": "Marjaniementie 60 (suojatie)"
+  },
+  {
+   "lon": 25.0775259,
+   "lat": 60.2749284,
+   "city": "Helsinki",
+   "name": "Vanha Porvoontie (Korvasienentie-Kalkkivuorentie)"
+  },
+  {
+   "lon": 25.0778013,
+   "lat": 60.2452083,
+   "city": "Helsinki",
+   "name": "Kontulankaari 22 (suojatie)"
+  },
+  {
+   "lon": 25.078196,
+   "lat": 60.2304485,
+   "city": "Helsinki",
+   "name": "Kontulantie/Sirrikuja"
+  },
+  {
+   "lon": 25.0789447,
+   "lat": 60.20693,
+   "city": "Helsinki",
+   "name": "Kauppakartanonkatu/Asujanpolku"
+  },
+  {
+   "lon": 25.0797869,
+   "lat": 60.2319668,
+   "city": "Helsinki",
+   "name": "Kontulantie/Porttitie"
+  },
+  {
+   "lon": 25.0798145,
+   "lat": 60.261981,
+   "city": "Helsinki",
+   "name": "Huokotie/Jakomäen koulu (suojatie)"
+  },
+  {
+   "lon": 25.0806046,
+   "lat": 60.2233411,
+   "city": "Helsinki",
+   "name": "Kehä I/Myllypurontie"
+  },
+  {
+   "lon": 25.0820728,
+   "lat": 60.2362825,
+   "city": "Helsinki",
+   "name": "Kontulankaari/Keinulaudantie"
+  },
+  {
+   "lon": 25.0830623,
+   "lat": 60.2080649,
+   "city": "Helsinki",
+   "name": "Kauppakartanonkatu/Lyypekinaukio"
+  },
+  {
+   "lon": 25.0831361,
+   "lat": 60.2354044,
+   "city": "Helsinki",
+   "name": "Kontulantie/Kontulankaari"
+  },
+  {
+   "lon": 25.0843194,
+   "lat": 60.2135792,
+   "city": "Helsinki",
+   "name": "Turunlinnantie/Korsholmantie"
+  },
+  {
+   "lon": 25.0857788,
+   "lat": 60.2140826,
+   "city": "Helsinki",
+   "name": "Kehä I/Turunlinnantie"
+  },
+  {
+   "lon": 25.0862175,
+   "lat": 60.2129713,
+   "city": "Helsinki",
+   "name": "Kehä I/Itäkatu"
+  },
+  {
+   "lon": 25.0877088,
+   "lat": 60.212319,
+   "city": "Helsinki",
+   "name": "Itäväylä/Kehä I"
+  },
+  {
+   "lon": 25.0882024,
+   "lat": 60.209501,
+   "city": "Helsinki",
+   "name": "Kauppakartanonkatu/Visbynkatu"
+  },
+  {
+   "lon": 25.0886622,
+   "lat": 60.2370038,
+   "city": "Helsinki",
+   "name": "Kotikonnuntie/Kontulantie"
+  },
+  {
+   "lon": 25.0908878,
+   "lat": 60.2102469,
+   "city": "Helsinki",
+   "name": "Meripellontie/Kauppakartanonkatu"
+  },
+  {
+   "lon": 25.0910263,
+   "lat": 60.2141951,
+   "city": "Helsinki",
+   "name": "Itäväylä/Brahenlinnantie"
+  },
+  {
+   "lon": 25.0960057,
+   "lat": 60.2083887,
+   "city": "Helsinki",
+   "name": "Meripellontie/Kunnallisneuvoksentie"
+  },
+  {
+   "lon": 25.0998923,
+   "lat": 60.2078797,
+   "city": "Helsinki",
+   "name": "Meripellontie/Puotilantie"
+  },
+  {
+   "lon": 25.1033848,
+   "lat": 60.2180988,
+   "city": "Helsinki",
+   "name": "Itäväylä/Kiviportintie"
+  },
+  {
+   "lon": 25.1041059,
+   "lat": 60.208195,
+   "city": "Helsinki",
+   "name": "Meripellontie/Juorumäenkuja/venesatama"
+  },
+  {
+   "lon": 25.1073105,
+   "lat": 60.2377141,
+   "city": "Helsinki",
+   "name": "Kontulantie/Länsimäentie"
+  },
+  {
+   "lon": 25.1100181,
+   "lat": 60.2212181,
+   "city": "Helsinki",
+   "name": "Itäväylä/Vartioharjuntie/Riskutie"
+  },
+  {
+   "lon": 25.1148478,
+   "lat": 60.2238309,
+   "city": "Helsinki",
+   "name": "Itäväylä/Linnavuorentie/Linnanherrantie"
+  },
+  {
+   "lon": 25.1185594,
+   "lat": 60.2050317,
+   "city": "Helsinki",
+   "name": "Meri-Rastilantie/Karavaanikatu/Vuotie (ramppi)"
+  },
+  {
+   "lon": 25.1212084,
+   "lat": 60.227235,
+   "city": "Helsinki",
+   "name": "Itäväylä/Linnanpajankuja"
+  },
+  {
+   "lon": 25.1236798,
+   "lat": 60.2285151,
+   "city": "Helsinki",
+   "name": "Itäväylä/Länsimäentie"
+  },
+  {
+   "lon": 25.1277975,
+   "lat": 60.2308234,
+   "city": "Helsinki",
+   "name": "Itäväylä/Mellunmäentie"
+  },
+  {
+   "lon": 25.1326618,
+   "lat": 60.2326439,
+   "city": "Helsinki",
+   "name": "Itäväylä/Kallvikintie"
+  },
+  {
+   "lon": 25.1333132,
+   "lat": 60.2155745,
+   "city": "Helsinki",
+   "name": "Kallvikintie/Koukkusaarenpolu (suojatie)"
+  },
+  {
+   "lon": 25.1349713,
+   "lat": 60.2121028,
+   "city": "Helsinki",
+   "name": "Kallvikintie/Satamasaarentie (suojatie)"
+  },
+  {
+   "lon": 25.1353665,
+   "lat": 60.2059613,
+   "city": "Helsinki",
+   "name": "Vuotie/Kaivonkatsojantie"
+  },
+  {
+   "lon": 25.1360367,
+   "lat": 60.2095803,
+   "city": "Helsinki",
+   "name": "Kallvikintie/Vuosaarentie/Lokitie"
+  },
+  {
+   "lon": 25.136264,
+   "lat": 60.2041476,
+   "city": "Helsinki",
+   "name": "Kaivonkatsojantie/Kaivonkatsojan puisto (suojatie)"
+  },
+  {
+   "lon": 25.1486734,
+   "lat": 60.2074283,
+   "city": "Helsinki",
+   "name": "Vuotie/Porslahdentie"
+  },
+  {
+   "lon": 24.779694,
+   "lat": 60.254758,
+   "city": "Vantaa",
+   "name": "Rajatorpantie / Linnaistentie"
+  },
+  {
+   "lon": 24.786736,
+   "lat": 60.287139,
+   "city": "Vantaa",
+   "name": "Vihdintie / Askistontie"
+  },
+  {
+   "lon": 24.800506,
+   "lat": 60.255189,
+   "city": "Vantaa",
+   "name": "Rajatorpantie / Terhotie"
+  },
+  {
+   "lon": 24.803542,
+   "lat": 60.276661,
+   "city": "Vantaa",
+   "name": "Vihdintie / Tiilipojanlenkki"
+  },
+  {
+   "lon": 24.803992,
+   "lat": 60.274981,
+   "city": "Vantaa",
+   "name": "Vihdintie / Kehä III ramppi, pohjoinen"
+  },
+  {
+   "lon": 24.804808,
+   "lat": 60.272767,
+   "city": "Vantaa",
+   "name": "Vihdintie / Kehä III ramppi, etelä"
+  },
+  {
+   "lon": 24.804814,
+   "lat": 60.255692,
+   "city": "Vantaa",
+   "name": "Mantelikuja / Rajatorpantie"
+  },
+  {
+   "lon": 24.805408,
+   "lat": 60.271,
+   "city": "Vantaa",
+   "name": "Vihdintie / Ainontie / Martinkyläntie"
+  },
+  {
+   "lon": 24.809658,
+   "lat": 60.255208,
+   "city": "Vantaa",
+   "name": "Rajatorpantie / Pähkinärinteentie"
+  },
+  {
+   "lon": 24.810408,
+   "lat": 60.263989,
+   "city": "Vantaa",
+   "name": "Lammaslammentie / Luhtitie"
+  },
+  {
+   "lon": 24.814897,
+   "lat": 60.254414,
+   "city": "Vantaa",
+   "name": "Rajatorpantie / Koivuvaarankuja"
+  },
+  {
+   "lon": 24.8167326,
+   "lat": 60.2664042,
+   "city": "Vantaa",
+   "name": "Luhtitie / Varistontie"
+  },
+  {
+   "lon": 24.817242,
+   "lat": 60.275742,
+   "city": "Vantaa",
+   "name": "Martinkyläntie / Riihimiehentie"
+  },
+  {
+   "lon": 24.818906,
+   "lat": 60.276517,
+   "city": "Vantaa",
+   "name": "Martinkyläntie / Riihitontuntie"
+  },
+  {
+   "lon": 24.821522,
+   "lat": 60.253833,
+   "city": "Vantaa",
+   "name": "Rajatorpantie / Vaakatie"
+  },
+  {
+   "lon": 24.824119,
+   "lat": 60.254483,
+   "city": "Vantaa",
+   "name": "Vihdintie / Rajatorpantie"
+  },
+  {
+   "lon": 24.826189,
+   "lat": 60.255367,
+   "city": "Vantaa",
+   "name": "Rajatorpantie / Vapaalantie"
+  },
+  {
+   "lon": 24.82795,
+   "lat": 60.255883,
+   "city": "Vantaa",
+   "name": "Rajatorpantie / Torpantie"
+  },
+  {
+   "lon": 24.835306,
+   "lat": 60.258856,
+   "city": "Vantaa",
+   "name": "Rajatorpantie / Lastutie"
+  },
+  {
+   "lon": 24.835806,
+   "lat": 60.281825,
+   "city": "Vantaa",
+   "name": "Raappavuorentie / Martinkyläntie"
+  },
+  {
+   "lon": 24.841092,
+   "lat": 60.269669,
+   "city": "Vantaa",
+   "name": "Raappavuorentie / Uomatie"
+  },
+  {
+   "lon": 24.8422092,
+   "lat": 60.3079744,
+   "city": "Vantaa",
+   "name": "Tikkurilantie / VT3-ramppi, länsi"
+  },
+  {
+   "lon": 24.842994,
+   "lat": 60.263469,
+   "city": "Vantaa",
+   "name": "Raappavuorentie / Vaskivuorentie"
+  },
+  {
+   "lon": 24.843244,
+   "lat": 60.259269,
+   "city": "Vantaa",
+   "name": "Rajatorpantie / Raappavuorentie"
+  },
+  {
+   "lon": 24.846811,
+   "lat": 60.3092011,
+   "city": "Vantaa",
+   "name": "Tikkurilantie / VT3-ramppi, itä"
+  },
+  {
+   "lon": 24.847975,
+   "lat": 60.316408,
+   "city": "Vantaa",
+   "name": "Ruusukvartsinkatu / Keimolantie"
+  },
+  {
+   "lon": 24.848789,
+   "lat": 60.263619,
+   "city": "Vantaa",
+   "name": "Vaskivuorentie / Ruukkukuja"
+  },
+  {
+   "lon": 24.849686,
+   "lat": 60.285092,
+   "city": "Vantaa",
+   "name": "Martinkyläntie / Kivivuorentie"
+  },
+  {
+   "lon": 24.849836,
+   "lat": 60.259114,
+   "city": "Vantaa",
+   "name": "Rajatorpantie / Kilterinkaari, länsi"
+  },
+  {
+   "lon": 24.8500765,
+   "lat": 60.3100911,
+   "city": "Vantaa",
+   "name": "Tikkurilantie / Vantaankoskentie"
+  },
+  {
+   "lon": 24.851356,
+   "lat": 60.259156,
+   "city": "Vantaa",
+   "name": "Rajatorpantie / Iskostie"
+  },
+  {
+   "lon": 24.8518,
+   "lat": 60.285872,
+   "city": "Vantaa",
+   "name": "Martinkyläntie / Sanomatie"
+  },
+  {
+   "lon": 24.852011,
+   "lat": 60.282683,
+   "city": "Vantaa",
+   "name": "Laajavuorentie / Kivivuorentie"
+  },
+  {
+   "lon": 24.8529646,
+   "lat": 60.2766952,
+   "city": "Vantaa",
+   "name": "Martinlaaksontie / Bussiterminaali"
+  },
+  {
+   "lon": 24.8531883,
+   "lat": 60.3115006,
+   "city": "Vantaa",
+   "name": "Tikkurilantie / Mestarintie"
+  },
+  {
+   "lon": 24.854047,
+   "lat": 60.2637095,
+   "city": "Vantaa",
+   "name": "Vaskivuorentie / Myyrmäentie"
+  },
+  {
+   "lon": 24.8541407,
+   "lat": 60.2765509,
+   "city": "Vantaa",
+   "name": "Martinlaaksontie / Kivivuorentie"
+  },
+  {
+   "lon": 24.854272,
+   "lat": 60.259189,
+   "city": "Vantaa",
+   "name": "Rajatorpantie / Kilterinkaari, itä"
+  },
+  {
+   "lon": 24.8563781,
+   "lat": 60.2637319,
+   "city": "Vantaa",
+   "name": "Jönsaksentie / Vaskivuorentie"
+  },
+  {
+   "lon": 24.8564425,
+   "lat": 60.2628065,
+   "city": "Vantaa",
+   "name": "Jönsaksentie / Liesikuja"
+  },
+  {
+   "lon": 24.856558,
+   "lat": 60.2611,
+   "city": "Vantaa",
+   "name": "Punamultatori / Bussiterminaali"
+  },
+  {
+   "lon": 24.856681,
+   "lat": 60.260072,
+   "city": "Vantaa",
+   "name": "Jönsaksentie / Punamultakuja"
+  },
+  {
+   "lon": 24.85975,
+   "lat": 60.287308,
+   "city": "Vantaa",
+   "name": "Martinkyläntie / VT3 ramppi, länsi"
+  },
+  {
+   "lon": 24.860511,
+   "lat": 60.294892,
+   "city": "Vantaa",
+   "name": "Vanha Nurmijärventie / Kehä III ramppi, pohjoinen"
+  },
+  {
+   "lon": 24.8624,
+   "lat": 60.293689,
+   "city": "Vantaa",
+   "name": "Vanha Nurmijärventie / Kehä III ramppi, etelä"
+  },
+  {
+   "lon": 24.863817,
+   "lat": 60.288692,
+   "city": "Vantaa",
+   "name": "Martinkyläntie / VT3 ramppi, itä"
+  },
+  {
+   "lon": 24.864731,
+   "lat": 60.2649,
+   "city": "Vantaa",
+   "name": "Vaskivuorentie / Louhelantie"
+  },
+  {
+   "lon": 24.8647585,
+   "lat": 60.2656571,
+   "city": "Vantaa",
+   "name": "Louhelantie / jk-valot"
+  },
+  {
+   "lon": 24.866667,
+   "lat": 60.290894,
+   "city": "Vantaa",
+   "name": "Martinkyläntie / Kauppalaivurintie"
+  },
+  {
+   "lon": 24.870926,
+   "lat": 60.2781619,
+   "city": "Vantaa",
+   "name": "Martinlaaksontie / VT3-ramppi itä"
+  },
+  {
+   "lon": 24.871117,
+   "lat": 60.262128,
+   "city": "Vantaa",
+   "name": "Vanha Kaarelantie / Ukonkivenpolku"
+  },
+  {
+   "lon": 24.871422,
+   "lat": 60.262842,
+   "city": "Vantaa",
+   "name": "Vaskivuorentie / Vanha Kaarelantie / Kaivokselantie"
+  },
+  {
+   "lon": 24.872175,
+   "lat": 60.257461,
+   "city": "Vantaa",
+   "name": "Vanha Kaarelantie / Vaskipellontie"
+  },
+  {
+   "lon": 24.872714,
+   "lat": 60.282383,
+   "city": "Vantaa",
+   "name": "Vantaanlaaksontie / Emännänkuja"
+  },
+  {
+   "lon": 24.872808,
+   "lat": 60.260986,
+   "city": "Vantaa",
+   "name": "Vanha Kaarelantie / LIDL-Liittymä"
+  },
+  {
+   "lon": 24.8839698,
+   "lat": 60.3001432,
+   "city": "Vantaa",
+   "name": "Katriinantie / Turvalaaksontie / Juhanilantie"
+  },
+  {
+   "lon": 24.883975,
+   "lat": 60.297503,
+   "city": "Vantaa",
+   "name": "Katriinantie / Kehä III ramppi, etelä"
+  },
+  {
+   "lon": 24.884308,
+   "lat": 60.298814,
+   "city": "Vantaa",
+   "name": "Katriinantie / Kehä III ramppi, pohjoinen"
+  },
+  {
+   "lon": 24.9076336,
+   "lat": 60.3037317,
+   "city": "Vantaa",
+   "name": "Tikkurilantie / Nuolitie"
+  },
+  {
+   "lon": 24.910681,
+   "lat": 60.284683,
+   "city": "Vantaa",
+   "name": "Ylästöntie jk-valot / Hakasuontie"
+  },
+  {
+   "lon": 24.911937,
+   "lat": 60.3036542,
+   "city": "Vantaa",
+   "name": "Tikkurilantie / Tahkotie"
+  },
+  {
+   "lon": 24.914572,
+   "lat": 60.284158,
+   "city": "Vantaa",
+   "name": "Ylästöntie jk-valot / Vanhatie"
+  },
+  {
+   "lon": 24.9167666,
+   "lat": 60.2946591,
+   "city": "Vantaa",
+   "name": "Tulkintie / Caravellentie"
+  },
+  {
+   "lon": 24.916881,
+   "lat": 60.297911,
+   "city": "Vantaa",
+   "name": "Caravellentie / Kehä III ramppi, pohjoinen"
+  },
+  {
+   "lon": 24.916903,
+   "lat": 60.296275,
+   "city": "Vantaa",
+   "name": "Caravellentie / Kehä III ramppi, etelä"
+  },
+  {
+   "lon": 24.9328817,
+   "lat": 60.300822,
+   "city": "Vantaa",
+   "name": "Tikkurilantie / Osumakuja"
+  },
+  {
+   "lon": 24.9399852,
+   "lat": 60.290005,
+   "city": "Vantaa",
+   "name": "Tulkintie / Krakanpuisto jk-valot"
+  },
+  {
+   "lon": 24.9447,
+   "lat": 60.289842,
+   "city": "Vantaa",
+   "name": "Väinö Tannerintie / Pakkalantie"
+  },
+  {
+   "lon": 24.949186,
+   "lat": 60.289819,
+   "city": "Vantaa",
+   "name": "Väinö Tannerintie / Pakkalan Puistotie"
+  },
+  {
+   "lon": 24.951319,
+   "lat": 60.302333,
+   "city": "Vantaa",
+   "name": "Tikkurilantie / Turbiinintie"
+  },
+  {
+   "lon": 24.958448,
+   "lat": 60.295979,
+   "city": "Vantaa",
+   "name": "Lentoasemantie / Kehä III ramppi, pohjoinen"
+  },
+  {
+   "lon": 24.9586,
+   "lat": 60.301861,
+   "city": "Vantaa",
+   "name": "Tikkurilantie / Lentoasemantie ramppi, länsi"
+  },
+  {
+   "lon": 24.959022,
+   "lat": 60.278103,
+   "city": "Vantaa",
+   "name": "Tilkuntie vuorotteluvalot"
+  },
+  {
+   "lon": 24.959736,
+   "lat": 60.293235,
+   "city": "Vantaa",
+   "name": "Lentoasemantie / Kehä III ramppi, etelä"
+  },
+  {
+   "lon": 24.959919,
+   "lat": 60.289908,
+   "city": "Vantaa",
+   "name": "Tasetie / Lentoasemantie / Väinö Tannerin Tie"
+  },
+  {
+   "lon": 24.961422,
+   "lat": 60.308294,
+   "city": "Vantaa",
+   "name": "Teknikontie / Tietotie"
+  },
+  {
+   "lon": 24.961919,
+   "lat": 60.289833,
+   "city": "Vantaa",
+   "name": "Tasetie / Vantaaportinkatu"
+  },
+  {
+   "lon": 24.962308,
+   "lat": 60.2853,
+   "city": "Vantaa",
+   "name": "Ylästöntie / Veromiehentie"
+  },
+  {
+   "lon": 24.963319,
+   "lat": 60.307519,
+   "city": "Vantaa",
+   "name": "Ilmakeha / Lentoasemantie ramppi, länsi"
+  },
+  {
+   "lon": 24.963411,
+   "lat": 60.301253,
+   "city": "Vantaa",
+   "name": "Tikkurilantie / Lentoasemantie ramppi, Itä"
+  },
+  {
+   "lon": 24.967328,
+   "lat": 60.289819,
+   "city": "Vantaa",
+   "name": "Tasetie / Rälssitie"
+  },
+  {
+   "lon": 24.968061,
+   "lat": 60.306506,
+   "city": "Vantaa",
+   "name": "Ilmakehä / Lentoasemantie ramppi, itä"
+  },
+  {
+   "lon": 24.969558,
+   "lat": 60.2725,
+   "city": "Vantaa",
+   "name": "Tammiston kauppatie / Tammimäentie"
+  },
+  {
+   "lon": 24.969839,
+   "lat": 60.270186,
+   "city": "Vantaa",
+   "name": "Tammiston kauppatie / Tammistonkatu"
+  },
+  {
+   "lon": 24.970397,
+   "lat": 60.274267,
+   "city": "Vantaa",
+   "name": "Tammiston kauppatie / Säätökuja"
+  },
+  {
+   "lon": 24.970508,
+   "lat": 60.277344,
+   "city": "Vantaa",
+   "name": "Tammiston kauppatie / Sähkötie"
+  },
+  {
+   "lon": 24.971794,
+   "lat": 60.306167,
+   "city": "Vantaa",
+   "name": "Ilmakehä / Teknobulevardi"
+  },
+  {
+   "lon": 24.972028,
+   "lat": 60.280475,
+   "city": "Vantaa",
+   "name": "Tammiston kauppatie / Bauhaus"
+  },
+  {
+   "lon": 24.972681,
+   "lat": 60.296989,
+   "city": "Vantaa",
+   "name": "Tikkurilantie / Rälssitie"
+  },
+  {
+   "lon": 24.972875,
+   "lat": 60.266994,
+   "city": "Vantaa",
+   "name": "Tammiston kauppatie / Kirkkotie"
+  },
+  {
+   "lon": 24.972908,
+   "lat": 60.265575,
+   "city": "Vantaa",
+   "name": "Tammiston kauppatie / Tapaninkyläntie"
+  },
+  {
+   "lon": 24.973808,
+   "lat": 60.282447,
+   "city": "Vantaa",
+   "name": "Tammiston kauppatie / Ylästöntie"
+  },
+  {
+   "lon": 24.974464,
+   "lat": 60.283667,
+   "city": "Vantaa",
+   "name": "Tammiston kauppatie / Valimokuja"
+  },
+  {
+   "lon": 24.974644,
+   "lat": 60.286486,
+   "city": "Vantaa",
+   "name": "Tammiston kauppatie / Harkkokuja"
+  },
+  {
+   "lon": 24.974803,
+   "lat": 60.305692,
+   "city": "Vantaa",
+   "name": "Ilmakehä / Ilmailutie"
+  },
+  {
+   "lon": 24.982506,
+   "lat": 60.302239,
+   "city": "Vantaa",
+   "name": "Ilmakehä / Junkersintie"
+  },
+  {
+   "lon": 24.991122,
+   "lat": 60.300478,
+   "city": "Vantaa",
+   "name": "Tuusulanväylä / Ilmakehä"
+  },
+  {
+   "lon": 24.992044,
+   "lat": 60.2883,
+   "city": "Vantaa",
+   "name": "Kuriirintien jk-valot"
+  },
+  {
+   "lon": 24.997147,
+   "lat": 60.292514,
+   "city": "Vantaa",
+   "name": "Tikkurilantie / Niittytie"
+  },
+  {
+   "lon": 24.999117,
+   "lat": 60.307311,
+   "city": "Vantaa",
+   "name": "Tuusulantie / Läntisen Valkoisenlähteentie"
+  },
+  {
+   "lon": 24.999328,
+   "lat": 60.316178,
+   "city": "Vantaa",
+   "name": "Tuusulantie / Simonkyläntie"
+  },
+  {
+   "lon": 25.0129193,
+   "lat": 60.3230472,
+   "city": "Vantaa",
+   "name": "Koivukylänväylä / Laaksotie"
+  },
+  {
+   "lon": 25.016072,
+   "lat": 60.293961,
+   "city": "Vantaa",
+   "name": "Peltolantie / Osmankäämintie"
+  },
+  {
+   "lon": 25.017581,
+   "lat": 60.323589,
+   "city": "Vantaa",
+   "name": "Koivukylänväylä / Ilolantie"
+  },
+  {
+   "lon": 25.022494,
+   "lat": 60.302086,
+   "city": "Vantaa",
+   "name": "Osmankäämintie / Valkoisenlähteentie"
+  },
+  {
+   "lon": 25.0228371,
+   "lat": 60.3071382,
+   "city": "Vantaa",
+   "name": "Simonkalliontie / Sammalleimunpuisto jk-valot"
+  },
+  {
+   "lon": 25.024347,
+   "lat": 60.306072,
+   "city": "Vantaa",
+   "name": "Koivukyläntie / Simonkalliontie"
+  },
+  {
+   "lon": 25.0252531,
+   "lat": 60.3075697,
+   "city": "Vantaa",
+   "name": "Koivukyläntie / Simonkallionpolku jk-valot"
+  },
+  {
+   "lon": 25.02565,
+   "lat": 60.324503,
+   "city": "Vantaa",
+   "name": "Koivukylänväylä / Epinkoskentie"
+  },
+  {
+   "lon": 25.028553,
+   "lat": 60.281461,
+   "city": "Vantaa",
+   "name": "Tikkuritie / Kehä III ramppi, etelä"
+  },
+  {
+   "lon": 25.030725,
+   "lat": 60.310922,
+   "city": "Vantaa",
+   "name": "Koivukyläntie / Leinikkitie"
+  },
+  {
+   "lon": 25.0321702,
+   "lat": 60.2928691,
+   "city": "Vantaa",
+   "name": "Talvikkitie / Unikkotie"
+  },
+  {
+   "lon": 25.0326215,
+   "lat": 60.2935936,
+   "city": "Vantaa",
+   "name": "Talvikkitie / Peltolantie"
+  },
+  {
+   "lon": 25.033128,
+   "lat": 60.2945,
+   "city": "Vantaa",
+   "name": "Talvikkitie / Lehdokkitie"
+  },
+  {
+   "lon": 25.033456,
+   "lat": 60.288164,
+   "city": "Vantaa",
+   "name": "Kielotie / Horsmakuja"
+  },
+  {
+   "lon": 25.033461,
+   "lat": 60.299572,
+   "city": "Vantaa",
+   "name": "Talvikkitie / Valkoisenlähteentie"
+  },
+  {
+   "lon": 25.033531,
+   "lat": 60.307306,
+   "city": "Vantaa",
+   "name": "Talvikkitie / Talkootie"
+  },
+  {
+   "lon": 25.034547,
+   "lat": 60.297119,
+   "city": "Vantaa",
+   "name": "Talvikkitie / Lummetie"
+  },
+  {
+   "lon": 25.035419,
+   "lat": 60.289408,
+   "city": "Vantaa",
+   "name": "Kielotie / Tikkurilantie"
+  },
+  {
+   "lon": 25.0388855,
+   "lat": 60.3117371,
+   "city": "Vantaa",
+   "name": "Talvikkitie / Uusiniityntie"
+  },
+  {
+   "lon": 25.039408,
+   "lat": 60.296297,
+   "city": "Vantaa",
+   "name": "Lummetie / Kielotie"
+  },
+  {
+   "lon": 25.040181,
+   "lat": 60.289983,
+   "city": "Vantaa",
+   "name": "Tikkurilantie / Ratatie"
+  },
+  {
+   "lon": 25.040992,
+   "lat": 60.299517,
+   "city": "Vantaa",
+   "name": "Valkoisenlähteentie / Kielotie"
+  },
+  {
+   "lon": 25.0418501,
+   "lat": 60.3137549,
+   "city": "Vantaa",
+   "name": "Talvikkitie / Tarhurintie"
+  },
+  {
+   "lon": 25.046025,
+   "lat": 60.290481,
+   "city": "Vantaa",
+   "name": "Tikkurilantie / Kuninkaalantie"
+  },
+  {
+   "lon": 25.050797,
+   "lat": 60.298314,
+   "city": "Vantaa",
+   "name": "Valkoisenlähteentie / Jokiniemenkatu"
+  },
+  {
+   "lon": 25.050886,
+   "lat": 60.29285,
+   "city": "Vantaa",
+   "name": "Tikkurilantie / Jokiniemenkatu"
+  },
+  {
+   "lon": 25.051656,
+   "lat": 60.320206,
+   "city": "Vantaa",
+   "name": "Talvikkitie / Koivukylänväylä"
+  },
+  {
+   "lon": 25.054347,
+   "lat": 60.356897,
+   "city": "Vantaa",
+   "name": "Lehmustontie / Vierumäen koulu"
+  },
+  {
+   "lon": 25.054742,
+   "lat": 60.322881,
+   "city": "Vantaa",
+   "name": "Asolanväylä / Norkkokuja"
+  },
+  {
+   "lon": 25.054867,
+   "lat": 60.298908,
+   "city": "Vantaa",
+   "name": "Valkoisenlähteentie / Urheilutie"
+  },
+  {
+   "lon": 25.055853,
+   "lat": 60.323933,
+   "city": "Vantaa",
+   "name": "Asolanväylä / Koivukylän puistotie"
+  },
+  {
+   "lon": 25.057128,
+   "lat": 60.325267,
+   "city": "Vantaa",
+   "name": "Asolanväylä / Ojalehdonkuja"
+  },
+  {
+   "lon": 25.058308,
+   "lat": 60.326647,
+   "city": "Vantaa",
+   "name": "Asolanväylä / Peijaksentie"
+  },
+  {
+   "lon": 25.0597195,
+   "lat": 60.3280191,
+   "city": "Vantaa",
+   "name": "Asolanväylä / Kuusitie / Viidakkokuja"
+  },
+  {
+   "lon": 25.060178,
+   "lat": 60.295375,
+   "city": "Vantaa",
+   "name": "Tikkurilantie / Urheilutie"
+  },
+  {
+   "lon": 25.060825,
+   "lat": 60.318753,
+   "city": "Vantaa",
+   "name": "Koivukylänväylä / Kytötie"
+  },
+  {
+   "lon": 25.061764,
+   "lat": 60.329525,
+   "city": "Vantaa",
+   "name": "Asolanväylä / Sairaalankatu"
+  },
+  {
+   "lon": 25.0646677,
+   "lat": 60.3348492,
+   "city": "Vantaa",
+   "name": "Asolanväylä / Valtimotie"
+  },
+  {
+   "lon": 25.072203,
+   "lat": 60.315133,
+   "city": "Vantaa",
+   "name": "Koivukylanväylä / Hanabölentie"
+  },
+  {
+   "lon": 25.072706,
+   "lat": 60.330239,
+   "city": "Vantaa",
+   "name": "Rekolantie / Laurintie"
+  },
+  {
+   "lon": 25.077967,
+   "lat": 60.275522,
+   "city": "Vantaa",
+   "name": "Vanha Porvoontie / Kehä III ramppi, etelä"
+  },
+  {
+   "lon": 25.079336,
+   "lat": 60.279044,
+   "city": "Vantaa",
+   "name": "Vanha Porvoontie / Kuusikkotie"
+  },
+  {
+   "lon": 25.080703,
+   "lat": 60.287431,
+   "city": "Vantaa",
+   "name": "Vanha Porvoontie / Tikkurilantie"
+  },
+  {
+   "lon": 25.081758,
+   "lat": 60.289883,
+   "city": "Vantaa",
+   "name": "Vanha Porvoontie / Honkanummen hautausmaa"
+  },
+  {
+   "lon": 25.0882349,
+   "lat": 60.2816094,
+   "city": "Vantaa",
+   "name": "Kyytitie / Porttisuontie"
+  },
+  {
+   "lon": 25.090211,
+   "lat": 60.345186,
+   "city": "Vantaa",
+   "name": "Kulomäentie / Siilireitti"
+  },
+  {
+   "lon": 25.0946615,
+   "lat": 60.309742,
+   "city": "Vantaa",
+   "name": "Koivukylänväylä / Trukkikuja"
+  },
+  {
+   "lon": 25.095419,
+   "lat": 60.309047,
+   "city": "Vantaa",
+   "name": "Koivukylänväylä / Vanha Porvoontie"
+  },
+  {
+   "lon": 25.0959458,
+   "lat": 60.3448582,
+   "city": "Vantaa",
+   "name": "Kulomäentie / Sadepolku jk-valot"
+  },
+  {
+   "lon": 25.098069,
+   "lat": 60.344511,
+   "city": "Vantaa",
+   "name": "Kulomäentie / Venuksentie"
+  },
+  {
+   "lon": 25.0982118,
+   "lat": 60.3070758,
+   "city": "Vantaa",
+   "name": "Koivukylänväylä / VT4-ramppi, länsi"
+  },
+  {
+   "lon": 25.0997464,
+   "lat": 60.2928638,
+   "city": "Vantaa",
+   "name": "Lahdentie / Hakkila jk-valot"
+  },
+  {
+   "lon": 25.100322,
+   "lat": 60.267844,
+   "city": "Vantaa",
+   "name": "Hakunilantie / Kehä III ramppi, etelä"
+  },
+  {
+   "lon": 25.100958,
+   "lat": 60.3058477,
+   "city": "Vantaa",
+   "name": "Koivukylänväylä / VT4-ramppi, itä"
+  },
+  {
+   "lon": 25.1015054,
+   "lat": 60.2809124,
+   "city": "Vantaa",
+   "name": "Lahdentie / Kaskelanrinne jk-valot"
+  },
+  {
+   "lon": 25.101889,
+   "lat": 60.297117,
+   "city": "Vantaa",
+   "name": "Lahdentie / Itäinen Valkoisenlähteentie"
+  },
+  {
+   "lon": 25.101889,
+   "lat": 60.344461,
+   "city": "Vantaa",
+   "name": "Kulomäentie / Pihkalantie / Murmelikuja"
+  },
+  {
+   "lon": 25.102806,
+   "lat": 60.269356,
+   "city": "Vantaa",
+   "name": "Hakunilantie / Kehä III ramppi, pohjoinen"
+  },
+  {
+   "lon": 25.1040153,
+   "lat": 60.3023637,
+   "city": "Vantaa",
+   "name": "Lahdentie / Mittalinja jk-valot"
+  },
+  {
+   "lon": 25.106839,
+   "lat": 60.278544,
+   "city": "Vantaa",
+   "name": "Hakunilantie / Kyytitie"
+  },
+  {
+   "lon": 25.118658,
+   "lat": 60.345042,
+   "city": "Vantaa",
+   "name": "Kulomäentie / Sorvatie / Kiiltomadontie"
+  },
+  {
+   "lon": 25.130161,
+   "lat": 60.254647,
+   "city": "Vantaa",
+   "name": "Länsisalmentie / Kehä III"
+  }
+ ]
+}

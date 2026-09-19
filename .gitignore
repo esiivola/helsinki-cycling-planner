@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.venv/
+.DS_Store
+__pycache__/
+.pytest_cache/
+.vite/
+# Build inputs: the OSM extract and the elevation tiles, ~870 MB. Kept here so a
+# rebuild needs no arguments, but never committed -- `public/graph/` holds the
+# outputs, which is what deploying actually needs.
+data/
+# The Maanmittauslaitos API key, kept out of the repository.
+tools/.mml-key

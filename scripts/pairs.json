@@ -1,0 +1,12 @@
+[
+ {"name": "Helsinki ctr -> Espoo Tapiola",       "from": [24.9414, 60.1710], "to": [24.8050, 60.1760]},
+ {"name": "Helsinki ctr -> Vantaa Tikkurila",    "from": [24.9414, 60.1710], "to": [25.0440, 60.2925]},
+ {"name": "Helsinki ctr -> Kauniainen",          "from": [24.9414, 60.1710], "to": [24.7290, 60.2115]},
+ {"name": "Espoo Tapiola -> Vantaa Myyrmaki",    "from": [24.8050, 60.1760], "to": [24.8540, 60.2610]},
+ {"name": "Espoo Leppavaara -> Kauniainen",      "from": [24.8130, 60.2190], "to": [24.7290, 60.2115]},
+ {"name": "Vantaa Aviapolis -> Espoo Keilaniemi","from": [24.9560, 60.3170], "to": [24.8330, 60.1750]},
+ {"name": "Kauniainen -> Vantaa Tikkurila",      "from": [24.7290, 60.2115], "to": [25.0440, 60.2925]},
+ {"name": "Espoo Kauklahti -> Helsinki Vuosaari","from": [24.5530, 60.1900], "to": [25.1440, 60.2070]},
+ {"name": "Vantaa Korso -> Helsinki Kamppi",     "from": [25.0870, 60.3540], "to": [24.9315, 60.1686]},
+ {"name": "Helsinki Ostersundom -> Espoo Espoonlahti", "from": [25.2100, 60.2620], "to": [24.6550, 60.1560]}
+]

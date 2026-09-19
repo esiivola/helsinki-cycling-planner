@@ -1,0 +1,16 @@
+{
+ "version": 1,
+ "edge_count": 424987,
+ "source": "Helsinki/RYA, talvihoidon priorisoitu reitist\u00f6 (CC BY 4.0)",
+ "reach_m": 14.0,
+ "bearing_degrees": 35.0,
+ "claim_share": 0.4,
+ "bytes": 424987,
+ "layout": {
+  "edge_winter": {
+   "offset": 0,
+   "count": 424987,
+   "type": "uint8"
+  }
+ }
+}

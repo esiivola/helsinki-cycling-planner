@@ -1,0 +1,187 @@
+{
+  "attribution": "OpenStreetMap contributors; traffic signals also Helsinki, Espoo and Vantaa (CC BY 4.0)",
+  "barrier_inside_edges": 11349,
+  "barrier_node_count": 1042,
+  "bearing_steps": 256,
+  "bounds": [
+    24.4000087,
+    60.0500069,
+    25.3998912,
+    60.4499962
+  ],
+  "bytes": 21477712,
+  "coordinate_scale": 10000000,
+  "cost": {
+    "crossing_delay_s": 2.0,
+    "network_bonus": 0.9,
+    "signal_delay_s": 30.0,
+    "slow_speed_factor": 0.65,
+    "turn_degrees": 40.0,
+    "turn_left_factor": 1.5,
+    "turn_merge_m": 25.0,
+    "turn_penalty_s": 10.0
+  },
+  "dedicated_edge_count": 82027,
+  "edge_count": 424987,
+  "layout": {
+    "bearing_a": {
+      "count": 424987,
+      "encoding": "uint8 heading leaving a towards b, in 360/256 degree steps",
+      "offset": 15034088,
+      "type": "uint8"
+    },
+    "bearing_b": {
+      "count": 424987,
+      "encoding": "uint8 heading arriving at b from a, in 360/256 degree steps",
+      "offset": 15459076,
+      "type": "uint8"
+    },
+    "degree": {
+      "count": 323584,
+      "encoding": "uint8 arms meeting at the junction, capped at 255",
+      "offset": 2912256,
+      "type": "uint8"
+    },
+    "edge_a": {
+      "count": 424987,
+      "encoding": "uint32 node index",
+      "offset": 3235840,
+      "type": "uint32"
+    },
+    "edge_access": {
+      "count": 424987,
+      "encoding": "uint8 bit 0: rideable a to b, bit 1: rideable b to a",
+      "offset": 14184112,
+      "type": "uint8"
+    },
+    "edge_b": {
+      "count": 424987,
+      "encoding": "uint32 node index",
+      "offset": 4935788,
+      "type": "uint32"
+    },
+    "edge_barriers": {
+      "count": 424987,
+      "encoding": "uint8 barriers passed inside this edge, weighted 1 slow and 2 stop",
+      "offset": 10885616,
+      "type": "uint8"
+    },
+    "edge_class": {
+      "count": 424987,
+      "encoding": "uint8 bit 0: built for bicycles, bit 1: carriageway with a path beside it, bit 2: on a signposted cycle route",
+      "offset": 14609100,
+      "type": "uint8"
+    },
+    "edge_crossings": {
+      "count": 424987,
+      "encoding": "uint8 uncontrolled crossings passed inside this edge",
+      "offset": 12059176,
+      "type": "uint8"
+    },
+    "edge_grade": {
+      "count": 424987,
+      "encoding": "uint8 roughness of the unpaved part: 0 paved, 1 firm, 2 rough, 3 loose",
+      "offset": 10460628,
+      "type": "uint8"
+    },
+    "edge_length": {
+      "count": 424987,
+      "encoding": "uint16 decimetres",
+      "offset": 6635736,
+      "type": "uint16"
+    },
+    "edge_lit": {
+      "count": 424987,
+      "encoding": "uint16 decimetres explicitly tagged as lit",
+      "offset": 9610652,
+      "type": "uint16"
+    },
+    "edge_name": {
+      "count": 424987,
+      "encoding": "uint32 index into name_blob's newline-separated list; 0 is unnamed",
+      "offset": 12484164,
+      "type": "uint32"
+    },
+    "edge_shared": {
+      "count": 424987,
+      "encoding": "uint16 decimetres paved but shared with people on foot; disjoint from edge_unpaved, and the two together are the metres ridden at the slow-surface factor",
+      "offset": 8335688,
+      "type": "uint16"
+    },
+    "edge_signals": {
+      "count": 424987,
+      "encoding": "uint8 traffic signals passed inside this edge",
+      "offset": 11634188,
+      "type": "uint8"
+    },
+    "edge_traffic": {
+      "count": 424987,
+      "encoding": "uint8 motor traffic shared with: 0 none, 1 calm, 2 moderate, 3 busy, 4 arterial",
+      "offset": 9185664,
+      "type": "uint8"
+    },
+    "edge_unpaved": {
+      "count": 424987,
+      "encoding": "uint16 decimetres ridden on a rough surface",
+      "offset": 7485712,
+      "type": "uint16"
+    },
+    "lat": {
+      "count": 323584,
+      "encoding": "int32 degrees * 1e7",
+      "offset": 1294336,
+      "type": "int32"
+    },
+    "lon": {
+      "count": 323584,
+      "encoding": "int32 degrees * 1e7",
+      "offset": 0,
+      "type": "int32"
+    },
+    "name_blob": {
+      "count": 244432,
+      "encoding": "uint8 utf-8 street names, newline separated, the first one empty",
+      "offset": 21233280,
+      "type": "uint8"
+    },
+    "node_barrier": {
+      "count": 323584,
+      "encoding": "uint8 barrier at the junction: 0 none, 1 squeeze past, 2 stop and put a foot down",
+      "offset": 11310604,
+      "type": "uint8"
+    },
+    "node_kind": {
+      "count": 323584,
+      "encoding": "uint8 junction: 0 plain, 1 uncontrolled crossing, 2 traffic signal, 3 signal crossed in two stages",
+      "offset": 2588672,
+      "type": "uint8"
+    },
+    "shape_count": {
+      "count": 424987,
+      "encoding": "uint16 interior points on this edge",
+      "offset": 15884064,
+      "type": "uint16"
+    },
+    "shape_delta": {
+      "count": 1799696,
+      "encoding": "uint16 zigzag deltas, lon and lat interleaved, degrees * 1e6; the first point of each edge is relative to node a, the rest to the previous point",
+      "offset": 16734040,
+      "type": "uint16"
+    },
+    "shape_kind": {
+      "count": 899848,
+      "encoding": "uint8 kind of each shape point, as node_kind",
+      "offset": 20333432,
+      "type": "uint8"
+    }
+  },
+  "name_count": 17760,
+  "network_edge_count": 8820,
+  "node_count": 323584,
+  "oneway_edge_count": 26459,
+  "shape_point_count": 899848,
+  "shape_scale": 1000000,
+  "sidepath_edge_count": 60136,
+  "two_stage_signal_count": 412,
+  "version": 9
+}

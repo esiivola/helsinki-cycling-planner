@@ -1,0 +1,33 @@
+{
+ "version": 3,
+ "edge_count": 424987,
+ "node_count": 323584,
+ "shape_point_count": 899848,
+ "scale": 10,
+ "source": "Maanmittauslaitos, korkeusmalli 10 m (CC BY 4.0)",
+ "sampled_m": 25.0,
+ "threshold_m": 2.0,
+ "bytes": 3246964,
+ "layout": {
+  "edge_ascent": {
+   "offset": 0,
+   "count": 424987,
+   "type": "uint16"
+  },
+  "edge_descent": {
+   "offset": 849974,
+   "count": 424987,
+   "type": "uint16"
+  },
+  "node_height": {
+   "offset": 1699948,
+   "count": 323584,
+   "type": "uint16"
+  },
+  "shape_height": {
+   "offset": 2347116,
+   "count": 899848,
+   "type": "uint8"
+  }
+ }
+}

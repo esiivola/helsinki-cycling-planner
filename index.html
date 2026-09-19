@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f9f8f4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14171a" media="(prefers-color-scheme: dark)" />
+    <title>Pyörämatkan kesto — Helsinki, Espoo ja Vantaa</title>
+    <meta name="description" content="Laskee pyöräreitin koetun keston pääkaupunkiseudulla: ajoaika sekä liikennevalojen, käännösten ja hitaan pinnoitteen viive." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🚲</text></svg>" />
+  </head>
+  <body>
+    <a class="skip" href="#panel">Siirry reittihakuun</a>
+    <div id="map" role="application" aria-label="Kartta. Klikkaa asettaaksesi lähtöpaikan tai määränpään."></div>
+
+    <button id="gear" class="icon-button map-button" type="button"
+            aria-haspopup="dialog" aria-expanded="false" aria-controls="settings"
+            aria-label="Asetukset">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="3.2"/>
+        <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 8.9 19a1.7 1.7 0 0 0-1.9.4l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 5 8.9a1.7 1.7 0 0 0-.4-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/>
+      </svg>
+    </button>
+    <div id="settings" class="settings" role="dialog" aria-labelledby="settings-title" hidden></div>
+
+    <main id="panel" aria-labelledby="title">
+      <button id="grip" type="button" class="grip" aria-expanded="false" aria-controls="panel">
+        <span class="grip-bar" aria-hidden="true"></span>
+        <span class="sr-only">Laajenna tai pienennä paneeli</span>
+      </button>
+
+      <header class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <h1 id="title">Pyörämatkan kesto</h1>
+          <small>Pääkaupunkiseutu</small>
+        </span>
+        <button id="reset" type="button" class="ghost" hidden>Tyhjennä</button>
+      </header>
+
+      <div id="form"></div>
+      <div id="readout"></div>
+    </main>
+
+    <p id="live" class="sr-only" role="status" aria-live="polite"></p>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
