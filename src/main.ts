@@ -608,11 +608,6 @@ function buildForm(): Record<Which, HTMLInputElement> {
     fields[which] = input;
     input.addEventListener("input", () => { draft[which] = input.value; offerSuggestions(which); });
     input.addEventListener("focus", () => { picking = which; offerSuggestions(which); });
-    input.addEventListener("blur", () => {
-      // Late enough that a click on a suggestion still lands, early enough that the
-      // list does not hang around over the map.
-      setTimeout(() => { if (focused === which) { focused = null; suggestions = []; renderForm(); } }, 120);
-    });
     input.addEventListener("keydown", (event) => {
       if (event.key === "ArrowDown" || event.key === "ArrowUp") {
         event.preventDefault();
@@ -631,6 +626,19 @@ function buildForm(): Record<Which, HTMLInputElement> {
       }
     });
   }
+  // The list closes as soon as focus leaves the search boxes, which the browser
+  // tells us directly: `focusout` carries where focus went, so there is nothing to
+  // time. Picking a suggestion never reaches here -- the handler below keeps the
+  // focus on the input. Tabbing on to a button does not: the list belongs to the
+  // box being typed in, and nowhere else.
+  form.addEventListener("focusout", (event) => {
+    const next = (event as FocusEvent).relatedTarget;
+    if (next instanceof Element && (next.closest(".suggestions") || next.matches("input"))) return;
+    if (!focused) return;
+    focused = null;
+    suggestions = [];
+    renderForm();
+  });
   // mousedown, not click: blurring the input first would close the list.
   form.querySelector(".suggestions")!.addEventListener("mousedown", (event) => {
     const option = (event.target as HTMLElement).closest<HTMLElement>("[data-pick]");

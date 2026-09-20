@@ -806,6 +806,18 @@ REGISTER_FALLBACK_M = 80.0
 # The terrain model cannot help, which is worth recording because it looks as though
 # it should. MML's korkeusmalli is a *ground* model with bridge decks removed, so the
 # street over the Baana and the Baana beneath it both read 13,5 m.
+#
+# Nor does the scale-free version of this rule, which is the obvious way to get rid of
+# the hand-set metres: score each candidate by how far it is to ride over how far it
+# is in plan, and drop the ones that detour. Measured over all 930 register junctions
+# and the 1,812 candidates they reach, that ratio does not separate the populations.
+# Half the candidates sit on the anchor itself, so the ratio is 0 and says nothing;
+# the tail is set by the denominator rather than by the geometry, and its worst cases
+# -- Runeberginkatu at 1 m in plan and 263 m to ride, a cycleway that is right there
+# but joins the carriageway nowhere near -- are at grade. A ratio cut deep enough to
+# catch a grade separation (above 6) drops 100 candidates where the metre budget drops
+# 55, and the extra 45 are not the false ones. The budget stays because it is measured
+# against the thing it is about: how far a rider has to go.
 REGISTER_WALK_M = 240.0
 
 # How close a cycleway has to run, and how nearly parallel, to count as the path
@@ -984,25 +996,13 @@ def _signalise_cycle_crossings(network: OsmNetwork) -> np.ndarray:
     """
     coordinates = network.coordinates
     kind = network.node_kind.copy()
-    dedicated = (network.edge_class & EDGE_DEDICATED).astype(bool)
-    cycle_bearings: dict[int, list[float]] = {}
-    road_bearings: dict[int, list[float]] = {}
-    for first, second, is_cycle in zip(network.edge_first, network.edge_second, dedicated):
-        first, second = int(first), int(second)
-        heading = _bearing(coordinates[first], coordinates[second])
-        target = cycle_bearings if is_cycle else road_bearings
-        target.setdefault(first, []).append(heading)
-        target.setdefault(second, []).append((heading + 180.0) % 360.0)
+    cycle_bearings, road_bearings = _bearings_by_node(network)
 
     cell = 0.001  # ~110 m of latitude
     grid: dict[tuple[int, int], list[int]] = {}
     for node in np.nonzero((kind == 2) | (kind == 3))[0]:
         point = coordinates[node]
         grid.setdefault((int(point[0] // cell), int(point[1] // cell)), []).append(int(node))
-
-    def crosses(here: float, there: float) -> bool:
-        between = abs(((here - there + 540.0) % 360.0) - 180.0)
-        return min(between, 180.0 - between) >= CROSSING_SIGNAL_DEGREES
 
     # Where a light has been given, and to the crossing of which carriageways, so a
     # second crossing node can tell "the other side of the same road" from "the
@@ -1027,7 +1027,7 @@ def _signalise_cycle_crossings(network: OsmNetwork) -> np.ndarray:
                     if metres > CROSSING_SIGNAL_METRES:
                         continue
                     if not any(
-                        crosses(mine, theirs)
+                        _cuts_across(mine, theirs)
                         for mine in cycle_bearings[node]
                         for theirs in road_bearings.get(signal, ())
                     ):
