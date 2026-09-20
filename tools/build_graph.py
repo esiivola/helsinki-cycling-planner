@@ -905,6 +905,72 @@ def _segment_metres(lon: float, lat: float, segment: tuple[float, float, float, 
     return math.hypot(x - (x1 + along * dx), y - (y1 + along * dy))
 
 
+def _bearings_by_node(network: OsmNetwork) -> tuple[dict[int, list[float]], dict[int, list[float]]]:
+    """Which way the cycleways and the carriageways run through each node."""
+    dedicated = (network.edge_class & EDGE_DEDICATED).astype(bool)
+    cycle: dict[int, list[float]] = {}
+    road: dict[int, list[float]] = {}
+    for first, second, is_cycle in zip(network.edge_first, network.edge_second, dedicated):
+        first, second = int(first), int(second)
+        heading = _bearing(network.coordinates[first], network.coordinates[second])
+        target = cycle if is_cycle else road
+        target.setdefault(first, []).append(heading)
+        target.setdefault(second, []).append((heading + 180.0) % 360.0)
+    return cycle, road
+
+
+def _cuts_across(here: float, there: float) -> bool:
+    between = abs(((here - there + 540.0) % 360.0) - 180.0)
+    return min(between, 180.0 - between) >= CROSSING_SIGNAL_DEGREES
+
+
+def _crossing_test(network: OsmNetwork):
+    """Does a rider at this node cut across the carriageway this junction controls?
+
+    This is the difference between a light a rider obeys and one they ride past. Of
+    the region's 7,219 signals, 2,686 are `highway=traffic_signals` standing on a
+    carriageway and on nothing else: they face the drivers. A rider on the path
+    alongside meets them only where the path turns and crosses the road. Where it
+    runs parallel, as a sidepath does for most of its length, the light is not theirs
+    and the wait never happens.
+
+    The road's heading is taken from the carriageways around the junction rather than
+    from the candidate node itself, because at a big junction the cycleway and the
+    carriageway often share no node at all -- which is the very case the register
+    exists to rescue. A node somebody has tagged a crossing needs no geometry: the
+    tag already says the rider crosses here.
+    """
+    cycle, road = _bearings_by_node(network)
+    coordinates = network.coordinates
+    cell = 0.001
+    road_grid: dict[tuple[int, int], list[int]] = {}
+    for node in road:
+        point = coordinates[node]
+        road_grid.setdefault((int(point[0] // cell), int(point[1] // cell)), []).append(node)
+
+    def headings_near(lon: float, lat: float, reach: float) -> list[float]:
+        east = math.cos(math.radians(lat)) * 111_320
+        key = (int(lon // cell), int(lat // cell))
+        out: list[float] = []
+        for dx in (-1, 0, 1):
+            for dy in (-1, 0, 1):
+                for node in road_grid.get((key[0] + dx, key[1] + dy), ()):
+                    point = coordinates[node]
+                    if math.hypot((point[0] - lon) * east, (point[1] - lat) * 110_540) <= reach:
+                        out.extend(road[node])
+        return out
+
+    def crosses(node: int, headings: list[float]) -> bool:
+        if network.node_kind[node] == 1:
+            return True
+        mine = cycle.get(int(node))
+        if not mine:
+            return True  # not on a cycleway at all; the road rules apply as before
+        return any(_cuts_across(a, b) for a in mine for b in headings)
+
+    return headings_near, crosses
+
+
 def _signalise_cycle_crossings(network: OsmNetwork) -> np.ndarray:
     """Give a cycle crossing the light that governs it but was tagged on the road.
 
@@ -919,34 +985,6 @@ def _signalise_cycle_crossings(network: OsmNetwork) -> np.ndarray:
     coordinates = network.coordinates
     kind = network.node_kind.copy()
     dedicated = (network.edge_class & EDGE_DEDICATED).astype(bool)
-    offsets, neighbours = _adjacency(network)
-    lengths = network.edge_length
-    # Which edges meet each node, in the same order `_adjacency` lists the neighbours,
-    # so the walk below can charge each step its real length.
-    edge_at = np.concatenate([np.arange(len(lengths)), np.arange(len(lengths))])
-    edge_at = edge_at[np.argsort(np.concatenate([network.edge_first, network.edge_second]), kind="stable")]
-
-    def within_walk(start: int, budget: float = REGISTER_WALK_M) -> dict[int, float]:
-        """Every node reachable from `start` inside `budget` metres of riding.
-
-        Small and bounded: a junction's neighbourhood is a few dozen nodes, and the
-        search stops at the budget rather than exploring the city.
-        """
-        seen = {int(start): 0.0}
-        queue = [(0.0, int(start))]
-        while queue:
-            queue.sort(reverse=True)
-            metres, node = queue.pop()
-            if metres > seen.get(node, math.inf):
-                continue
-            for slot in range(offsets[node], offsets[node + 1]):
-                other = int(neighbours[slot])
-                step = metres + float(lengths[edge_at[slot]])
-                if step <= budget and step < seen.get(other, math.inf):
-                    seen[other] = step
-                    queue.append((step, other))
-        return seen
-
     cycle_bearings: dict[int, list[float]] = {}
     road_bearings: dict[int, list[float]] = {}
     for first, second, is_cycle in zip(network.edge_first, network.edge_second, dedicated):
@@ -1020,11 +1058,11 @@ def _signalise_from_register(network: OsmNetwork, register: list[dict]) -> np.nd
     where neither the tags nor the geometry rule reaches it.
 
     A junction in the register is one point for the whole junction, so the light goes
-    on the nearest place a rider passes through it, preferring somewhere they visibly
-    meet the road -- a node their way shares with a carriageway, or one already
-    tagged as a crossing -- and otherwise taking the nearest node of the way itself.
-    A cycleway within 40 m of a signalised junction's centre crosses one of its arms;
-    that is what a signalised junction *is*.
+    on the nearest place a rider actually meets the traffic: a node where their own
+    way cuts across a carriageway, or one somebody has tagged as a crossing. Nowhere
+    else will do. The nearest cycleway node is usually the wrong answer -- on a
+    sidepath running beside the road it is a node the rider rides straight past, and
+    the light standing there faces the drivers.
 
     Two things are never given a light. A bridge or a tunnel: a rider passing under
     the junction passes no signal, and the register cannot tell you which it is. And
@@ -1085,6 +1123,7 @@ def _signalise_from_register(network: OsmNetwork, register: list[dict]) -> np.nd
     # A bridge or a tunnel is never it: a rider passing under a signalised junction
     # passes no signal, and the register cannot tell you which of the two it is.
     at_grade = lambda nodes: (node for node in nodes if node not in network.elevated_nodes)
+    headings_near, crosses = _crossing_test(network)
     candidates = {
         "cycleway": index(at_grade(on_cycleway)),
         "road": index(at_grade(on_road)),
@@ -1117,7 +1156,15 @@ def _signalise_from_register(network: OsmNetwork, register: list[dict]) -> np.nd
         # further to ride than `REGISTER_WALK_M` is passing over or under, not through.
         anchor = list(nearby(candidates["road"], lon, lat, east, REGISTER_FALLBACK_M))
         walkable = within_walk(int(min(anchor)[1])) if anchor else {}
-        at_junction = lambda found: [(metres, node) for metres, node in found if node in walkable]
+        # A rider waits where their path crosses the traffic, not where it runs
+        # beside it. Without this the nearest cycleway node wins, and on a sidepath
+        # that node is one the rider rides straight past: the light a few metres away
+        # faces the drivers, and the wait is fiction.
+        road_headings = headings_near(lon, lat, REGISTER_FALLBACK_M)
+        at_junction = lambda found: [
+            (metres, node) for metres, node in found
+            if node in walkable and crosses(node, road_headings)
+        ]
 
         reached = False
         for way_kind in ("cycleway", "road"):

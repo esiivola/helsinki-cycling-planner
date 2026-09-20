@@ -239,6 +239,42 @@ a *rider* meets, since a signal on a carriageway the router avoids is met by nob
 
 Before the registers were read at all, that figure was 91.9% for Helsinki.
 
+### Whose light is it
+
+A light beside a cycleway is not automatically a light the rider obeys. Of the
+region's 7,219 signals, **2,686 are `highway=traffic_signals` standing on a
+carriageway and on nothing else**: they face the drivers. Where a cycleway runs
+parallel to that road, as a sidepath does for most of its length, the rider passes
+them and never stops. OSM draws the same line — `highway=traffic_signals` is a
+junction's signal, `crossing=traffic_signals` is a crossing's — and 4,175 of the
+region's signals carry the crossing form.
+
+| signal | lies on | count |
+|---|---|---|
+| `highway=traffic_signals` | road only | 2 686 |
+| `crossing=traffic_signals` | cycleway and road | 2 291 |
+| `crossing=traffic_signals` | road only | 871 |
+| `crossing=traffic_signals` | cycleway only | 405 |
+| `highway=traffic_signals` | cycleway and road | 46 |
+
+Direction tags cannot settle it: 272 nodes carry `traffic_signals=signal` and 310 a
+direction, against 7,219 signals. So the test is geometric, and the same one in both
+places a light can be attached: the rider is charged only where their own way **cuts
+across** the carriageway by 45° or more, or where somebody has tagged the node a
+crossing, which says it in words. A path running alongside is left alone.
+
+The rule was already applied to signals OSM tags. It was *not* applied to the ones
+taken from the city registers, whose docstring claimed it and whose code took the
+nearest cycleway node — so on a sidepath the light landed on a node the rider rides
+straight past. Both now use the same test, and the road's heading is read from the
+carriageways around the junction rather than from the candidate node, because at a
+big junction the cycleway and the carriageway often share no node at all — which is
+the case the register exists to rescue.
+
+It corrects few lights here (the registers are junctions by construction, where
+riders do cross) and it is a guard against the case that is badly wrong rather than a
+mass correction.
+
 ### Snapping a register point to a rider, by riding distance
 
 The registers give one point for a whole junction, and the first version attached it

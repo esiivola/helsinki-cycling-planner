@@ -488,6 +488,32 @@ def test_a_register_junction_reaches_a_cycleway_that_shares_no_node(tmp_path: Pa
     assert (24.9418, 60.1700) in lit
 
 
+def test_a_sidepath_running_alongside_gets_no_light(tmp_path: Path) -> None:
+    """A light between a road and the path beside it faces the drivers.
+
+    2,686 of the region's signals are `highway=traffic_signals` standing on a
+    carriageway and on nothing else. Where a cycleway runs parallel to that road --
+    which is what a sidepath does for most of its length -- the nearest cycleway node
+    to the register's point is one the rider rides straight past. Charging them 30 s
+    there is inventing a wait that never happens.
+    """
+    nodes = (
+        '<node id="80" lat="60.1700" lon="24.9400"/>'      # road, running east
+        '<node id="81" lat="60.1700" lon="24.9418"/>'
+        '<node id="82" lat="60.1700" lon="24.9440"/>'
+        '<node id="83" lat="60.17018" lon="24.9400"/>'     # cycleway, parallel, 20 m north
+        '<node id="84" lat="60.17018" lon="24.9418"/>'
+        '<node id="85" lat="60.17018" lon="24.9440"/>'
+    )
+    ways = _way(80, (80, 81, 82)) + _way(81, (83, 84, 85), highway="cycleway")
+    register = [{"lon": 24.9418, "lat": 60.1700, "city": "Helsinki", "name": "parallel"}]
+    graph = _graph(tmp_path, nodes, ways, register=register)
+
+    lit = _lit(graph)
+    assert (24.9418, 60.17018) not in lit   # the rider never crosses anything here
+    assert (24.9418, 60.1700) in lit        # the drivers still get their light
+
+
 def test_a_cycleway_that_only_passes_beneath_gets_no_light(tmp_path: Path) -> None:
     """The Baana problem, and the reason the register is snapped by riding distance.
 
