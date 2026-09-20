@@ -239,6 +239,49 @@ a *rider* meets, since a signal on a carriageway the router avoids is met by nob
 
 Before the registers were read at all, that figure was 91.9% for Helsinki.
 
+### Snapping a register point to a rider, by riding distance
+
+The registers give one point for a whole junction, and the first version attached it
+to the nearest place a rider passes within 40 m. That is wrong wherever a route
+crosses a road without meeting it. The Baana runs in a former railway cutting beneath
+every street it crosses and has no traffic light on it at all; it was given one,
+which cost 30 s on the one corridor in the city whose whole point is that you never
+stop.
+
+Tags cannot see this. The Baana is not a tunnel and carries no `layer`, because it is
+the *street overhead* that is the bridge — the vertical relationship is recorded on
+the other way, so a filter reading the cycleway's own tags is structurally blind to
+it. The terrain model cannot see it either, which is worth recording because it looks
+as though it should: MML's korkeusmalli is a ground model with bridge decks removed,
+so the street above the Baana and the Baana beneath it both read 13,5 m.
+
+What does see it is **riding distance**. A signalised junction is a place you ride
+*through*, so the test is whether a rider can get there from the junction without
+leaving it. On the Baana the phantom sat 42 m away in plan view and 333 m away to
+ride, because reaching the street means climbing a ramp and coming back. The register
+point now anchors to the nearest carriageway node, a bounded search finds everything
+within `REGISTER_WALK_M` of riding, and only those nodes can take the light.
+
+The threshold is the honest part. A first pass at 110 m looked clean: over the
+junctions that had both a road and a cycleway node close by, 95% connected within
+57 m and the rest jumped straight past 300 m. That sample was biased — it excluded
+the awkward junctions by construction. Checking what actually lost a light found
+genuine at-grade crossings at 106, 164, 175 and 200 m: a Finnish suburban crossroads
+often joins its cycleway well back from the corner. The populations do separate, but
+by less than the first measurement suggested, so the line is drawn at 240 m, above
+the honest cases and below the 284 m ramp and the 333 m Baana.
+
+It is set to keep lights rather than to catch every false one. A light wrongly kept
+costs a rider 30 s of pessimism; a light wrongly dropped makes a route that stops look
+like one that does not.
+
+Against the registers the cost is 1,9 points of coverage — 98,5% of junctions had a
+light a rider meets within 40 m, now 96,6%. Of the 18 that changed, seven are named
+in the registers as motorway ramps (Turunväylä, Lahdenväylä, Lentoasemantie,
+Tuusulanväylä), where a rider on the path alongside passes under and meets nothing:
+those are the fix working. Eight are Espoo entries, which the city publishes without
+names. Three are ordinary crossings and are losses.
+
 ### Why there is no green wave in the model
 
 The obvious upgrade to a flat 30 s is to know the junction: its cycle time, its green

@@ -786,6 +786,27 @@ REGISTER_REACH_M = 40.0
 # path stops being one that passes the junction, and a light there is a wait that
 # never happens.
 REGISTER_FALLBACK_M = 80.0
+# How far a rider may be from the junction *along the network* and still be at it.
+#
+# This is what tells a cycleway crossing a road apart from a cycleway passing under
+# it. Both are metres away in plan view; only one is metres away to ride. The Baana
+# runs in a cutting beneath the streets it crosses, and its nodes sit 42 m from a
+# signalised junction and 333 m from it to ride -- eight times as far, because you
+# must climb a ramp and come back. Tags cannot see this: the Baana is not a tunnel
+# and carries no `layer`, because it is the *street* overhead that is the bridge.
+#
+# The budget is set to keep honest junctions rather than to catch every false one. A
+# Finnish suburban crossroads often joins its cycleway well back from the corner --
+# Kontulantie at 164 m, Vaskivuorentie 175 m, Rajatorpantie 200 m, every one of them
+# at grade -- while what this is meant to exclude sits at 284 m and beyond. The two
+# populations separate, but not by much, so the line is drawn above the honest ones:
+# a light wrongly kept costs a rider 30 s of pessimism, and a light wrongly dropped
+# makes a route that stops look like one that does not.
+#
+# The terrain model cannot help, which is worth recording because it looks as though
+# it should. MML's korkeusmalli is a *ground* model with bridge decks removed, so the
+# street over the Baana and the Baana beneath it both read 13,5 m.
+REGISTER_WALK_M = 240.0
 
 # How close a cycleway has to run, and how nearly parallel, to count as the path
 # beside a road. 20 m clears a carriageway plus a verge without reaching the next
@@ -898,6 +919,33 @@ def _signalise_cycle_crossings(network: OsmNetwork) -> np.ndarray:
     coordinates = network.coordinates
     kind = network.node_kind.copy()
     dedicated = (network.edge_class & EDGE_DEDICATED).astype(bool)
+    offsets, neighbours = _adjacency(network)
+    lengths = network.edge_length
+    # Which edges meet each node, in the same order `_adjacency` lists the neighbours,
+    # so the walk below can charge each step its real length.
+    edge_at = np.concatenate([np.arange(len(lengths)), np.arange(len(lengths))])
+    edge_at = edge_at[np.argsort(np.concatenate([network.edge_first, network.edge_second]), kind="stable")]
+
+    def within_walk(start: int, budget: float = REGISTER_WALK_M) -> dict[int, float]:
+        """Every node reachable from `start` inside `budget` metres of riding.
+
+        Small and bounded: a junction's neighbourhood is a few dozen nodes, and the
+        search stops at the budget rather than exploring the city.
+        """
+        seen = {int(start): 0.0}
+        queue = [(0.0, int(start))]
+        while queue:
+            queue.sort(reverse=True)
+            metres, node = queue.pop()
+            if metres > seen.get(node, math.inf):
+                continue
+            for slot in range(offsets[node], offsets[node + 1]):
+                other = int(neighbours[slot])
+                step = metres + float(lengths[edge_at[slot]])
+                if step <= budget and step < seen.get(other, math.inf):
+                    seen[other] = step
+                    queue.append((step, other))
+        return seen
 
     cycle_bearings: dict[int, list[float]] = {}
     road_bearings: dict[int, list[float]] = {}
@@ -986,6 +1034,33 @@ def _signalise_from_register(network: OsmNetwork, register: list[dict]) -> np.nd
     coordinates = network.coordinates
     kind = network.node_kind.copy()
     dedicated = (network.edge_class & EDGE_DEDICATED).astype(bool)
+    offsets, neighbours = _adjacency(network)
+    lengths = network.edge_length
+    # Which edges meet each node, in the same order `_adjacency` lists the neighbours,
+    # so the walk below can charge each step its real length.
+    edge_at = np.concatenate([np.arange(len(lengths)), np.arange(len(lengths))])
+    edge_at = edge_at[np.argsort(np.concatenate([network.edge_first, network.edge_second]), kind="stable")]
+
+    def within_walk(start: int, budget: float = REGISTER_WALK_M) -> dict[int, float]:
+        """Every node reachable from `start` inside `budget` metres of riding.
+
+        Small and bounded: a junction's neighbourhood is a few dozen nodes, and the
+        search stops at the budget rather than exploring the city.
+        """
+        seen = {int(start): 0.0}
+        queue = [(0.0, int(start))]
+        while queue:
+            queue.sort(reverse=True)
+            metres, node = queue.pop()
+            if metres > seen.get(node, math.inf):
+                continue
+            for slot in range(offsets[node], offsets[node + 1]):
+                other = int(neighbours[slot])
+                step = metres + float(lengths[edge_at[slot]])
+                if step <= budget and step < seen.get(other, math.inf):
+                    seen[other] = step
+                    queue.append((step, other))
+        return seen
 
     # The two ways a rider can be on through a junction, kept apart on purpose. At a
     # big junction the cycleway and the carriageway often share no node at all, which
@@ -1030,27 +1105,36 @@ def _signalise_from_register(network: OsmNetwork, register: list[dict]) -> np.nd
                     if metres <= reach:
                         yield metres, node
 
-    census = {"already known": 0, "added": 0, "reached further": 0, "unreachable": 0}
+    census = {"already known": 0, "added": 0, "reached further": 0,
+              "grade separated": 0, "unreachable": 0}
     orphans = []
     stretched = []
     for junction in register:
         lon, lat = junction["lon"], junction["lat"]
         east = math.cos(math.radians(lat)) * 111_320
+        # The junction is a place on the road, so the road is the anchor: whatever a
+        # rider meets here, they meet it within a short ride of that point. Anything
+        # further to ride than `REGISTER_WALK_M` is passing over or under, not through.
+        anchor = list(nearby(candidates["road"], lon, lat, east, REGISTER_FALLBACK_M))
+        walkable = within_walk(int(min(anchor)[1])) if anchor else {}
+        at_junction = lambda found: [(metres, node) for metres, node in found if node in walkable]
+
         reached = False
         for way_kind in ("cycleway", "road"):
             # At the ordinary radius: a light 100 m away belongs to the next
             # junction along, and treating it as this one's leaves this one dark.
-            if any(True for _ in nearby(signalled[way_kind], lon, lat, east)):
+            if at_junction(nearby(signalled[way_kind], lon, lat, east)):
                 census["already known"] += 1
                 reached = True
                 continue
-            found = list(nearby(candidates[way_kind], lon, lat, east))
+            found = at_junction(nearby(candidates[way_kind], lon, lat, east))
             if not found:
-                found = list(nearby(candidates[way_kind], lon, lat, east, REGISTER_FALLBACK_M))
+                found = at_junction(nearby(candidates[way_kind], lon, lat, east, REGISTER_FALLBACK_M))
                 if found:
                     census["reached further"] += 1
                     stretched.append((junction, min(found)[0], way_kind))
             if not found:
+                census["grade separated"] += 1
                 continue
             node = int(min(found)[1])
             kind[node] = 2
@@ -1063,6 +1147,7 @@ def _signalise_from_register(network: OsmNetwork, register: list[dict]) -> np.nd
     print(
         f"    register: {census['added']:,} lights added, {census['already known']:,} already known, "
         f"{census['reached further']:,} beyond {REGISTER_REACH_M:.0f} m, "
+        f"{census['grade separated']:,} over or under rather than through, "
         f"{census['unreachable']:,} junctions no rider reaches"
     )
     for junction, metres, way_kind in stretched:

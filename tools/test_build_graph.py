@@ -454,23 +454,28 @@ def test_a_register_junction_with_no_crossing_nearby_is_left_alone(tmp_path: Pat
 # A junction where the cycleway runs through without sharing a node with the road --
 # the commonest orphan, 52 of the region's 67 -- plus a link west so the path is part
 # of the network. 0.0003 deg of latitude is ~33 m, inside the register's 40 m reach.
+# A signalised crossroads with a cycleway crossing it that shares no node with the
+# road, joined to it a few metres away -- which is what a big Helsinki junction looks
+# like. The link is short on purpose: measured over the real register, 95% of
+# junctions put their nearest cycleway node within 57 m of the road to ride.
 CROSSING_NODES = (
     '<node id="70" lat="60.1700" lon="24.9400"/>'
+    '<node id="76" lat="60.1700" lon="24.9414"/>'
     '<node id="71" lat="60.1700" lon="24.9418"/>'
     '<node id="72" lat="60.1700" lon="24.9440"/>'
-    '<node id="73" lat="60.1703" lon="24.9418"/>'
-    '<node id="74" lat="60.1697" lon="24.9418"/>'
-    '<node id="75" lat="60.1703" lon="24.9400"/>'
+    '<node id="73" lat="60.17015" lon="24.9418"/>'
+    '<node id="74" lat="60.16985" lon="24.9418"/>'
+    '<node id="75" lat="60.17015" lon="24.9414"/>'
 )
 CROSSING_REGISTER = [{"lon": 24.9418, "lat": 60.1700, "city": "Helsinki", "name": "test"}]
 
 
 def _crossing_ways(**cycle_tags: str) -> str:
     return (
-        _way(70, (70, 71, 72))                                   # the road
+        _way(70, (70, 76, 71, 72))                               # the road
         + _way(71, (73, 74), highway="cycleway", **cycle_tags)   # straight through it
         + _way(72, (75, 73), highway="cycleway")                 # a link, so it connects
-        + _way(73, (70, 75), highway="cycleway")
+        + _way(73, (76, 75), highway="cycleway")
     )
 
 
@@ -479,8 +484,35 @@ def test_a_register_junction_reaches_a_cycleway_that_shares_no_node(tmp_path: Pa
 
     # One on the path the rider is on, one on the carriageway: a rider passes one.
     lit = _lit(graph)
-    assert (24.9418, 60.1703) in lit or (24.9418, 60.1697) in lit
+    assert (24.9418, 60.17015) in lit or (24.9418, 60.16985) in lit
     assert (24.9418, 60.1700) in lit
+
+
+def test_a_cycleway_that_only_passes_beneath_gets_no_light(tmp_path: Path) -> None:
+    """The Baana problem, and the reason the register is snapped by riding distance.
+
+    A cycle route in a cutting runs beneath the streets it crosses. Its nodes sit
+    within metres of a signalised junction in plan view and a long way from it to
+    ride -- 42 m against 333 m on the real Baana -- because reaching the junction
+    means climbing a ramp and coming back. Nothing in the tags says so: the cutting
+    is not a tunnel and carries no `layer`, because it is the street overhead that is
+    the bridge. Only the network distance tells the two apart.
+    """
+    # Same crossing, but the only way between the cycleway and the road is the long
+    # way round, as an underpass would be.
+    nodes = CROSSING_NODES + '<node id="77" lat="60.1730" lon="24.9414"/>'
+    ways = (
+        _way(70, (70, 76, 71, 72))
+        + _way(71, (73, 74), highway="cycleway")
+        + _way(72, (75, 73), highway="cycleway")
+        + _way(74, (77, 75), highway="cycleway")   # a ramp, 330 m north
+        + _way(75, (76, 77), highway="cycleway")
+    )
+    graph = _graph(tmp_path, nodes, ways, register=CROSSING_REGISTER)
+
+    lit = _lit(graph)
+    assert (24.9418, 60.17015) not in lit and (24.9418, 60.16985) not in lit
+    assert (24.9418, 60.1700) in lit  # the carriageway through the junction still has it
 
 
 def test_a_rider_passing_under_a_junction_gets_no_light(tmp_path: Path) -> None:
@@ -490,5 +522,5 @@ def test_a_rider_passing_under_a_junction_gets_no_light(tmp_path: Path) -> None:
     graph = _graph(tmp_path, CROSSING_NODES, _crossing_ways(tunnel="yes"), register=CROSSING_REGISTER)
 
     lit = _lit(graph)
-    assert (24.9418, 60.1703) not in lit and (24.9418, 60.1697) not in lit
+    assert (24.9418, 60.17015) not in lit and (24.9418, 60.16985) not in lit
     assert (24.9418, 60.1700) in lit  # the carriageway above still has its light
