@@ -19,6 +19,7 @@ cost model reads: junctions, and the bearings of the ways meeting at them.
 from __future__ import annotations
 
 import gzip
+import heapq
 import json
 import math
 import sys
@@ -331,6 +332,10 @@ class OsmNetwork:
     names: tuple[str, ...]        # street names; index 0 is the unnamed one
     node_roads: dict[int, frozenset[int]]   # node index -> the carriageways meeting it
     elevated_nodes: frozenset[int]          # nodes on a bridge or in a tunnel
+    # Which evidence lit each signal, once `_attach_signals` has run. Not shipped:
+    # the browser prices a light the same whoever found it, and this is here so the
+    # build and an audit can say which rule to go and look at.
+    node_signal_source: np.ndarray | None = None
 
 
 class _RouteHandler(osmium.SimpleHandler):
@@ -983,74 +988,127 @@ def _crossing_test(network: OsmNetwork):
     return headings_near, crosses
 
 
-def _signalise_cycle_crossings(network: OsmNetwork) -> np.ndarray:
-    """Give a cycle crossing the light that governs it but was tagged on the road.
+# Where a light came from. A light in the graph used to carry no record of the rule
+# that put it there, so a wrong one could only be guessed at from the outside, and the
+# share of them that are wrong could be bounded but not measured.
+SIGNAL_UNLIT, SIGNAL_TAGGED, SIGNAL_GOVERNING, SIGNAL_REGISTERED = 0, 1, 2, 3
+SIGNAL_SOURCES = ("unlit", "tagged on the node", "the road's light, crossed", "the cities' register")
 
-    52% of the region's traffic signals (3,751 of 7,225) sit on a carriageway and on
-    no cycleway at all, so a rider on the path beside it meets none of them and the
-    route is priced as if the junction were free. Only 311 signals say which way they
-    face, so the direction has to come from the geometry: the rider is charged only
-    where their own path cuts across the road the signal stands on, which is exactly
-    the case where they have to wait for it. A signal beside a cycleway running the
-    same way is a signal for the cars, and is left alone.
+
+def _node_grid(coordinates: np.ndarray, nodes, cell: float = 0.001) -> dict[tuple[int, int], list[int]]:
+    """Nodes bucketed by a ~110 m cell, for the short-range searches below."""
+    grid: dict[tuple[int, int], list[int]] = {}
+    for node in nodes:
+        point = coordinates[node]
+        grid.setdefault((int(point[0] // cell), int(point[1] // cell)), []).append(int(node))
+    return grid
+
+
+def _around(coordinates: np.ndarray, grid, lon: float, lat: float, reach: float, cell: float = 0.001):
+    """Every node in `grid` within `reach` metres of the point, with the distance."""
+    east = math.cos(math.radians(lat)) * 111_320
+    span = int(reach / (cell * 60_000)) + 1
+    key = (int(lon // cell), int(lat // cell))
+    for dx in range(-span, span + 1):
+        for dy in range(-span, span + 1):
+            for node in grid.get((key[0] + dx, key[1] + dy), ()):
+                point = coordinates[node]
+                metres = math.hypot((point[0] - lon) * east, (point[1] - lat) * 110_540)
+                if metres <= reach:
+                    yield metres, node
+
+
+def _attach_signals(network: OsmNetwork, register: list[dict] | None) -> tuple[np.ndarray, np.ndarray]:
+    """Decide, for each place a rider might stop, whether a light stops them there.
+
+    Three kinds of evidence say a rider waits, and it is worth being exact about what
+    each one licenses, because they do not license the same thing:
+
+      * a signal tagged on the node itself is the rider's own light, and settles it;
+      * a signal tagged on the carriageway a few metres away is the rider's light too
+        wherever their path cuts across that carriageway rather than running beside
+        it -- but it is an inference, and two inferences about one crossing must not
+        become two waits;
+      * a junction in the cities' register says the junction is signalised without
+        saying where its lights stand, so it may only fill in a junction that has no
+        light a rider meets at all.
+
+    That third one is why this is not one rule with one radius. An inferred light and
+    the carriageway signal it was inferred from are the same lamp seen from the two
+    places a rider can be, and both belong in the graph; a register point next to
+    either of them is the same junction counted twice. So the merge that the
+    inference does looks only at what the inference invented, and the register looks
+    at every light there is. Both now go through `claim`, which is the only place a
+    light is written and the only place that judgement is made.
+
+    Returns the node kinds and, beside them, which evidence lit each node.
     """
     coordinates = network.coordinates
     kind = network.node_kind.copy()
+    tagged = (kind == 2) | (kind == 3)
+    source = np.where(tagged, SIGNAL_TAGGED, SIGNAL_UNLIT).astype(np.int64)
     cycle_bearings, road_bearings = _bearings_by_node(network)
 
-    cell = 0.001  # ~110 m of latitude
-    grid: dict[tuple[int, int], list[int]] = {}
-    for node in np.nonzero((kind == 2) | (kind == 3))[0]:
-        point = coordinates[node]
-        grid.setdefault((int(point[0] // cell), int(point[1] // cell)), []).append(int(node))
+    def claim(node: int, why: int) -> bool:
+        """Light this node, unless it is lit already.
 
-    # Where a light has been given, and to the crossing of which carriageways, so a
-    # second crossing node can tell "the other side of the same road" from "the
-    # other carriageway of a dual road".
-    added: list[tuple[np.ndarray, frozenset[int]]] = []
+        3 is already a two-wait crossing; a second light there would lose the second
+        wait rather than add anything.
+        """
+        node = int(node)
+        if kind[node] in (2, 3):
+            return False
+        kind[node] = 2
+        source[node] = why
+        return True
+
+    # --- the road's own light, where the rider crosses the road it governs --------
+    # 52% of the region's signals (3,751 of 7,225) sit on a carriageway and on no
+    # cycleway at all, so a rider on the path beside one meets nothing and the
+    # junction is priced as if it were free. Only 311 signals say which way they
+    # face, so the direction comes from the geometry: the rider is charged where
+    # their own path cuts across the road the signal stands on, and nowhere else.
+    signals = _node_grid(coordinates, np.nonzero(tagged)[0])
+    # What the inference has invented so far, and across which carriageways, so that
+    # a second crossing node can tell "the other side of the same road" from "the
+    # other carriageway of a dual road". The first is one wait; the second is two.
+    invented: list[tuple[np.ndarray, frozenset[int]]] = []
     for node in sorted(cycle_bearings):
         # Only where the rider actually meets road traffic: a junction with a road,
         # or a node someone tagged as a crossing. A cycleway merely passing a
         # junction 20 m away is not waiting at it.
-        # 3 is already a two-wait crossing; giving it the road's light would lose
-        # the second wait rather than add anything.
         if kind[node] in (2, 3) or not (node in road_bearings or kind[node] == 1):
             continue
         point = coordinates[node]
         east = math.cos(math.radians(point[1])) * 111_320
-        key = (int(point[0] // cell), int(point[1] // cell))
-        for dx in (-1, 0, 1):
-            for dy in (-1, 0, 1):
-                for signal in grid.get((key[0] + dx, key[1] + dy), ()):
-                    other = coordinates[signal]
-                    metres = math.hypot((other[0] - point[0]) * east, (other[1] - point[1]) * 110_540)
-                    if metres > CROSSING_SIGNAL_METRES:
-                        continue
-                    if not any(
-                        _cuts_across(mine, theirs)
-                        for mine in cycle_bearings[node]
-                        for theirs in road_bearings.get(signal, ())
-                    ):
-                        continue
-                    roads = network.node_roads.get(node, frozenset())
-                    if any(
-                        math.hypot((was[0] - point[0]) * east, (was[1] - point[1]) * 110_540) < SIGNAL_MERGE_M
-                        and (not roads or not other_roads or roads & other_roads)
-                        for was, other_roads in added
-                    ):
-                        break
-                    kind[node] = 2
-                    added.append((point, network.node_roads.get(node, frozenset())))
-                    break
-                if kind[node] == 2:
-                    break
-            if kind[node] == 2:
-                break
-    return kind
+        for _, signal in _around(coordinates, signals, point[0], point[1], CROSSING_SIGNAL_METRES):
+            if not any(
+                _cuts_across(mine, theirs)
+                for mine in cycle_bearings[node]
+                for theirs in road_bearings.get(signal, ())
+            ):
+                continue
+            roads = network.node_roads.get(node, frozenset())
+            merged = any(
+                math.hypot((was[0] - point[0]) * east, (was[1] - point[1]) * 110_540) < SIGNAL_MERGE_M
+                and (not roads or not other_roads or roads & other_roads)
+                for was, other_roads in invented
+            )
+            if not merged and claim(node, SIGNAL_GOVERNING):
+                invented.append((point, roads))
+            break
+
+    if register:
+        _claim_from_register(network, kind, register, claim)
+    counts = np.bincount(source, minlength=4)
+    print("    signals: " + ", ".join(
+        f"{counts[which]:,} {SIGNAL_SOURCES[which]}"
+        for which in (SIGNAL_TAGGED, SIGNAL_GOVERNING, SIGNAL_REGISTERED)))
+    return kind, source
 
 
-def _signalise_from_register(network: OsmNetwork, register: list[dict]) -> np.ndarray:
-    """Add the lights the cities know about and OSM does not.
+def _claim_from_register(network: OsmNetwork, kind: np.ndarray, register: list[dict], claim) -> None:
+    """Put the cities' signalised junctions on the place a rider meets the traffic.
 
     Audited against the three registers, 7% of the region's signalised junctions had
     no light a rider would meet: some are absent from OSM altogether, and in the rest
@@ -1070,7 +1128,6 @@ def _signalise_from_register(network: OsmNetwork, register: list[dict]) -> np.nd
     where no rider goes. Everything else is accounted for, and the build says so.
     """
     coordinates = network.coordinates
-    kind = network.node_kind.copy()
     dedicated = (network.edge_class & EDGE_DEDICATED).astype(bool)
     offsets, neighbours = _adjacency(network)
     lengths = network.edge_length
@@ -1088,8 +1145,7 @@ def _signalise_from_register(network: OsmNetwork, register: list[dict]) -> np.nd
         seen = {int(start): 0.0}
         queue = [(0.0, int(start))]
         while queue:
-            queue.sort(reverse=True)
-            metres, node = queue.pop()
+            metres, node = heapq.heappop(queue)
             if metres > seen.get(node, math.inf):
                 continue
             for slot in range(offsets[node], offsets[node + 1]):
@@ -1097,7 +1153,7 @@ def _signalise_from_register(network: OsmNetwork, register: list[dict]) -> np.nd
                 step = metres + float(lengths[edge_at[slot]])
                 if step <= budget and step < seen.get(other, math.inf):
                     seen[other] = step
-                    queue.append((step, other))
+                    heapq.heappush(queue, (step, other))
         return seen
 
     # The two ways a rider can be on through a junction, kept apart on purpose. At a
@@ -1111,50 +1167,31 @@ def _signalise_from_register(network: OsmNetwork, register: list[dict]) -> np.nd
         target.add(int(first))
         target.add(int(second))
 
-    cell = 0.002
-
-    def index(nodes):
-        grid: dict[tuple[int, int], list[int]] = {}
-        for node in nodes:
-            point = coordinates[node]
-            grid.setdefault((int(point[0] // cell), int(point[1] // cell)), []).append(int(node))
-        return grid
-
     # A bridge or a tunnel is never it: a rider passing under a signalised junction
     # passes no signal, and the register cannot tell you which of the two it is.
     at_grade = lambda nodes: (node for node in nodes if node not in network.elevated_nodes)
     headings_near, crosses = _crossing_test(network)
-    candidates = {
-        "cycleway": index(at_grade(on_cycleway)),
-        "road": index(at_grade(on_road)),
+    grid = lambda nodes: _node_grid(coordinates, nodes)
+    candidates = {"cycleway": grid(at_grade(on_cycleway)), "road": grid(at_grade(on_road))}
+    # Every light a rider meets, on each kind of way, so a junction that already has
+    # one is not given a second. Unlike the inference above this looks at *all* of
+    # them, tagged ones included: the register knows only that the junction is
+    # signalised, so any light serving it already answers what it had to say.
+    lit = {
+        "cycleway": grid(node for node in on_cycleway if kind[node] in (2, 3)),
+        "road": grid(node for node in on_road if kind[node] in (2, 3)),
     }
-    signalled = {
-        "cycleway": index(node for node in on_cycleway if kind[node] in (2, 3)),
-        "road": index(node for node in on_road if kind[node] in (2, 3)),
-    }
-
-    def nearby(grid, lon, lat, east, reach=REGISTER_REACH_M):
-        span = int(reach / (cell * 60_000)) + 1
-        key = (int(lon // cell), int(lat // cell))
-        for dx in range(-span, span + 1):
-            for dy in range(-span, span + 1):
-                for node in grid.get((key[0] + dx, key[1] + dy), ()):
-                    point = coordinates[node]
-                    metres = math.hypot((point[0] - lon) * east, (point[1] - lat) * 110_540)
-                    if metres <= reach:
-                        yield metres, node
+    near = lambda index, lon, lat, reach: _around(coordinates, index, lon, lat, reach)
 
     census = {"already known": 0, "added": 0, "reached further": 0,
               "grade separated": 0, "unreachable": 0}
-    orphans = []
-    stretched = []
+    orphans, stretched = [], []
     for junction in register:
         lon, lat = junction["lon"], junction["lat"]
-        east = math.cos(math.radians(lat)) * 111_320
         # The junction is a place on the road, so the road is the anchor: whatever a
         # rider meets here, they meet it within a short ride of that point. Anything
         # further to ride than `REGISTER_WALK_M` is passing over or under, not through.
-        anchor = list(nearby(candidates["road"], lon, lat, east, REGISTER_FALLBACK_M))
+        anchor = list(near(candidates["road"], lon, lat, REGISTER_FALLBACK_M))
         walkable = within_walk(int(min(anchor)[1])) if anchor else {}
         # A rider waits where their path crosses the traffic, not where it runs
         # beside it. Without this the nearest cycleway node wins, and on a sidepath
@@ -1170,13 +1207,13 @@ def _signalise_from_register(network: OsmNetwork, register: list[dict]) -> np.nd
         for way_kind in ("cycleway", "road"):
             # At the ordinary radius: a light 100 m away belongs to the next
             # junction along, and treating it as this one's leaves this one dark.
-            if at_junction(nearby(signalled[way_kind], lon, lat, east)):
+            if at_junction(near(lit[way_kind], lon, lat, REGISTER_REACH_M)):
                 census["already known"] += 1
                 reached = True
                 continue
-            found = at_junction(nearby(candidates[way_kind], lon, lat, east))
+            found = at_junction(near(candidates[way_kind], lon, lat, REGISTER_REACH_M))
             if not found:
-                found = at_junction(nearby(candidates[way_kind], lon, lat, east, REGISTER_FALLBACK_M))
+                found = at_junction(near(candidates[way_kind], lon, lat, REGISTER_FALLBACK_M))
                 if found:
                     census["reached further"] += 1
                     stretched.append((junction, min(found)[0], way_kind))
@@ -1184,8 +1221,9 @@ def _signalise_from_register(network: OsmNetwork, register: list[dict]) -> np.nd
                 census["grade separated"] += 1
                 continue
             node = int(min(found)[1])
-            kind[node] = 2
-            signalled[way_kind].setdefault((int(lon // cell), int(lat // cell)), []).append(node)
+            claim(node, SIGNAL_REGISTERED)
+            point = coordinates[node]
+            lit[way_kind].setdefault((int(point[0] // 0.001), int(point[1] // 0.001)), []).append(node)
             census["added"] += 1
             reached = True
         if not reached:
@@ -1202,7 +1240,6 @@ def _signalise_from_register(network: OsmNetwork, register: list[dict]) -> np.nd
     for junction in orphans:
         print(f"      unreached: {junction['city']} {junction.get('name') or ''} "
               f"({junction['lat']:.5f},{junction['lon']:.5f})")
-    return kind
 
 
 def _largest_component(graph: RoutingGraph) -> np.ndarray:
@@ -1260,9 +1297,8 @@ def build_routing_graph(
     register: list[dict] | None = None,
 ) -> RoutingGraph:
     """Contract every degree-2 run into one edge and keep the largest component."""
-    network = replace(network, node_kind=_signalise_cycle_crossings(network))
-    if register:
-        network = replace(network, node_kind=_signalise_from_register(network, register))
+    kind, signal_source = _attach_signals(network, register)
+    network = replace(network, node_kind=kind, node_signal_source=signal_source)
     graph = _contract(network, bounds)
     graph = replace(graph, edge_class=_mark_parallel_roads(graph))
     return _restrict(graph, _largest_component(graph))
