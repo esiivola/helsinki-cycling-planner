@@ -550,3 +550,33 @@ def test_a_rider_passing_under_a_junction_gets_no_light(tmp_path: Path) -> None:
     lit = _lit(graph)
     assert (24.9418, 60.17015) not in lit and (24.9418, 60.16985) not in lit
     assert (24.9418, 60.1700) in lit  # the carriageway above still has its light
+
+
+# A junction whose carriageway is only visible from 55 to 80 m due east. A cell of
+# longitude is 55 m at this latitude, so a scan of the eight cells around a point
+# reaches that far east-west and no further, while the register asks for 80 m. The
+# road here sits in the second cell over: close enough for the register to anchor to,
+# far enough that a scan of the neighbouring cells alone never sees it.
+SIDEWAYS_NODES = (
+    '<node id="80" lat="60.1695" lon="24.9431"/>'
+    '<node id="81" lat="60.1700" lon="24.9431"/>'
+    '<node id="82" lat="60.1705" lon="24.9431"/>'
+    '<node id="83" lat="60.1700" lon="24.9410"/>'
+    '<node id="84" lat="60.1700" lon="24.9418"/>'
+)
+
+
+def test_a_junction_is_seen_from_the_far_side_of_a_grid_cell(tmp_path: Path) -> None:
+    # The cycleway runs east and crosses the road at right angles, so the rider
+    # plainly cuts across it and the light is theirs. Judging that needs the road's
+    # heading, and the road is 72 m away: inside the reach the register asks for,
+    # outside the cells a naive scan looks in. Without the wider scan the heading
+    # comes back empty, the crossing reads as one the rider runs beside, and the
+    # junction goes dark.
+    graph = _graph(
+        tmp_path, SIDEWAYS_NODES,
+        _way(80, (80, 81, 82)) + _way(81, (83, 84, 81), highway="cycleway"),
+        register=[{"lon": 24.9418, "lat": 60.1700, "city": "Helsinki", "name": "sideways"}],
+    )
+
+    assert (24.9418, 60.1700) in _lit(graph)

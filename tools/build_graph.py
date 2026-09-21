@@ -959,23 +959,24 @@ def _crossing_test(network: OsmNetwork):
     """
     cycle, road = _bearings_by_node(network)
     coordinates = network.coordinates
-    cell = 0.001
-    road_grid: dict[tuple[int, int], list[int]] = {}
-    for node in road:
-        point = coordinates[node]
-        road_grid.setdefault((int(point[0] // cell), int(point[1] // cell)), []).append(node)
+    # `_around` widens the scan with the reach asked for, which this needs and the
+    # hand-rolled scan it replaces did not: that one swept the eight cells around the
+    # point, and a cell of longitude is 55 m at this latitude, so at the 80 m reach
+    # the register asks for, every carriageway between 55 and 80 m due east or west
+    # was invisible. 412 of the 930 register junctions lost a heading that way.
+    #
+    # None of them lost every heading, so no light in this region moves: a junction
+    # has carriageways running several ways and the rider need only cut across one of
+    # them. The graph rebuilds byte for byte identical either way. It is fixed anyway,
+    # because the rule the code means to apply is "the roads within 80 m" and what it
+    # applied was "the roads within 80 m, unless they lie east or west", which is true
+    # here by luck and is not a thing anybody could reason about later.
+    road_grid = _node_grid(coordinates, road)
 
     def headings_near(lon: float, lat: float, reach: float) -> list[float]:
-        east = math.cos(math.radians(lat)) * 111_320
-        key = (int(lon // cell), int(lat // cell))
-        out: list[float] = []
-        for dx in (-1, 0, 1):
-            for dy in (-1, 0, 1):
-                for node in road_grid.get((key[0] + dx, key[1] + dy), ()):
-                    point = coordinates[node]
-                    if math.hypot((point[0] - lon) * east, (point[1] - lat) * 110_540) <= reach:
-                        out.extend(road[node])
-        return out
+        return [heading
+                for _, node in _around(coordinates, road_grid, lon, lat, reach)
+                for heading in road[node]]
 
     def crosses(node: int, headings: list[float]) -> bool:
         if network.node_kind[node] == 1:
