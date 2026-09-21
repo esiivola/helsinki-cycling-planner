@@ -951,11 +951,27 @@ def _crossing_test(network: OsmNetwork):
     runs parallel, as a sidepath does for most of its length, the light is not theirs
     and the wait never happens.
 
-    The road's heading is taken from the carriageways around the junction rather than
-    from the candidate node itself, because at a big junction the cycleway and the
-    carriageway often share no node at all -- which is the very case the register
-    exists to rescue. A node somebody has tagged a crossing needs no geometry: the
-    tag already says the rider crosses here.
+    The road's heading is read from the carriageways around the candidate node, not
+    from the node's own ways: at a big junction the cycleway and the carriageway
+    often share no node at all, which is the very case the register exists to rescue.
+    A node somebody has tagged a crossing needs no geometry: the tag already says the
+    rider crosses here.
+
+    Around the *candidate*, though, and not around the register's point. A junction
+    in the register is one dot for the whole thing, and asking "is there a road here
+    the rider cuts across" anywhere within reach of that dot passes any node with a
+    perpendicular road somewhere in the circle -- including a node the rider is
+    simply riding alongside. Measured over the region it put five lights on a
+    sidepath running parallel to the road it was supposed to be crossing, the worst
+    of them 13 m from the Finlandia-talo crossing, on the path along Mannerheimintie:
+    a wait charged to everyone riding the length of it. Asking at the candidate puts
+    the question where it is decided. Four of those five move 17 to 38 m onto the
+    crossing they belong to and the fifth, a Kehä III ramp, goes dark; 1,764 of the
+    1,782 candidates are unchanged, and none appears that the old test refused.
+
+    The reach is the register's own: the same distance, measured from the place the
+    rider would stop rather than from the dot. Reading it tighter is worse -- at 25 m
+    eight junctions go dark -- and wider drifts back to the dot it came from.
     """
     cycle, road = _bearings_by_node(network)
     coordinates = network.coordinates
@@ -973,20 +989,21 @@ def _crossing_test(network: OsmNetwork):
     # here by luck and is not a thing anybody could reason about later.
     road_grid = _node_grid(coordinates, road)
 
-    def headings_near(lon: float, lat: float, reach: float) -> list[float]:
-        return [heading
-                for _, node in _around(coordinates, road_grid, lon, lat, reach)
-                for heading in road[node]]
-
-    def crosses(node: int, headings: list[float]) -> bool:
+    def crosses(node: int, reach: float = REGISTER_REACH_M) -> bool:
         if network.node_kind[node] == 1:
             return True
         mine = cycle.get(int(node))
         if not mine:
             return True  # not on a cycleway at all; the road rules apply as before
-        return any(_cuts_across(a, b) for a in mine for b in headings)
+        point = coordinates[node]
+        return any(
+            _cuts_across(a, heading)
+            for a in mine
+            for _, other in _around(coordinates, road_grid, point[0], point[1], reach)
+            for heading in road[other]
+        )
 
-    return headings_near, crosses
+    return crosses
 
 
 # Where a light came from. A light in the graph used to carry no record of the rule
@@ -1171,7 +1188,7 @@ def _claim_from_register(network: OsmNetwork, kind: np.ndarray, register: list[d
     # A bridge or a tunnel is never it: a rider passing under a signalised junction
     # passes no signal, and the register cannot tell you which of the two it is.
     at_grade = lambda nodes: (node for node in nodes if node not in network.elevated_nodes)
-    headings_near, crosses = _crossing_test(network)
+    crosses = _crossing_test(network)
     grid = lambda nodes: _node_grid(coordinates, nodes)
     candidates = {"cycleway": grid(at_grade(on_cycleway)), "road": grid(at_grade(on_road))}
     # Every light a rider meets, on each kind of way, so a junction that already has
@@ -1197,11 +1214,11 @@ def _claim_from_register(network: OsmNetwork, kind: np.ndarray, register: list[d
         # A rider waits where their path crosses the traffic, not where it runs
         # beside it. Without this the nearest cycleway node wins, and on a sidepath
         # that node is one the rider rides straight past: the light a few metres away
-        # faces the drivers, and the wait is fiction.
-        road_headings = headings_near(lon, lat, REGISTER_FALLBACK_M)
+        # faces the drivers, and the wait is fiction. Asked of each candidate in turn,
+        # against the roads beside *it* -- see `_crossing_test`.
         at_junction = lambda found: [
             (metres, node) for metres, node in found
-            if node in walkable and crosses(node, road_headings)
+            if node in walkable and crosses(node)
         ]
 
         reached = False

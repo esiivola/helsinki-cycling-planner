@@ -6,6 +6,8 @@ import numpy as np
 
 from build_graph import (
     CROSSING_DELAY_S,
+    _around,
+    _node_grid,
     TURN_LEFT_FACTOR,
     SIGNAL_DELAY_S,
     SLOW_SPEED_FACTOR,
@@ -552,31 +554,56 @@ def test_a_rider_passing_under_a_junction_gets_no_light(tmp_path: Path) -> None:
     assert (24.9418, 60.1700) in lit  # the carriageway above still has its light
 
 
-# A junction whose carriageway is only visible from 55 to 80 m due east. A cell of
-# longitude is 55 m at this latitude, so a scan of the eight cells around a point
-# reaches that far east-west and no further, while the register asks for 80 m. The
-# road here sits in the second cell over: close enough for the register to anchor to,
-# far enough that a scan of the neighbouring cells alone never sees it.
-SIDEWAYS_NODES = (
-    '<node id="80" lat="60.1695" lon="24.9431"/>'
-    '<node id="81" lat="60.1700" lon="24.9431"/>'
-    '<node id="82" lat="60.1705" lon="24.9431"/>'
-    '<node id="83" lat="60.1700" lon="24.9410"/>'
-    '<node id="84" lat="60.1700" lon="24.9418"/>'
+def test_the_short_range_search_reaches_as_far_east_as_it_says(tmp_path: Path) -> None:
+    """A cell of longitude is 55 m at this latitude, and the searches reach 80 m.
+
+    A scan of the eight cells around a point reaches one cell east and no further, so
+    a hand-rolled one silently stopped at 55 m east and west while its caller asked
+    for 80. `_around` widens the scan with the reach it is given. Nothing in the
+    region turned on it -- 412 of the 930 register junctions lost a heading that way
+    and not one lost all of them -- which is exactly why it wants a test rather than
+    a note.
+    """
+    coordinates = np.array([[24.9418, 60.1700], [24.9431, 60.1700], [24.9418, 60.1712]])
+    grid = _node_grid(coordinates, range(len(coordinates)))
+    # Node 1 is 72 m due east, two cells over; node 2 is 133 m north and out of reach.
+    found = {node for _, node in _around(coordinates, grid, 24.9418, 60.1700, 80.0)}
+
+    assert found == {0, 1}
+
+
+# A junction where the cycleway runs *along* the road, and the street it would cross
+# is 65 m up: inside the 80 m the register reaches from its dot, outside the 40 m the
+# rider's own node can see. The register gives one dot for the whole junction, so a
+# crossing test taken there passes the node beside the road on the strength of a
+# perpendicular street somewhere in the circle, and charges a wait to a rider who
+# never leaves the path. Mannerheimintie at Finlandia-talo was exactly this, 13 m out.
+PARALLEL_NODES = (
+    '<node id="90" lat="60.1690" lon="24.9418"/>'    # the road the path runs along
+    '<node id="91" lat="60.1700" lon="24.9418"/>'    # level with the register's point
+    '<node id="97" lat="60.17059" lon="24.9418"/>'   # where the side street comes in
+    '<node id="92" lat="60.1712" lon="24.9418"/>'
+    '<node id="96" lat="60.17059" lon="24.9431"/>'   # the side street, running east
+    '<node id="93" lat="60.1690" lon="24.9420"/>'    # the path beside it, 11 m east
+    '<node id="94" lat="60.1700" lon="24.9420"/>'
+    '<node id="95" lat="60.1712" lon="24.9420"/>'
 )
 
 
-def test_a_junction_is_seen_from_the_far_side_of_a_grid_cell(tmp_path: Path) -> None:
-    # The cycleway runs east and crosses the road at right angles, so the rider
-    # plainly cuts across it and the light is theirs. Judging that needs the road's
-    # heading, and the road is 72 m away: inside the reach the register asks for,
-    # outside the cells a naive scan looks in. Without the wider scan the heading
-    # comes back empty, the crossing reads as one the rider runs beside, and the
-    # junction goes dark.
+def test_a_register_light_is_refused_by_the_path_running_alongside(tmp_path: Path) -> None:
     graph = _graph(
-        tmp_path, SIDEWAYS_NODES,
-        _way(80, (80, 81, 82)) + _way(81, (83, 84, 81), highway="cycleway"),
-        register=[{"lon": 24.9418, "lat": 60.1700, "city": "Helsinki", "name": "sideways"}],
+        tmp_path, PARALLEL_NODES,
+        _way(90, (90, 91, 97, 92)) + _way(91, (97, 96))
+        + _way(92, (93, 94, 95), highway="cycleway")
+        + _way(93, (95, 92), highway="cycleway") + _way(94, (93, 90), highway="cycleway"),
+        register=[{"lon": 24.9418, "lat": 60.1700, "city": "Helsinki", "name": "parallel"}],
     )
 
-    assert (24.9418, 60.1700) in _lit(graph)
+    # Node 94 is the nearest thing on the path, 11 m from the register's point, and
+    # the rider there is riding alongside the road rather than across it. Asked at
+    # the dot, the side street 65 m north says they cross; asked where they are, the
+    # only road within reach runs the way they do. The light goes on the carriageway,
+    # which is the one place here a rider does meet it.
+    lit = _lit(graph)
+    assert (24.9420, 60.1700) not in lit
+    assert (24.9418, 60.1700) in lit
