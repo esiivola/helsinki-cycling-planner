@@ -61,13 +61,69 @@ export function mountSettings(
   hasWinterRef = hasWinter;
   let open = false;
   let tab: "taste" | "model" = "taste";
+  /** Whether the eleven individual preferences are unfolded.
+   *
+   *  A preset answers the question for almost everyone, and eleven sliders each with
+   *  a line of explanation under it is two phone screens of scrolling before the
+   *  rider reaches the reset button. Folded away they cost one line; a rider whose
+   *  taste is no longer any preset arrives with them already open, because that is
+   *  where they left off. */
+  let tuning = presetOf(read().taste) === null;
 
-  const change = (mutate: (profile: Profile) => void) => {
+  const change = (mutate: (profile: Profile) => void, rebuild = true) => {
     const profile = structuredClone(read());
     mutate(profile);
     write(profile);
-    render();
+    if (rebuild) render(); else patch();
   };
+
+  /** Write only what a slider's own movement changes.
+   *
+   *  Re-rendering the panel on every `input` event removes the very range input the
+   *  thumb is holding, and the browser ends the gesture with it: a preference could
+   *  be nudged one stop and went dead, which on a phone is the whole control. The
+   *  same lesson the address fields already learned. Nothing structural depends on a
+   *  slider's value, so the text beside it, the chips and the reset are all that
+   *  need saying. */
+  function patch(): void {
+    const profile = read();
+    for (const row of ROWS.filter(shown)) {
+      const input = panel.querySelector<HTMLInputElement>(`#pref-${row.key}`);
+      if (!input) continue;
+      const value = profile.taste[row.key];
+      const stop = stopOf(row.key, value);
+      const name = stop < 0 ? `Mukautettu · ${decimal(value)}×` : row.labels[stop];
+      const label = input.closest(".pref")!.querySelector("b")!;
+      label.textContent = name;
+      label.classList.toggle("moved", stop !== row.standard);
+      input.setAttribute("aria-valuetext", name);
+      // The free weight is the same number in another notation; leave it alone while
+      // it is being typed in.
+      const raw = panel.querySelector<HTMLInputElement>(`#raw-${row.key}`);
+      if (raw && document.activeElement !== raw) raw.value = decimal(value);
+    }
+    const base = baseCost();
+    for (const knob of base ? KNOBS.filter((entry) => !entry.needsClimb || hasClimb()) : []) {
+      const input = panel.querySelector<HTMLInputElement>(`#knob-${knob.key}`);
+      if (!input) continue;
+      const shipped = (base![knob.key] as number | undefined) ?? SHIPPED_CLIMB[knob.key] ?? 0;
+      const value = (profile.cost[knob.key] as number | undefined) ?? shipped;
+      const text = `${decimal(value)} ${knob.unit}`;
+      const label = input.closest(".pref")!.querySelector("b")!;
+      label.textContent = text;
+      label.classList.toggle("moved", Math.abs(value - shipped) > 1e-9);
+      input.setAttribute("aria-valuetext", text);
+      const note = input.closest(".pref")!.querySelector("small");
+      if (note) note.hidden = Math.abs(value - shipped) <= 1e-9;
+    }
+    const active = presetOf(profile.taste);
+    panel.querySelectorAll<HTMLElement>("[data-preset]").forEach((chip) => {
+      chip.setAttribute("aria-pressed", String(active?.id === chip.dataset.preset));
+    });
+    const reset = panel.querySelector<HTMLButtonElement>("[data-reset]");
+    if (reset) reset.disabled = isShipped(profile);
+    gear.classList.toggle("moved", !isShipped(profile));
+  }
 
   function rowMarkup(profile: Profile): string {
     return ROWS.filter(shown).map((row) => {
@@ -118,7 +174,7 @@ export function mountSettings(
         <input type="range" id="knob-${knob.key}" data-knob="${knob.key}"
                min="${knob.min}" max="${knob.max}" step="${knob.step}" value="${value}"
                aria-valuetext="${decimal(value)} ${escape(knob.unit)}" />
-        ${moved ? `<small>Oletus ${decimal(shipped)} ${escape(knob.unit)}</small>` : ""}
+        <small ${moved ? "" : "hidden"}>Oletus ${decimal(shipped)} ${escape(knob.unit)}</small>
       </div>`;
     }).join("");
   }
@@ -156,8 +212,11 @@ export function mountSettings(
               aria-pressed="${active?.id === preset.id}" title="${escape(preset.hint)}"
               >${escape(preset.label)}</button>`).join("")}
           </div>
-          ${rowMarkup(profile)}
-          ${weightsMarkup(profile)}
+          <details class="tune" ${tuning ? "open" : ""}>
+            <summary>Säädä tarkemmin</summary>
+            ${rowMarkup(profile)}
+            ${weightsMarkup(profile)}
+          </details>
         </div>
         <div role="tabpanel" id="panel-model" aria-labelledby="tab-model" ${tab === "model" ? "" : "hidden"}>
           <p class="settings-note">Mitä ajaminen oikeasti maksaa. <b>Muuttaa näytettyä kestoa.</b></p>
@@ -180,10 +239,10 @@ export function mountSettings(
     const target = event.target as HTMLInputElement;
     if (target.dataset.pref) {
       const key = target.dataset.pref as keyof Taste;
-      change((profile) => { profile.taste[key] = rowOf(key).values[Number(target.value)]; });
+      change((profile) => { profile.taste[key] = rowOf(key).values[Number(target.value)]; }, false);
     } else if (target.dataset.knob) {
       const key = target.dataset.knob as keyof Profile["cost"];
-      change((profile) => { (profile.cost as Record<string, number>)[key] = Number(target.value); });
+      change((profile) => { (profile.cost as Record<string, number>)[key] = Number(target.value); }, false);
     }
   });
 
@@ -222,6 +281,12 @@ export function mountSettings(
       panel.querySelector<HTMLElement>(`#tab-${tab}`)?.focus();
     }
   });
+
+  // `toggle` does not bubble, so it is caught on the way down.
+  panel.addEventListener("toggle", (event) => {
+    const target = event.target as HTMLElement;
+    if (target.classList.contains("tune")) tuning = (target as HTMLDetailsElement).open;
+  }, true);
 
   panel.addEventListener("keydown", (event) => {
     const target = event.target as HTMLElement;

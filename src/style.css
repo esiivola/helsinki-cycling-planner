@@ -379,9 +379,15 @@ td small { color: var(--muted); font-variant-numeric: normal; }
 .directions .far { color: var(--muted); font-variant-numeric: tabular-nums; }
 .directions .where { grid-column: 2 / -1; color: var(--muted); font-size: 12px; }
 
+/* The breakdown borrows the turn list's disclosure so the two rows under the answer
+   look like the pair of drawers they are. Its table needs the border the <ol> got
+   from its own rule. */
+.breakdown table { margin-bottom: 4px; }
+.breakdown th:first-child { padding-left: 0; }
+
 /* --- speed ----------------------------------------------------------------- */
 
-.speed { display: block; margin-top: 18px; }
+.speed { display: block; margin: 16px 0 4px; }
 .speed .row { display: flex; align-items: baseline; justify-content: space-between; }
 .speed b { font-variant-numeric: tabular-nums; }
 .speed .scale { display: flex; justify-content: space-between; color: var(--muted); font-size: 11px; }
@@ -566,6 +572,13 @@ input[type="range"] { width: 100%; margin: 6px 0 2px; accent-color: var(--blue);
 .pref small { display: block; color: var(--muted); font-size: 11px; }
 .pref input[type="range"] { margin: 2px 0 3px; }
 
+/* The presets answer the question for most riders; the eleven sliders behind this
+   are the long tail, and open they buried the reset button two screens down. */
+.tune { margin: 2px 0 10px; border-top: 1px solid var(--line-soft); }
+.tune > summary { padding: 11px 0; color: var(--muted); font-size: 12px; cursor: pointer; }
+.tune > summary:hover { color: var(--blue); }
+.tune[open] > summary { margin-bottom: 8px; }
+
 .raw { margin: 4px 0 16px; border-top: 1px solid var(--line-soft); }
 .raw summary { padding: 10px 0; color: var(--muted); font-size: 12px; cursor: pointer; }
 .raw summary:hover { color: var(--blue); }
@@ -607,7 +620,7 @@ input[type="range"] { width: 100%; margin: 6px 0 2px; accent-color: var(--blue);
 
 /* --- elevation profile ----------------------------------------------------- */
 
-.profile { margin: 0; }
+.profile { margin: 18px 0 0; }
 .profile svg {
   display: block;
   width: 100%;

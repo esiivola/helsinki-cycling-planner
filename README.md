@@ -619,9 +619,28 @@ The page follows the system's light and dark setting. Dark mode swaps the basema
 CARTO Dark Matter rather than filtering the light one: inverting Positron turns the
 land black and the sea pale, which reads as a photographic negative of a map.
 
-How the duration is arrived at is a paragraph worth reading once and never again, so
-it is folded away under the readout rather than standing between the rider and the
-answer.
+What the panel shows open is what a rider decides on: the duration, the three figures
+under it, the speed they ride at, the alternatives, where the riding happens and the
+hills. Everything that audits the route rather than choosing it — the nine rows of
+kilometres and counts, the turn list, and how the duration is arrived at — is folded
+beneath that. Printed open they ran to twice the height of a phone screen and pushed
+the alternatives and the speed below a second scroll. Nothing is gone; each is one
+line until it is asked for.
+
+The same discipline decides what is printed twice, which is what the readout mostly
+was: the ascent stood in the headline, in the alternative rows, in the chart's caption
+and again in the table. A number earns a second appearance only where it does a
+different job — the chart says *where* the 101 m is, the alternative rows say what it
+costs against another route — so the heading over the chart went too, the caption
+under it having already named it.
+
+The speed sits directly under the figures it moves rather than at the foot of the
+panel. It is the one control most riders touch, and below a turn list on a phone it
+was not a control at all. Like the address fields, it is one element kept across
+renders and moved into each readout: re-routing rewrites the readout, and rewriting it
+used to remove the very range input the thumb was holding, which ended the drag a few
+km/h in. The preference sliders behind the gear had the same bug and the same cause,
+and now write only the text beside them as they move.
 
 ### Reaching it without a mouse
 
@@ -751,11 +770,17 @@ down to 41 % for no measurable detour.
 
 ### Presets, and the one that is missing
 
-Four: *Tasapainoinen*, *Rauhallinen*, *Suoraviivainen*, *Asfaltti*. There is no
-"fastest", because the shipped model already minimises perceived time and a preset
-that dropped its preference for signposted routes measured **slower** — 1089 minutes
-against 1081. A baana is not merely pleasant, it is quick, and a button promising to
+Six: *Tasapainoinen*, *Rauhallinen*, *Suoraviivainen*, *Asfaltti*, *Tasainen*,
+*Talvi*. There is no "fastest", because the shipped model already minimises perceived
+time and a preset that dropped its preference for signposted routes measured
+**slower** — 1089 minutes against 1081. A baana is not merely pleasant, it is quick, and a button promising to
 save time while costing it would be a lie.
+
+A preset is the answer for almost everyone, so the presets are what the tab opens on
+and the eleven rows sit behind *Säädä tarkemmin*. Open, they and their explanations
+were two phone screens standing between the rider and the reset button, for a control
+most riders set once. A rider whose taste no longer matches any preset arrives with
+the rows already unfolded, because that is where they left off.
 
 Under the rows, *Omat painot* takes the raw multiplier for any of them, so the scale
 is a shortcut rather than a fence.

@@ -91,6 +91,8 @@ let selected = 0;
 let openStep = -1;
 /** Whether the turn-by-turn list is unfolded; it survives a re-render. */
 let directionsOpen = false;
+/** The same, for the table of everything else the route is made of. */
+let breakdownOpen = false;
 /** Endpoints restored from the link still carry coordinates for labels; once the
  *  address index lands they get their real names. */
 let namesPending = false;
@@ -883,8 +885,7 @@ function renderProfile(route: Route): string {
   const line = points.map((point, index) =>
     `${index ? "L" : "M"}${x(point[0]).toFixed(1)} ${y(point[1]).toFixed(1)}`).join("");
   const area = `${line}L${width} ${height}L0 ${height}Z`;
-  return `<span class="eyebrow">Korkeusprofiili</span>
-    <figure class="profile">
+  return `<figure class="profile">
       <svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" role="img"
            aria-label="Korkeusprofiili: nousua ${Math.round(route.ascentMetres)} metriä,
              matalin ${Math.round(low)} ja korkein ${Math.round(high)} metriä merenpinnasta.">
@@ -934,6 +935,35 @@ function renderSteps(route: Route): string {
   </details>`;
 }
 
+/** Everything else the route is made of.
+ *
+ * Folded away, and that is the whole point. Nine rows of kilometres and counts are
+ * the answer to a question a rider asks once a month -- how much of this is gravel,
+ * is any of it ploughed -- and printing them open pushed the turn list, the speed and
+ * the alternatives below a second screenful. Closed it is one line; open it is the
+ * same table it always was, so nothing has been taken away. */
+function renderBreakdown(route: Route): string {
+  const share = (metres: number) =>
+    `${km(metres)} km <small>${percent(metres, route.metres)} %</small>`;
+  const row = (label: string, value: string) => `<tr><th>${label}</th><td>${value}</td></tr>`;
+  const rows = [
+    row("Pyöräväylää", share(route.dedicatedMetres)),
+    route.sidepathMetres > 50 ? row("Ajorataa pyörätien vierellä", `${km(route.sidepathMetres)} km`) : "",
+    router?.hasClimb ? row("Nousua", `${Math.round(route.ascentMetres)} m`) : "",
+    router?.hasClimb ? row("Laskua", `${Math.round(route.descentMetres)} m`) : "",
+    row("Suojatiet ilman valoja", String(route.crossings)),
+    route.barriers ? row("Puomeja ja pollareita", String(route.barriers)) : "",
+    route.winterMetres > 50 ? row("Talvihoidettua", share(route.winterMetres)) : "",
+    route.litMetres > 50 ? row("Valaistua", share(route.litMetres)) : "",
+    route.unpavedMetres > 50 ? row("Päällystämätöntä", share(route.unpavedMetres)) : "",
+    route.sharedMetres > 50 ? row("Jalankulkijoiden kanssa", share(route.sharedMetres)) : "",
+  ].filter(Boolean);
+  return `<details class="directions breakdown" ${breakdownOpen ? "open" : ""}>
+    <summary>Reitin erittely</summary>
+    <table>${rows.join("")}</table>
+  </details>`;
+}
+
 const METHOD = `<details class="method">
   <summary>Miten kesto lasketaan?</summary>
   <p>Koettu kesto = ajoaika + 30 s / valo-odotus + 10 s / käännös + 2 s / valo-ohjaamaton
@@ -944,14 +974,33 @@ const METHOD = `<details class="method">
   Vantaa (CC BY 4.0).</p>
 </details>`;
 
-function speedControl(): string {
-  return `<div class="speed">
-    <label class="row" for="speed">Vauhti tasaisella <b>${profile.speedKmh} km/h</b></label>
-    <input type="range" min="10" max="28" step="1" value="${profile.speedKmh}" id="speed"
-           aria-valuetext="${profile.speedKmh} kilometriä tunnissa" />
-    <span class="scale" aria-hidden="true"><span>10</span><span>rauhallinen · reipas</span><span>28</span></span>
-  </div>`;
+/** The speed slider is built once and moved into each readout, never rewritten.
+ *
+ * Moving it re-routes, and re-routing rewrites the readout -- which used to remove
+ * the very range input the thumb was holding. The browser ends the gesture with the
+ * element, so a drag moved the speed a few km/h and then went dead, and on a phone
+ * there is no arrow key to finish the job with. The fields upstairs are kept for the
+ * same reason and it is the same bug. */
+const speedBox = document.createElement("div");
+speedBox.className = "speed";
+speedBox.innerHTML = `
+  <label class="row" for="speed">Vauhti tasaisella <b></b></label>
+  <input type="range" min="10" max="28" step="1" id="speed" />
+  <span class="scale" aria-hidden="true"><span>10</span><span>rauhallinen · reipas</span><span>28</span></span>`;
+const speedInput = speedBox.querySelector("input") as HTMLInputElement;
+speedInput.addEventListener("input", () => {
+  setProfile({ ...profile, speedKmh: Number(speedInput.value) });
+});
+
+/** Say what the profile now holds, without touching a value the thumb is setting. */
+function syncSpeed(): void {
+  speedBox.querySelector("b")!.textContent = `${profile.speedKmh} km/h`;
+  speedInput.setAttribute("aria-valuetext", `${profile.speedKmh} kilometriä tunnissa`);
+  if (speedInput.value !== String(profile.speedKmh)) speedInput.value = String(profile.speedKmh);
 }
+
+/** Where the slider is put back after the readout around it has been rewritten. */
+const SPEED_SLOT = `<div id="speed-slot"></div>`;
 
 function renderReadout(): void {
   const route = routes[selected] ?? null;
@@ -969,7 +1018,7 @@ function renderReadout(): void {
       ? `Hae osoitteella, käytä omaa sijaintia tai klikkaa kartalta ${ends.from ? "määränpää" : "lähtöpaikka"}.`
       : "Ladataan tieverkkoa…");
     readout.innerHTML = `${borrowed}${problem}<p class="lede">${escape(hint)}</p>
-      ${ends.from || ends.to ? speedControl() : ""}${METHOD}`;
+      ${ends.from || ends.to ? SPEED_SLOT : ""}${METHOD}`;
   } else {
     // Subtracted after rounding, not before: at 44,5 min total and 38,4 min riding,
     // rounding each separately printed "38 min plus 6 min" under a headline of 45.
@@ -987,32 +1036,23 @@ function renderReadout(): void {
         <div><dt>Odotuksia</dt><dd>${route.signals}</dd></div>
         <div><dt>Käännöksiä</dt><dd>${route.turns}</dd></div>
       </dl>
+      ${SPEED_SLOT}
       ${renderOptions()}
       ${renderTraffic(route)}
       ${router?.hasClimb ? renderProfile(route) : ""}
-      <span class="eyebrow">Reitin erittely</span>
-      <table>
-        <tr><th>Pyöräväylää</th><td>${km(route.dedicatedMetres)} km <small>${percent(route.dedicatedMetres, route.metres)} %</small></td></tr>
-        ${route.sidepathMetres > 50 ? `<tr><th>Ajorataa pyörätien vierellä</th><td>${km(route.sidepathMetres)} km</td></tr>` : ""}
-        ${router?.hasClimb ? `<tr><th>Nousua</th><td>${Math.round(route.ascentMetres)} m</td></tr>
-        <tr><th>Laskua</th><td>${Math.round(route.descentMetres)} m</td></tr>` : ""}
-        <tr><th>Suojatiet ilman valoja</th><td>${route.crossings}</td></tr>
-        ${route.barriers ? `<tr><th>Puomeja ja pollareita</th><td>${route.barriers}</td></tr>` : ""}
-        ${route.winterMetres > 50 ? `<tr><th>Talvihoidettua</th><td>${km(route.winterMetres)} km <small>${percent(route.winterMetres, route.metres)} %</small></td></tr>` : ""}
-        ${route.litMetres > 50 ? `<tr><th>Valaistua</th><td>${km(route.litMetres)} km <small>${percent(route.litMetres, route.metres)} %</small></td></tr>` : ""}
-        ${route.unpavedMetres > 50 ? `<tr><th>Päällystämätöntä</th><td>${km(route.unpavedMetres)} km <small>${percent(route.unpavedMetres, route.metres)} %</small></td></tr>` : ""}
-        ${route.sharedMetres > 50 ? `<tr><th>Jalankulkijoiden kanssa</th><td>${km(route.sharedMetres)} km <small>${percent(route.sharedMetres, route.metres)} %</small></td></tr>` : ""}
-      </table>
       ${renderSteps(route)}
-      ${speedControl()}${METHOD}`;
+      ${renderBreakdown(route)}
+      ${METHOD}`;
   }
 
-  document.getElementById("speed")?.addEventListener("input", (event) => {
-    setProfile({ ...profile, speedKmh: Number((event.target as HTMLInputElement).value) });
-  });
-  readout.querySelector<HTMLDetailsElement>(".directions")?.addEventListener("toggle", (event) => {
-    directionsOpen = (event.target as HTMLDetailsElement).open;
-    layoutSheet();
+  document.getElementById("speed-slot")?.append(speedBox);
+  syncSpeed();
+  readout.querySelectorAll<HTMLDetailsElement>("details").forEach((element) => {
+    element.addEventListener("toggle", () => {
+      if (element.classList.contains("breakdown")) breakdownOpen = element.open;
+      else if (element.classList.contains("directions")) directionsOpen = element.open;
+      layoutSheet();
+    });
   });
   readout.querySelectorAll<HTMLElement>("[data-keep]").forEach((element) => {
     element.addEventListener("click", () => keepBorrowed(Boolean(element.dataset.keep)));
